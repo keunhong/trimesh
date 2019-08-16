@@ -1,0 +1,576 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trimesh.ray package &mdash; trimesh 3.2.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="trimesh.resources package" href="trimesh.resources.html" />
+    <link rel="prev" title="trimesh.path.exchange package" href="trimesh.path.exchange.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="trimesh.html">trimesh package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="trimesh.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="trimesh.exchange.html">trimesh.exchange package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.interfaces.html">trimesh.interfaces package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.path.html">trimesh.path package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">trimesh.ray package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.resources.html">trimesh.resources package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.scene.html">trimesh.scene package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.viewer.html">trimesh.viewer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.visual.html">trimesh.visual package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.voxel.html">trimesh.voxel package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.base">trimesh.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.boolean">trimesh.boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.bounds">trimesh.bounds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.caching">trimesh.caching module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.collision">trimesh.collision module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.comparison">trimesh.comparison module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.constants">trimesh.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.convex">trimesh.convex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.creation">trimesh.creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.curvature">trimesh.curvature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.decomposition">trimesh.decomposition module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.exceptions">trimesh.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.geometry">trimesh.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.graph">trimesh.graph module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.grouping">trimesh.grouping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.inertia">trimesh.inertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.integrate">trimesh.integrate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.intersections">trimesh.intersections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.interval">trimesh.interval module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.nsphere">trimesh.nsphere module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.parent">trimesh.parent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.permutate">trimesh.permutate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.points">trimesh.points module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.poses">trimesh.poses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.primitives">trimesh.primitives module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.proximity">trimesh.proximity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.registration">trimesh.registration module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.remesh">trimesh.remesh module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.rendering">trimesh.rendering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.repair">trimesh.repair module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.sample">trimesh.sample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.schemas">trimesh.schemas module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.smoothing">trimesh.smoothing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.transformations">trimesh.transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.triangles">trimesh.triangles module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.units">trimesh.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.util">trimesh.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.version">trimesh.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Module Reference</a> &raquo;</li>
+        
+          <li><a href="trimesh.html">trimesh package</a> &raquo;</li>
+        
+      <li>trimesh.ray package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/trimesh.ray.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trimesh-ray-package">
+<h1>trimesh.ray package<a class="headerlink" href="#trimesh-ray-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.ray.ray_pyembree">
+<span id="trimesh-ray-ray-pyembree-module"></span><h2>trimesh.ray.ray_pyembree module<a class="headerlink" href="#module-trimesh.ray.ray_pyembree" title="Permalink to this headline">¶</a></h2>
+<p>Ray queries using the pyembree package with the
+API wrapped to match our native raytracer.</p>
+<dl class="class">
+<dt id="trimesh.ray.ray_pyembree.RayMeshIntersector">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.ray.ray_pyembree.</code><code class="sig-name descname">RayMeshIntersector</code><span class="sig-paren">(</span><em class="sig-param">geometry</em>, <em class="sig-param">scale_to_box=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_pyembree.RayMeshIntersector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="trimesh.ray.ray_pyembree.RayMeshIntersector.contains_points">
+<code class="sig-name descname">contains_points</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_pyembree.RayMeshIntersector.contains_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a mesh contains a list of points, using ray tests.</p>
+<p>If the point is on the surface of the mesh, behavior is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>points in space</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>contains</strong> – Whether point is inside mesh or not</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n,) bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.ray.ray_pyembree.RayMeshIntersector.intersects_any">
+<code class="sig-name descname">intersects_any</code><span class="sig-paren">(</span><em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_pyembree.RayMeshIntersector.intersects_any" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a list of rays hits the surface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ray_origins</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>origins of rays</em>) – </p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>direction</em><em> (</em><em>vector</em><em>) </em><em>of rays</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>hit</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n,) bool, did each ray hit the surface</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.ray.ray_pyembree.RayMeshIntersector.intersects_first">
+<code class="sig-name descname">intersects_first</code><span class="sig-paren">(</span><em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_pyembree.RayMeshIntersector.intersects_first" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the index of the first triangle a ray hits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ray_origins</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>origins of rays</em>) – </p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>direction</em><em> (</em><em>vector</em><em>) </em><em>of rays</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>triangle_index</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n,) int, index of triangle ray hit, or -1 if not hit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.ray.ray_pyembree.RayMeshIntersector.intersects_id">
+<code class="sig-name descname">intersects_id</code><span class="sig-paren">(</span><em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em>, <em class="sig-param">multiple_hits=True</em>, <em class="sig-param">max_hits=20</em>, <em class="sig-param">return_locations=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_pyembree.RayMeshIntersector.intersects_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the triangles hit by a list of rays, including
+optionally multiple hits along a single ray.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ray_origins</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>origins of rays</em>) – </p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>direction</em><em> (</em><em>vector</em><em>) </em><em>of rays</em>) – </p></li>
+<li><p><strong>multiple_hits</strong> (<em>bool</em><em>, </em><em>if True will return every hit along the ray</em>) – if False will only return first hit</p></li>
+<li><p><strong>return_locations</strong> (<em>bool</em><em>, </em><em>should we return hit locations</em><em> or </em><em>not</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>index_tri</strong> (<em>(m,) int, index of triangle the ray hit</em>)</p></li>
+<li><p><strong>index_ray</strong> (<em>(m,) int, index of ray</em>)</p></li>
+<li><p><strong>locations</strong> (<em>(m,3) float, locations in space</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.ray.ray_pyembree.RayMeshIntersector.intersects_location">
+<code class="sig-name descname">intersects_location</code><span class="sig-paren">(</span><em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em>, <em class="sig-param">multiple_hits=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_pyembree.RayMeshIntersector.intersects_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the location of where a ray hits a surface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ray_origins</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>origins of rays</em>) – </p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>direction</em><em> (</em><em>vector</em><em>) </em><em>of rays</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>locations</strong> (<em>(n) sequence of (m,3) intersection points</em>)</p></li>
+<li><p><strong>index_ray</strong> (<em>(n,) int, list of ray index</em>)</p></li>
+<li><p><strong>index_tri</strong> (<em>(n,) int, list of triangle (face) indexes</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.ray.ray_triangle">
+<span id="trimesh-ray-ray-triangle-module"></span><h2>trimesh.ray.ray_triangle module<a class="headerlink" href="#module-trimesh.ray.ray_triangle" title="Permalink to this headline">¶</a></h2>
+<p>A basic slow implementation of ray- triangle queries.</p>
+<dl class="class">
+<dt id="trimesh.ray.ray_triangle.RayMeshIntersector">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.ray.ray_triangle.</code><code class="sig-name descname">RayMeshIntersector</code><span class="sig-paren">(</span><em class="sig-param">mesh</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_triangle.RayMeshIntersector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An object to query a mesh for ray intersections.
+Precomputes an r-tree for each triangle on the mesh.</p>
+<dl class="method">
+<dt id="trimesh.ray.ray_triangle.RayMeshIntersector.contains_points">
+<code class="sig-name descname">contains_points</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_triangle.RayMeshIntersector.contains_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a mesh contains a list of points, using ray tests.</p>
+<p>If the point is on the surface of the mesh the behavior
+is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Points in space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>contains</strong> – Whether point is inside mesh or not</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n,) bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.ray.ray_triangle.RayMeshIntersector.intersects_any">
+<code class="sig-name descname">intersects_any</code><span class="sig-paren">(</span><em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_triangle.RayMeshIntersector.intersects_any" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find out if each ray hit any triangle on the mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ray_origins</strong> (<em>(</em><em>m</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Ray origin points</p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>m</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Ray direction vectors</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>hit</strong> – Whether any ray hit any triangle on the mesh</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m,) bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.ray.ray_triangle.RayMeshIntersector.intersects_id">
+<code class="sig-name descname">intersects_id</code><span class="sig-paren">(</span><em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em>, <em class="sig-param">return_locations=False</em>, <em class="sig-param">multiple_hits=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_triangle.RayMeshIntersector.intersects_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the intersections between the current mesh and an
+array of rays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ray_origins</strong> (<em>(</em><em>m</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Ray origin points</p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>m</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Ray direction vectors</p></li>
+<li><p><strong>multiple_hits</strong> (<em>bool</em>) – Consider multiple hits of each ray or not</p></li>
+<li><p><strong>return_locations</strong> (<em>bool</em>) – Return hit locations or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>index_triangle</strong> (<em>(h,) int</em>) – Index of triangles hit</p></li>
+<li><p><strong>index_ray</strong> (<em>(h,) int</em>) – Index of ray that hit triangle</p></li>
+<li><p><strong>locations</strong> (<em>(h, 3) float</em>) – [optional] Position of intersection in space</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.ray.ray_triangle.RayMeshIntersector.intersects_location">
+<code class="sig-name descname">intersects_location</code><span class="sig-paren">(</span><em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_triangle.RayMeshIntersector.intersects_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return unique cartesian locations where rays hit the mesh.
+If you are counting the number of hits a ray had, this method
+should be used as if only the triangle index is used on- edge hits
+will be counted twice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ray_origins</strong> (<em>(</em><em>m</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Ray origin points</p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>m</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Ray direction vectors</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>locations</strong> (<em>(n) sequence of (m,3) float</em>) – Intersection points</p></li>
+<li><p><strong>index_ray</strong> (<em>(n,) int</em>) – Array of ray indexes</p></li>
+<li><p><strong>index_tri</strong> (<em>(n,) int</em>) – Array of triangle (face) indexes</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.ray.ray_triangle.ray_bounds">
+<code class="sig-prename descclassname">trimesh.ray.ray_triangle.</code><code class="sig-name descname">ray_bounds</code><span class="sig-paren">(</span><em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em>, <em class="sig-param">bounds</em>, <em class="sig-param">buffer_dist=1e-05</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_triangle.ray_bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a set of rays and a bounding box for the volume of interest
+where the rays will be passing through, find the bounding boxes
+of the rays as they pass through the volume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ray_origins</strong> (<em>(</em><em>m</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>ray origin points</em>) – </p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>m</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>ray direction vectors</em>) – </p></li>
+<li><p><strong>bounds</strong> (<em>(</em><em>2</em><em>,</em><em>3</em><em>) </em><em>bounding box</em><em> (</em><em>min</em><em>, </em><em>max</em><em>)</em>) – </p></li>
+<li><p><strong>buffer_dist</strong> (<em>float</em><em>, </em><em>distance to pad zero width bounding boxes</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>ray_bounding</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><ol class="loweralpha simple" start="14">
+<li><p>set of AABB of rays passing through volume</p></li>
+</ol>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.ray.ray_triangle.ray_triangle_candidates">
+<code class="sig-prename descclassname">trimesh.ray.ray_triangle.</code><code class="sig-name descname">ray_triangle_candidates</code><span class="sig-paren">(</span><em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em>, <em class="sig-param">tree</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_triangle.ray_triangle_candidates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do broad- phase search for triangles that the rays
+may intersect.</p>
+<p>Does this by creating a bounding box for the ray as it
+passes through the volume occupied by the tree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ray_origins</strong> (<em>(</em><em>m</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>ray origin points</em>) – </p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>m</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>ray direction vectors</em>) – </p></li>
+<li><p><strong>tree</strong> (<em>rtree object</em><em>, </em><em>contains AABB of each triangle</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>ray_candidates</strong> (<em>(n,) int, triangle indexes</em>)</p></li>
+<li><p><strong>ray_id</strong> (<em>(n,) int, corresponding ray index for a triangle candidate</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.ray.ray_triangle.ray_triangle_id">
+<code class="sig-prename descclassname">trimesh.ray.ray_triangle.</code><code class="sig-name descname">ray_triangle_id</code><span class="sig-paren">(</span><em class="sig-param">triangles</em>, <em class="sig-param">ray_origins</em>, <em class="sig-param">ray_directions</em>, <em class="sig-param">triangles_normal=None</em>, <em class="sig-param">tree=None</em>, <em class="sig-param">multiple_hits=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.ray.ray_triangle.ray_triangle_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the intersections between a group of triangles and rays</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>triangles</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Triangles in space</p></li>
+<li><p><strong>ray_origins</strong> (<em>(</em><em>m</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Ray origin points</p></li>
+<li><p><strong>ray_directions</strong> (<em>(</em><em>m</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Ray direction vectors</p></li>
+<li><p><strong>triangles_normal</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Normal vector of triangles, optional</p></li>
+<li><p><strong>tree</strong> (<em>rtree.Index</em>) – Rtree object holding triangle bounds</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>index_triangle</strong> (<em>(h,) int</em>) – Index of triangles hit</p></li>
+<li><p><strong>index_ray</strong> (<em>(h,) int</em>) – Index of ray that hit triangle</p></li>
+<li><p><strong>locations</strong> (<em>(h, 3) float</em>) – Position of intersection in space</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.ray.ray_util">
+<span id="trimesh-ray-ray-util-module"></span><h2>trimesh.ray.ray_util module<a class="headerlink" href="#module-trimesh.ray.ray_util" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.ray">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trimesh.ray" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trimesh.resources.html" class="btn btn-neutral float-right" title="trimesh.resources package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trimesh.path.exchange.html" class="btn btn-neutral float-left" title="trimesh.path.exchange package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

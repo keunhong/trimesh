@@ -1,0 +1,54 @@
+trimesh.path.exchange package
+=============================
+
+Submodules
+----------
+
+trimesh.path.exchange.dxf module
+--------------------------------
+
+.. automodule:: trimesh.path.exchange.dxf
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.path.exchange.export module
+-----------------------------------
+
+.. automodule:: trimesh.path.exchange.export
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.path.exchange.load module
+---------------------------------
+
+.. automodule:: trimesh.path.exchange.load
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.path.exchange.misc module
+---------------------------------
+
+.. automodule:: trimesh.path.exchange.misc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.path.exchange.svg\_io module
+------------------------------------
+
+.. automodule:: trimesh.path.exchange.svg_io
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: trimesh.path.exchange
+   :members:
+   :undoc-members:
+   :show-inheritance:

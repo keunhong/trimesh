@@ -1,0 +1,3525 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trimesh.path package &mdash; trimesh 3.2.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="trimesh.path.exchange package" href="trimesh.path.exchange.html" />
+    <link rel="prev" title="trimesh.interfaces package" href="trimesh.interfaces.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="trimesh.html">trimesh package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="trimesh.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="trimesh.exchange.html">trimesh.exchange package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.interfaces.html">trimesh.interfaces package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">trimesh.path package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.ray.html">trimesh.ray package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.resources.html">trimesh.resources package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.scene.html">trimesh.scene package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.viewer.html">trimesh.viewer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.visual.html">trimesh.visual package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.voxel.html">trimesh.voxel package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.base">trimesh.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.boolean">trimesh.boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.bounds">trimesh.bounds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.caching">trimesh.caching module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.collision">trimesh.collision module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.comparison">trimesh.comparison module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.constants">trimesh.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.convex">trimesh.convex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.creation">trimesh.creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.curvature">trimesh.curvature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.decomposition">trimesh.decomposition module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.exceptions">trimesh.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.geometry">trimesh.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.graph">trimesh.graph module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.grouping">trimesh.grouping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.inertia">trimesh.inertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.integrate">trimesh.integrate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.intersections">trimesh.intersections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.interval">trimesh.interval module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.nsphere">trimesh.nsphere module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.parent">trimesh.parent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.permutate">trimesh.permutate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.points">trimesh.points module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.poses">trimesh.poses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.primitives">trimesh.primitives module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.proximity">trimesh.proximity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.registration">trimesh.registration module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.remesh">trimesh.remesh module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.rendering">trimesh.rendering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.repair">trimesh.repair module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.sample">trimesh.sample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.schemas">trimesh.schemas module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.smoothing">trimesh.smoothing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.transformations">trimesh.transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.triangles">trimesh.triangles module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.units">trimesh.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.util">trimesh.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.version">trimesh.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Module Reference</a> &raquo;</li>
+        
+          <li><a href="trimesh.html">trimesh package</a> &raquo;</li>
+        
+      <li>trimesh.path package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/trimesh.path.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trimesh-path-package">
+<h1>trimesh.path package<a class="headerlink" href="#trimesh-path-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="trimesh.path.exchange.html">trimesh.path.exchange package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trimesh.path.exchange.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trimesh.path.exchange.html#module-trimesh.path.exchange.dxf">trimesh.path.exchange.dxf module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trimesh.path.exchange.html#module-trimesh.path.exchange.export">trimesh.path.exchange.export module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trimesh.path.exchange.html#module-trimesh.path.exchange.load">trimesh.path.exchange.load module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trimesh.path.exchange.html#module-trimesh.path.exchange.misc">trimesh.path.exchange.misc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trimesh.path.exchange.html#module-trimesh.path.exchange.svg_io">trimesh.path.exchange.svg_io module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trimesh.path.exchange.html#module-trimesh.path.exchange">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.path.arc">
+<span id="trimesh-path-arc-module"></span><h2>trimesh.path.arc module<a class="headerlink" href="#module-trimesh.path.arc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.arc.arc_center">
+<code class="sig-prename descclassname">trimesh.path.arc.</code><code class="sig-name descname">arc_center</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.arc.arc_center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given three points on an arc find:
+center, radius, normal, and angle.</p>
+<p>This uses the fact that the intersection of the perp
+bisectors of the segments between the control points
+is the center of the arc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>(</em><em>3</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Points in space, where dimension is either 2 or 3</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>result</strong> –</p>
+<dl class="simple">
+<dt>Has keys:</dt><dd><p>’center’:   (d,) float, cartesian center of the arc
+‘radius’:   float, radius of the arc
+‘normal’:   (3,) float, the plane normal.
+‘angle’:    (2,) float, angle of start and end, in radians
+‘span’ :    float, angle swept by the arc, in radians</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.arc.discretize_arc">
+<code class="sig-prename descclassname">trimesh.path.arc.</code><code class="sig-name descname">discretize_arc</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">close=False</em>, <em class="sig-param">scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.arc.discretize_arc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a version of a three point arc consisting of
+line segments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>3</em><em>, </em><em>d</em><em>) </em><em>float</em>) – Points on the arc where d in [2,3]</p></li>
+<li><p><strong>close</strong> (<em>boolean</em>) – If True close the arc into a circle</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – What is the approximate overall drawing scale
+Used to establish order of magnitude for precision</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>discrete</strong> – Connected points in space</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, d) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.arc.to_threepoint">
+<code class="sig-prename descclassname">trimesh.path.arc.</code><code class="sig-name descname">to_threepoint</code><span class="sig-paren">(</span><em class="sig-param">center</em>, <em class="sig-param">radius</em>, <em class="sig-param">angles=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.arc.to_threepoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>For 2D arcs, given a center and radius convert them to three
+points on the arc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em>) – Center point on the plane</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – Radius of arc</p></li>
+<li><p><strong>angles</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em>) – Angles in radians for start and end angle
+if not specified, will default to (0.0, pi)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>three</strong> – Arc control points</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(3, 2) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.creation">
+<span id="trimesh-path-creation-module"></span><h2>trimesh.path.creation module<a class="headerlink" href="#module-trimesh.path.creation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.creation.box_outline">
+<code class="sig-prename descclassname">trimesh.path.creation.</code><code class="sig-name descname">box_outline</code><span class="sig-paren">(</span><em class="sig-param">extents=None</em>, <em class="sig-param">transform=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.creation.box_outline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a cuboid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extents</strong> (<em>float</em><em>, or </em><em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Edge lengths</p></li>
+<li><p><strong>transform</strong> (<em>(</em><em>4</em><em>, </em><em>4</em><em>) </em><em>float</em>) – Transformation matrix</p></li>
+<li><p><strong>**kwargs</strong> – passed to Trimesh to create box</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>geometry</strong> – Path outline of a cuboid geometry</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>trimesh.Path3D</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.creation.circle">
+<code class="sig-prename descclassname">trimesh.path.creation.</code><code class="sig-name descname">circle</code><span class="sig-paren">(</span><em class="sig-param">radius=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.creation.circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Path2D containing a single or multiple rectangles
+with the specified bounds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bounds</strong> (<em>(</em><em>2</em><em>, </em><em>2</em><em>) </em><em>float</em><em>, or </em><em>(</em><em>m</em><em>, </em><em>2</em><em>, </em><em>2</em><em>) </em><em>float</em>) – Minimum XY, Maximum XY</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rect</strong> – Path containing specified rectangles</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D">Path2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.creation.circle_pattern">
+<code class="sig-prename descclassname">trimesh.path.creation.</code><code class="sig-name descname">circle_pattern</code><span class="sig-paren">(</span><em class="sig-param">pattern_radius, circle_radius, count, center=[0.0, 0.0], angle=None, **kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.creation.circle_pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Path2D representing a circle pattern.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pattern_radius</strong> (<em>float</em>) – Radius of circle centers</p></li>
+<li><p><strong>circle_radius</strong> (<em>float</em>) – The radius of each circle</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – Number of circles in the pattern</p></li>
+<li><p><strong>center</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em>) – Center of pattern</p></li>
+<li><p><strong>angle</strong> (<em>float</em>) – If defined pattern will span this angle
+If None, pattern will be evenly spaced</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>pattern</strong> – Path containing circular pattern</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#trimesh.path.Path2D" title="trimesh.path.Path2D">trimesh.path.Path2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.creation.rectangle">
+<code class="sig-prename descclassname">trimesh.path.creation.</code><code class="sig-name descname">rectangle</code><span class="sig-paren">(</span><em class="sig-param">bounds</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.creation.rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Path2D containing a single or multiple rectangles
+with the specified bounds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bounds</strong> (<em>(</em><em>2</em><em>, </em><em>2</em><em>) </em><em>float</em><em>, or </em><em>(</em><em>m</em><em>, </em><em>2</em><em>, </em><em>2</em><em>) </em><em>float</em>) – Minimum XY, Maximum XY</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rect</strong> – Path containing specified rectangles</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D">Path2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.curve">
+<span id="trimesh-path-curve-module"></span><h2>trimesh.path.curve module<a class="headerlink" href="#module-trimesh.path.curve" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.curve.binomial">
+<code class="sig-prename descclassname">trimesh.path.curve.</code><code class="sig-name descname">binomial</code><span class="sig-paren">(</span><em class="sig-param">n</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.curve.binomial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all binomial coefficients for a given order.</p>
+<p>For n &gt; 5, scipy.special.binom is used, below we hardcode
+to avoid the scipy.special dependency.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – Order</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>binom</strong> – Binomial coefficients of a given order</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n + 1,) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.curve.discretize_bezier">
+<code class="sig-prename descclassname">trimesh.path.curve.</code><code class="sig-name descname">discretize_bezier</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">count=None</em>, <em class="sig-param">scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.curve.discretize_bezier" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>order</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Control points of the bezier curve
+For a 2D cubic bezier, order=3, dimension=2</p></li>
+<li><p><strong>count</strong> (<em>int</em><em>, or </em><em>None</em>) – Number of segments</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Scale of curve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>discrete</strong> – of the bezier curve which respects constants.RES_LENGTH</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n,d) list of points, a polyline representation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.curve.discretize_bspline">
+<code class="sig-prename descclassname">trimesh.path.curve.</code><code class="sig-name descname">discretize_bspline</code><span class="sig-paren">(</span><em class="sig-param">control</em>, <em class="sig-param">knots</em>, <em class="sig-param">count=None</em>, <em class="sig-param">scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.curve.discretize_bspline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a B-Splines control points and knot vector, return
+a sampled version of the curve.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>control</strong> (<em>(</em><em>o</em><em>, </em><em>d</em><em>) </em><em>float</em>) – Control points of the b- spline</p></li>
+<li><p><strong>knots</strong> (<em>(</em><em>j</em><em>,</em><em>) </em><em>float</em>) – B-spline knots</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – Number of line segments to discretize the spline
+If not specified will be calculated as something reasonable</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>discrete</strong> – Points on a polyline version of the B-spline</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(count, dimension) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.entities">
+<span id="trimesh-path-entities-module"></span><h2>trimesh.path.entities module<a class="headerlink" href="#module-trimesh.path.entities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="entities-py">
+<h3>entities.py<a class="headerlink" href="#entities-py" title="Permalink to this headline">¶</a></h3>
+<p>Basic geometric primitives which only store references to
+vertex indices rather than vertices themselves.</p>
+<dl class="class">
+<dt id="trimesh.path.entities.Arc">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.entities.</code><code class="sig-name descname">Arc</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">closed=None</em>, <em class="sig-param">layer=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Arc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.entities.Entity" title="trimesh.path.entities.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.entities.Entity</span></code></a></p>
+<dl class="method">
+<dt id="trimesh.path.entities.Arc.bounds">
+<code class="sig-name descname">bounds</code><span class="sig-paren">(</span><em class="sig-param">vertices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Arc.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the AABB of the arc entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Vertices in space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>bounds</strong> – Coordinates of AABB in (min, max) form</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(2, dimension) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Arc.center">
+<code class="sig-name descname">center</code><span class="sig-paren">(</span><em class="sig-param">vertices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Arc.center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the center information about the arc entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Vertices in space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>info</strong> – With keys: ‘radius’, ‘center’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Arc.closed">
+<em class="property">property </em><code class="sig-name descname">closed</code><a class="headerlink" href="#trimesh.path.entities.Arc.closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean flag for whether the arc is closed (a circle) or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>closed</strong> – If set True, Arc will be a closed circle</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Arc.discrete">
+<code class="sig-name descname">discrete</code><span class="sig-paren">(</span><em class="sig-param">vertices</em>, <em class="sig-param">scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Arc.discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discretize the arc entity into line sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Points in space</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Size of overall scene for numerical comparisons</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>discrete</strong> – Path in space made up of line segments</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, dimension) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Arc.is_valid">
+<em class="property">property </em><code class="sig-name descname">is_valid</code><a class="headerlink" href="#trimesh.path.entities.Arc.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the current Arc entity valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>valid</strong> – Does the current Arc have exactly 3 control points</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.path.entities.BSpline">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.entities.</code><code class="sig-name descname">BSpline</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">knots</em>, <em class="sig-param">closed=None</em>, <em class="sig-param">layer=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.BSpline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.entities.Curve" title="trimesh.path.entities.Curve"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.entities.Curve</span></code></a></p>
+<p>An open or closed B- Spline.</p>
+<dl class="method">
+<dt id="trimesh.path.entities.BSpline.discrete">
+<code class="sig-name descname">discrete</code><span class="sig-paren">(</span><em class="sig-param">vertices</em>, <em class="sig-param">count=None</em>, <em class="sig-param">scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.BSpline.discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discretize the B-Spline curve.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Points in space</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Scale of overall drawings (for precision)</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – Number of segments to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>discrete</strong> – Curve as line segments</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, 2) or (m, 3) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.BSpline.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.BSpline.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with all of the information
+about the entity.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.path.entities.Bezier">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.entities.</code><code class="sig-name descname">Bezier</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">closed=None</em>, <em class="sig-param">layer=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Bezier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.entities.Curve" title="trimesh.path.entities.Curve"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.entities.Curve</span></code></a></p>
+<p>An open or closed Bezier curve</p>
+<dl class="method">
+<dt id="trimesh.path.entities.Bezier.discrete">
+<code class="sig-name descname">discrete</code><span class="sig-paren">(</span><em class="sig-param">vertices</em>, <em class="sig-param">scale=1.0</em>, <em class="sig-param">count=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Bezier.discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discretize the Bezier curve.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Points in space</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Scale of overall drawings (for precision)</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – Number of segments to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>discrete</strong> – Curve as line segments</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, 2) or (m, 3) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.path.entities.Curve">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.entities.</code><code class="sig-name descname">Curve</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">closed=None</em>, <em class="sig-param">layer=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Curve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.entities.Entity" title="trimesh.path.entities.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.entities.Entity</span></code></a></p>
+<p>The parent class for all wild curves in space.</p>
+<dl class="method">
+<dt id="trimesh.path.entities.Curve.nodes">
+<em class="property">property </em><code class="sig-name descname">nodes</code><a class="headerlink" href="#trimesh.path.entities.Curve.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an (n,2) list of nodes, or vertices on the path.
+Note that this generic class function assumes that all of the
+reference points are on the path which is true for lines and
+three point arcs.</p>
+<p>If you were to define another class where that wasn’t the case
+(for example, the control points of a bezier curve),
+you would need to implement an entity- specific version of this
+function.</p>
+<p>The purpose of having a list of nodes is so that they can then be
+added as edges to a graph so we can use functions to check
+connectivity, extract paths, etc.</p>
+<p>The slicing on this function is essentially just tiling points
+so the first and last vertices aren’t repeated. Example:</p>
+<p>self.points = [0,1,2]
+returns:      [[0,1], [1,2]]</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.path.entities.Entity">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.entities.</code><code class="sig-name descname">Entity</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">closed=None</em>, <em class="sig-param">layer=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Entity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.bounds">
+<code class="sig-name descname">bounds</code><span class="sig-paren">(</span><em class="sig-param">vertices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Entity.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the AABB of the current entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Vertices in space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>bounds</strong> – Coordinates of AABB, in (min, max) form</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(2, dimension) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.closed">
+<em class="property">property </em><code class="sig-name descname">closed</code><a class="headerlink" href="#trimesh.path.entities.Entity.closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the first point is the same as the end point
+the entity is closed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>closed</strong> – Is the entity closed or not?</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Entity.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of the current entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>copied</strong> – Copy of current entity</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#trimesh.path.entities.Entity" title="trimesh.path.entities.Entity">Entity</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.end_points">
+<em class="property">property </em><code class="sig-name descname">end_points</code><a class="headerlink" href="#trimesh.path.entities.Entity.end_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first and last points. Also note that if you
+define a new entity class where the first and last vertices
+in self.points aren’t the endpoints of the curve you need to
+implement this function for your class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ends</strong> – Indices of the two end points of the entity</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(2,) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.explode">
+<code class="sig-name descname">explode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Entity.explode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split the entity into multiple entities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>explode</strong> – Current entity split into multiple entities if necessary</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list of Entity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.is_valid">
+<em class="property">property </em><code class="sig-name descname">is_valid</code><a class="headerlink" href="#trimesh.path.entities.Entity.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the current entity valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>valid</strong> – Is the current entity well formed</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.length">
+<code class="sig-name descname">length</code><span class="sig-paren">(</span><em class="sig-param">vertices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Entity.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the total length of the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Vertices in space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>length</strong> – Total length of entity</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.nodes">
+<em class="property">property </em><code class="sig-name descname">nodes</code><a class="headerlink" href="#trimesh.path.entities.Entity.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an (n,2) list of nodes, or vertices on the path.
+Note that this generic class function assumes that all of the
+reference points are on the path which is true for lines and
+three point arcs.</p>
+<p>If you were to define another class where that wasn’t the case
+(for example, the control points of a bezier curve),
+you would need to implement an entity- specific version of this
+function.</p>
+<p>The purpose of having a list of nodes is so that they can then be
+added as edges to a graph so we can use functions to check
+connectivity, extract paths, etc.</p>
+<p>The slicing on this function is essentially just tiling points
+so the first and last vertices aren’t repeated. Example:</p>
+<p>self.points = [0,1,2]
+returns:      [[0,1], [1,2]]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.reverse">
+<code class="sig-name descname">reverse</code><span class="sig-paren">(</span><em class="sig-param">direction=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Entity.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse the current entity in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>direction</strong> (<em>int</em>) – If positive will not touch direction
+If negative will reverse self.points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Entity.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Entity.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with all of the information
+about the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>as_dict</strong> – Has keys ‘type’, ‘points’, ‘closed’</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.path.entities.Line">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.entities.</code><code class="sig-name descname">Line</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">closed=None</em>, <em class="sig-param">layer=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.entities.Entity" title="trimesh.path.entities.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.entities.Entity</span></code></a></p>
+<p>A line or poly-line entity</p>
+<dl class="method">
+<dt id="trimesh.path.entities.Line.discrete">
+<code class="sig-name descname">discrete</code><span class="sig-paren">(</span><em class="sig-param">vertices</em>, <em class="sig-param">scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Line.discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discretize into a world- space path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Points in space</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Size of overall scene for numerical comparisons</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>discrete</strong> – Path in space composed of line segments</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, dimension) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Line.explode">
+<code class="sig-name descname">explode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Line.explode" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the current Line entity consists of multiple line
+break it up into n Line entities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>exploded</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) Line entities</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Line.is_valid">
+<em class="property">property </em><code class="sig-name descname">is_valid</code><a class="headerlink" href="#trimesh.path.entities.Line.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the current entity valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>valid</strong> – Is the current entity well formed</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.path.entities.Text">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.entities.</code><code class="sig-name descname">Text</code><span class="sig-paren">(</span><em class="sig-param">origin</em>, <em class="sig-param">text</em>, <em class="sig-param">height=None</em>, <em class="sig-param">vector=None</em>, <em class="sig-param">normal=None</em>, <em class="sig-param">align=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.entities.Entity" title="trimesh.path.entities.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.entities.Entity</span></code></a></p>
+<p>Text to annotate a 2D or 3D path.</p>
+<dl class="method">
+<dt id="trimesh.path.entities.Text.angle">
+<code class="sig-name descname">angle</code><span class="sig-paren">(</span><em class="sig-param">vertices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Text.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>If Text is 2D, get the rotation angle in radians.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) </em><em>float</em>) – Vertices in space referenced by self.points</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>angle</strong> – Rotation angle in radians</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.closed">
+<em class="property">property </em><code class="sig-name descname">closed</code><a class="headerlink" href="#trimesh.path.entities.Text.closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the first point is the same as the end point
+the entity is closed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>closed</strong> – Is the entity closed or not?</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.discrete">
+<code class="sig-name descname">discrete</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Text.discrete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.end_points">
+<em class="property">property </em><code class="sig-name descname">end_points</code><a class="headerlink" href="#trimesh.path.entities.Text.end_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first and last points. Also note that if you
+define a new entity class where the first and last vertices
+in self.points aren’t the endpoints of the curve you need to
+implement this function for your class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ends</strong> – Indices of the two end points of the entity</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(2,) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.is_valid">
+<em class="property">property </em><code class="sig-name descname">is_valid</code><a class="headerlink" href="#trimesh.path.entities.Text.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the current entity valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>valid</strong> – Is the current entity well formed</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.length">
+<code class="sig-name descname">length</code><span class="sig-paren">(</span><em class="sig-param">vertices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Text.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the total length of the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Vertices in space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>length</strong> – Total length of entity</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.nodes">
+<em class="property">property </em><code class="sig-name descname">nodes</code><a class="headerlink" href="#trimesh.path.entities.Text.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an (n,2) list of nodes, or vertices on the path.
+Note that this generic class function assumes that all of the
+reference points are on the path which is true for lines and
+three point arcs.</p>
+<p>If you were to define another class where that wasn’t the case
+(for example, the control points of a bezier curve),
+you would need to implement an entity- specific version of this
+function.</p>
+<p>The purpose of having a list of nodes is so that they can then be
+added as edges to a graph so we can use functions to check
+connectivity, extract paths, etc.</p>
+<p>The slicing on this function is essentially just tiling points
+so the first and last vertices aren’t repeated. Example:</p>
+<p>self.points = [0,1,2]
+returns:      [[0,1], [1,2]]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.normal">
+<em class="property">property </em><code class="sig-name descname">normal</code><a class="headerlink" href="#trimesh.path.entities.Text.normal" title="Permalink to this definition">¶</a></dt>
+<dd><p>A point representing the plane normal along the
+vector: vertices[normal] - vertices[origin]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>normal</strong> – Index of vertex</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.origin">
+<em class="property">property </em><code class="sig-name descname">origin</code><a class="headerlink" href="#trimesh.path.entities.Text.origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>The origin point of the text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>origin</strong> – Index of vertices</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param">vertices</em>, <em class="sig-param">show=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.entities.Text.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the text using matplotlib.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) </em><em>float</em>) – Vertices in space</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – If True, call plt.show()</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.entities.Text.vector">
+<em class="property">property </em><code class="sig-name descname">vector</code><a class="headerlink" href="#trimesh.path.entities.Text.vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>A point representing the text direction
+along the vector: vertices[vector] - vertices[origin]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>vector</strong> – Index of vertex</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-trimesh.path.intersections">
+<span id="trimesh-path-intersections-module"></span><h2>trimesh.path.intersections module<a class="headerlink" href="#module-trimesh.path.intersections" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.intersections.line_line">
+<code class="sig-prename descclassname">trimesh.path.intersections.</code><code class="sig-name descname">line_line</code><span class="sig-paren">(</span><em class="sig-param">origins</em>, <em class="sig-param">directions</em>, <em class="sig-param">plane_normal=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.intersections.line_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the intersection between two lines.
+Uses terminology from:
+<a class="reference external" href="http://geomalgorithms.com/a05-_intersect-1.html">http://geomalgorithms.com/a05-_intersect-1.html</a></p>
+<p>line 1:    P(s) = p_0 + sU
+line 2:    Q(t) = q_0 + tV</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origins</strong> (<em>(</em><em>2</em><em>, </em><em>d</em><em>) </em><em>float</em><em>, </em><em>points on lines</em><em> (</em><em>d in</em><em> [</em><em>2</em><em>,</em><em>3</em><em>]</em><em>)</em>) – </p></li>
+<li><p><strong>directions</strong> (<em>(</em><em>2</em><em>, </em><em>d</em><em>) </em><em>float</em><em>, </em><em>direction vectors</em>) – </p></li>
+<li><p><strong>plane_normal</strong> (<em>(</em><em>3</em><em>, </em><em>) </em><em>float</em><em>, </em><em>if not passed computed from cross</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>intersects</strong> (<em>boolean, whether the lines intersect.</em>) – In 2D, false if the lines are parallel
+In 3D, false if lines are not coplanar</p></li>
+<li><p><strong>intersection</strong> (<em>if intersects: (d) length point of intersection</em>) – else:          None</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.packing">
+<span id="trimesh-path-packing-module"></span><h2>trimesh.path.packing module<a class="headerlink" href="#module-trimesh.path.packing" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trimesh.path.packing.RectangleBin">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.packing.</code><code class="sig-name descname">RectangleBin</code><span class="sig-paren">(</span><em class="sig-param">bounds=None</em>, <em class="sig-param">size=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.packing.RectangleBin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>2D BSP tree node.
+<a class="reference external" href="http://www.blackpawn.com/texts/lightmaps/">http://www.blackpawn.com/texts/lightmaps/</a></p>
+<dl class="method">
+<dt id="trimesh.path.packing.RectangleBin.extents">
+<em class="property">property </em><code class="sig-name descname">extents</code><a class="headerlink" href="#trimesh.path.packing.RectangleBin.extents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bounding box size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>extents</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(2,) float, edge lengths of bounding box</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.packing.RectangleBin.insert">
+<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">rectangle</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.packing.RectangleBin.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a rectangle into the bin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rectangle</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em><em>, </em><em>size of rectangle to insert</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.packing.RectangleBin.split">
+<code class="sig-name descname">split</code><span class="sig-paren">(</span><em class="sig-param">length</em>, <em class="sig-param">vertical=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.packing.RectangleBin.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns two bounding boxes representing the current
+bounds split into two smaller boxes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>length</strong> (<em>float</em><em>, </em><em>length to split</em>) – </p></li>
+<li><p><strong>vertical</strong> (<em>bool</em><em>, </em><em>if True will split box vertically</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>box</strong> – [minx, miny, maxx, maxy]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(2,4) float, two bounding boxes consisting of:</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.packing.multipack">
+<code class="sig-prename descclassname">trimesh.path.packing.</code><code class="sig-name descname">multipack</code><span class="sig-paren">(</span><em class="sig-param">polygons</em>, <em class="sig-param">sheet_size=None</em>, <em class="sig-param">iterations=50</em>, <em class="sig-param">density_escape=0.95</em>, <em class="sig-param">spacing=0.094</em>, <em class="sig-param">quantity=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.packing.multipack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pack polygons into a rectangle by taking each Polygon’s OBB
+and then packing that as a rectangle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polygons</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>shapely.geometry.Polygon</em>) – Source geometry</p></li>
+<li><p><strong>sheet_size</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em>) – Size of rectangular sheet</p></li>
+<li><p><strong>iterations</strong> (<em>int</em>) – Number of times to run the loop</p></li>
+<li><p><strong>density_escape</strong> (<em>float</em>) – When to exit early (0.0 - 1.0)</p></li>
+<li><p><strong>spacing</strong> (<em>float</em>) – How big a gap to leave between polygons</p></li>
+<li><p><strong>quantity</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>int</em><em>, or </em><em>None</em>) – Quantity of each Polygon</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>overall_inserted</strong> (<em>(m,) int</em>) – Indexes of inserted polygons</p></li>
+<li><p><strong>packed</strong> (<em>(m, 3, 3) float</em>) – Homogeonous transforms from original frame to packed frame</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.packing.pack_paths">
+<code class="sig-prename descclassname">trimesh.path.packing.</code><code class="sig-name descname">pack_paths</code><span class="sig-paren">(</span><em class="sig-param">paths</em>, <em class="sig-param">sheet_size=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.packing.pack_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pack a list of Path2D objects into a rectangle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>paths</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><a class="reference internal" href="#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D"><em>Path2D</em></a>) – Geometry to be packed</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>packed</strong> (<em>trimesh.path.Path2D</em>) – Object containing input geometry</p></li>
+<li><p><strong>inserted</strong> (<em>(m,) int</em>) – Indexes of paths inserted into result</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.packing.pack_rectangles">
+<code class="sig-prename descclassname">trimesh.path.packing.</code><code class="sig-name descname">pack_rectangles</code><span class="sig-paren">(</span><em class="sig-param">rectangles</em>, <em class="sig-param">sheet_size</em>, <em class="sig-param">shuffle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.packing.pack_rectangles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pack smaller rectangles onto a larger rectangle, using a binary
+space partition tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rectangles</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) </em><em>float</em>) – An array of (width, height) pairs
+representing the rectangles to be packed.</p></li>
+<li><p><strong>sheet_size</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em>) – Width, height of rectangular sheet</p></li>
+<li><p><strong>shuffle</strong> (<em>bool</em>) – Whether or not to shuffle the insert order of the
+smaller rectangles, as the final packing density depends
+on insertion order.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>density</strong> (<em>float</em>) – Area filled over total sheet area</p></li>
+<li><p><strong>offset</strong> (<em>(m,2) float</em>) – Offsets to move rectangles to their packed location</p></li>
+<li><p><strong>inserted</strong> (<em>(n,) bool</em>) – Which of the original rectangles were packed</p></li>
+<li><p><strong>consumed_box</strong> (<em>(2,) float</em>) – Bounding box size of packed result</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.path">
+<span id="trimesh-path-path-module"></span><h2>trimesh.path.path module<a class="headerlink" href="#module-trimesh.path.path" title="Permalink to this headline">¶</a></h2>
+<p>path.py</p>
+<p>A library designed to work with vector paths.</p>
+<dl class="class">
+<dt id="trimesh.path.path.Path">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.path.</code><code class="sig-name descname">Path</code><span class="sig-paren">(</span><em class="sig-param">entities=None</em>, <em class="sig-param">vertices=None</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">process=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Path object consists of:</p>
+<p>vertices: (n,[2|3]) coordinates, stored in self.vertices</p>
+<dl class="simple">
+<dt>entities: geometric primitives (aka Lines, Arcs, etc.)</dt><dd><p>that reference indexes in self.vertices</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="trimesh.path.path.Path.apply_layer">
+<code class="sig-name descname">apply_layer</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.apply_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a layer name to every entity in the path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Apply layer name to every entity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.apply_scale">
+<code class="sig-name descname">apply_scale</code><span class="sig-paren">(</span><em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.apply_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a transformation matrix to the current path in- place</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scale</strong> (<em>float</em><em> or </em><em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Scale to be applied to mesh</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.apply_transform">
+<code class="sig-name descname">apply_transform</code><span class="sig-paren">(</span><em class="sig-param">transform</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.apply_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a transformation matrix to the current path in- place</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>transform</strong> (<em>(</em><em>d+1</em><em>, </em><em>d+1</em><em>) </em><em>float</em>) – Homogeneous transformation for vertices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.apply_translation">
+<code class="sig-name descname">apply_translation</code><span class="sig-paren">(</span><em class="sig-param">offset</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.apply_translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a transformation matrix to the current path in- place</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>offset</strong> (<em>float</em><em> or </em><em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Translation to be applied to mesh</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.bounds">
+<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#trimesh.path.path.Path.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the axis aligned bounding box of the current path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>bounds</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(2, dimension) float, (min, max) coordinates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.convert_units">
+<code class="sig-name descname">convert_units</code><span class="sig-paren">(</span><em class="sig-param">desired</em>, <em class="sig-param">guess=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.convert_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the units of the current drawing in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>desired</strong> (<em>str</em><em>, </em><em>unit system to convert to</em>) – </p></li>
+<li><p><strong>guess</strong> (<em>bool</em><em>, </em><em>if True will attempt to guess units</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a copy of the current mesh</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>copied</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Path object, copy of self</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.crc">
+<code class="sig-name descname">crc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.crc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A CRC of the current vertices and entities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>crc</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int, CRC of entity points and vertices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.dangling">
+<em class="property">property </em><code class="sig-name descname">dangling</code><a class="headerlink" href="#trimesh.path.path.Path.dangling" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of entities that aren’t included in a closed path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>dangling</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) int, index of self.entities</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.discrete">
+<em class="property">property </em><code class="sig-name descname">discrete</code><a class="headerlink" href="#trimesh.path.path.Path.discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence of connected vertices in space, corresponding to
+self.paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>discrete</strong> – A sequence of (m*, dimension) float</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(len(self.paths),)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.discretize_path">
+<code class="sig-name descname">discretize_path</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.discretize_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of entities, return a list of connected points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>int</em><em>, </em><em>indexes of self.entities</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>discrete</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, dimension)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.entities">
+<em class="property">property </em><code class="sig-name descname">entities</code><a class="headerlink" href="#trimesh.path.path.Path.entities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.explode">
+<code class="sig-name descname">explode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.explode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn every multi- segment entity into single segment
+entities in- place.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.export">
+<code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param">file_obj=None</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the path to a file object or return data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>None</em><em>, </em><em>str</em><em>, or </em><em>file object</em>) – File object or string to export to</p></li>
+<li><p><strong>file_type</strong> (<em>None</em><em> or </em><em>str</em>) – Type of file: dxf, dict, svg</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>exported</strong> – Exported as specified type</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes or str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.extents">
+<em class="property">property </em><code class="sig-name descname">extents</code><a class="headerlink" href="#trimesh.path.path.Path.extents" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size of the axis aligned bounding box.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>extents</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(dimension,) float, edge length of AABB</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.fill_gaps">
+<code class="sig-name descname">fill_gaps</code><span class="sig-paren">(</span><em class="sig-param">distance=0.025</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.fill_gaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find vertices without degree 2 and try to connect to
+other vertices. Operations are done in-place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>distance</strong> (<em>float</em>) – Connect vertices up to this distance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.is_closed">
+<em class="property">property </em><code class="sig-name descname">is_closed</code><a class="headerlink" href="#trimesh.path.path.Path.is_closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Are all entities connected to other entities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>closed</strong> – Every entity is connected at its ends</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#trimesh.path.path.Path.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Are any entities defined for the current path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>empty</strong> – True if no entities are defined</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.kdtree">
+<em class="property">property </em><code class="sig-name descname">kdtree</code><a class="headerlink" href="#trimesh.path.path.Path.kdtree" title="Permalink to this definition">¶</a></dt>
+<dd><p>A KDTree object holding the vertices of the path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>kdtree</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>scipy.spatial.cKDTree object holding self.vertices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.layers">
+<em class="property">property </em><code class="sig-name descname">layers</code><a class="headerlink" href="#trimesh.path.path.Path.layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>If entities have a layer defined, return it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>layers</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(len(entities), ) list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.md5">
+<code class="sig-name descname">md5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.md5" title="Permalink to this definition">¶</a></dt>
+<dd><p>An MD5 hash of the current vertices and entities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>md5</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str, two appended MD5 hashes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.merge_vertices">
+<code class="sig-name descname">merge_vertices</code><span class="sig-paren">(</span><em class="sig-param">digits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.merge_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges vertices which are identical and replace references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>digits</strong> (<em>None</em><em>, or </em><em>int</em>) – How many digits to consider when merging vertices</p></li>
+<li><p><strong>Alters</strong> – </p></li>
+<li><p><strong>-----------</strong> – </p></li>
+<li><p><strong>self.entities</strong> (<em>entity.points re- referenced</em>) – </p></li>
+<li><p><strong>self.vertices</strong> (<em>duplicates removed</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.paths">
+<em class="property">property </em><code class="sig-name descname">paths</code><a class="headerlink" href="#trimesh.path.path.Path.paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sequence of closed paths, encoded by entity index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>paths</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) sequence of (<a href="#id1"><span class="problematic" id="id2">*</span></a>,) int referencing self.entities</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.process">
+<code class="sig-name descname">process</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply basic cleaning functions to the Path object, in- place.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.referenced_vertices">
+<em class="property">property </em><code class="sig-name descname">referenced_vertices</code><a class="headerlink" href="#trimesh.path.path.Path.referenced_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Which vertices are referenced by an entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>referenced_vertices</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) int, indexes of self.vertices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.remove_duplicate_entities">
+<code class="sig-name descname">remove_duplicate_entities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.remove_duplicate_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove entities that are duplicated</p>
+<p>self.entities: length same or shorter</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.remove_entities">
+<code class="sig-name descname">remove_entities</code><span class="sig-paren">(</span><em class="sig-param">entity_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.remove_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove entities by index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entity_ids</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>int</em>) – Indexes of self.entities to remove</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.remove_invalid">
+<code class="sig-name descname">remove_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.remove_invalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove entities which declare themselves invalid</p>
+<p>self.entities: shortened</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.remove_unreferenced_vertices">
+<code class="sig-name descname">remove_unreferenced_vertices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.remove_unreferenced_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all vertices which aren’t used by an entity.</p>
+<p>self.vertices: reordered and shortened
+self.entities: entity.points references updated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.replace_vertex_references">
+<code class="sig-name descname">replace_vertex_references</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.replace_vertex_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace the vertex index references in every entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mask</strong> (<em>(</em><em>len</em><em>(</em><em>self.vertices</em><em>)</em><em>, </em><em>) </em><em>int</em>) – Contains new vertex indexes</p></li>
+<li><p><strong>Alters</strong> – </p></li>
+<li><p><strong>------------</strong> – </p></li>
+<li><p><strong>in self.entities</strong> (<em>entity.points</em>) – Replaced by mask[entity.points]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.rezero">
+<code class="sig-name descname">rezero</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.rezero" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate so that every vertex is positive in the current
+mesh is positive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>matrix</strong> – Homogeneous transformation that was applied
+to the current Path object.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(dimension + 1, dimension + 1) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#trimesh.path.path.Path.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>What is a representitive number that reflects the magnitude
+of the world holding the paths, for numerical comparisons.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>scale</strong> – Approximate size of the world holding this path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.scene">
+<code class="sig-name descname">scene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a scene object containing the current Path3D object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>scene</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>trimesh.scene.Scene object containing current path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.units">
+<em class="property">property </em><code class="sig-name descname">units</code><a class="headerlink" href="#trimesh.path.path.Path.units" title="Permalink to this definition">¶</a></dt>
+<dd><p>If there are units defined in self.metadata return them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>units</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str, current unit system</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.vertex_graph">
+<em class="property">property </em><code class="sig-name descname">vertex_graph</code><a class="headerlink" href="#trimesh.path.path.Path.vertex_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a networkx.Graph object for the entity connectiviy</p>
+<dl class="simple">
+<dt>graph<span class="classifier">networkx.Graph</span></dt><dd><p>Holds vertex indexes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.vertex_nodes">
+<em class="property">property </em><code class="sig-name descname">vertex_nodes</code><a class="headerlink" href="#trimesh.path.path.Path.vertex_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of which vertex indices are nodes,
+which are either endpoints or points where the
+entity makes a direction change.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>nodes</strong> – Indexes of self.vertices which are nodes</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n, 2) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path.vertices">
+<em class="property">property </em><code class="sig-name descname">vertices</code><a class="headerlink" href="#trimesh.path.path.Path.vertices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.path.path.Path2D">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.path.</code><code class="sig-name descname">Path2D</code><span class="sig-paren">(</span><em class="sig-param">entities=None</em>, <em class="sig-param">vertices=None</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">process=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.path.Path" title="trimesh.path.path.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.path.Path</span></code></a></p>
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.apply_obb">
+<code class="sig-name descname">apply_obb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.apply_obb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the current path so that its OBB is axis aligned
+and OBB center is at the origin.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.area">
+<em class="property">property </em><code class="sig-name descname">area</code><a class="headerlink" href="#trimesh.path.path.Path2D.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the area of the polygons interior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>area</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float, total area of polygons minus interiors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.body_count">
+<em class="property">property </em><code class="sig-name descname">body_count</code><a class="headerlink" href="#trimesh.path.path.Path2D.body_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.centroid">
+<em class="property">property </em><code class="sig-name descname">centroid</code><a class="headerlink" href="#trimesh.path.path.Path2D.centroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the centroid of the path object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>centroid</strong> – Approximate centroid of the path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(d,) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.connected_paths">
+<code class="sig-name descname">connected_paths</code><span class="sig-paren">(</span><em class="sig-param">path_id</em>, <em class="sig-param">include_self=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.connected_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an index of self.paths find other paths which
+overlap with that path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path_id</strong> (<em>int</em>) – Index of self.paths</p></li>
+<li><p><strong>include_self</strong> (<em>bool</em>) – Should the result include path_id or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>path_ids</strong> – Indexes of self.paths that overlap input path_id</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, ) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.enclosure">
+<em class="property">property </em><code class="sig-name descname">enclosure</code><a class="headerlink" href="#trimesh.path.path.Path2D.enclosure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Networkx Graph object of polygon enclosure.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.enclosure_directed">
+<em class="property">property </em><code class="sig-name descname">enclosure_directed</code><a class="headerlink" href="#trimesh.path.path.Path2D.enclosure_directed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Networkx DiGraph of polygon enclosure</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.enclosure_shell">
+<em class="property">property </em><code class="sig-name descname">enclosure_shell</code><a class="headerlink" href="#trimesh.path.path.Path2D.enclosure_shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of path indexes which are ‘shell’ paths, and values
+of ‘hole’ paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>corresponding</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict, {index of self.paths of shell : [indexes of holes]}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.extrude">
+<code class="sig-name descname">extrude</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.extrude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extrude the current 2D path into a 3D mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>height</strong> (<em>float</em><em>, </em><em>how far to extrude the profile</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>passed directly to meshpy.triangle.build:</em>) – <dl class="simple">
+<dt>triangle.build(mesh_info,</dt><dd><p>verbose=False,
+refinement_func=None,
+attributes=False,
+volume_constraints=True,
+max_volume=None,
+allow_boundary_steiner=True,
+allow_volume_steiner=True,
+quality_meshing=True,
+generate_edges=None,
+generate_faces=False,
+min_angle=None)</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mesh</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>trimesh object representing extruded polygon</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.identifier">
+<em class="property">property </em><code class="sig-name descname">identifier</code><a class="headerlink" href="#trimesh.path.path.Path2D.identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unique identifier for the path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>identifier</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(5,) float, unique identifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.identifier_md5">
+<em class="property">property </em><code class="sig-name descname">identifier_md5</code><a class="headerlink" href="#trimesh.path.path.Path2D.identifier_md5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an MD5 of the identifier</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.length">
+<em class="property">property </em><code class="sig-name descname">length</code><a class="headerlink" href="#trimesh.path.path.Path2D.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total discretized length of every entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>length</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float, summed length of every entity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.medial_axis">
+<code class="sig-name descname">medial_axis</code><span class="sig-paren">(</span><em class="sig-param">resolution=None</em>, <em class="sig-param">clip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.medial_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the approximate medial axis based
+on a voronoi diagram of evenly spaced points on the
+boundary of the polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resolution</strong> (<em>None</em><em> or </em><em>float</em>) – Distance between each sample on the polygon boundary</p></li>
+<li><p><strong>clip</strong> (<em>None</em><em>, or </em><em>(</em><em>2</em><em>,</em><em>) </em><em>float</em>) – Min, max number of samples</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>medial</strong> – Contains only medial axis of Path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Path2D object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.path_valid">
+<em class="property">property </em><code class="sig-name descname">path_valid</code><a class="headerlink" href="#trimesh.path.path.Path2D.path_valid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>path_valid</strong> – which are valid polygons</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) bool, indexes of self.paths self.polygons_closed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.plot_discrete">
+<code class="sig-name descname">plot_discrete</code><span class="sig-paren">(</span><em class="sig-param">show=False</em>, <em class="sig-param">annotations=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.plot_discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the closed curves of the path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.plot_entities">
+<code class="sig-name descname">plot_entities</code><span class="sig-paren">(</span><em class="sig-param">show=False</em>, <em class="sig-param">annotations=True</em>, <em class="sig-param">color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.plot_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the entities of the path, with no notion of topology</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.polygons_closed">
+<em class="property">property </em><code class="sig-name descname">polygons_closed</code><a class="headerlink" href="#trimesh.path.path.Path2D.polygons_closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cycles in the vertex graph, as shapely.geometry.Polygons.
+These are polygon objects for every closed circuit, with no notion
+of whether a polygon is a hole or an area. Every polygon in this
+list will have an exterior, but NO interiors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>polygons_closed</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) list of shapely.geometry.Polygon objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.polygons_full">
+<em class="property">property </em><code class="sig-name descname">polygons_full</code><a class="headerlink" href="#trimesh.path.path.Path2D.polygons_full" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of shapely.geometry.Polygon objects with interiors created
+by checking which closed polygons enclose which other polygons.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>full</strong> – Polygons containing interiors</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(len(self.root),) shapely.geometry.Polygon</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.rasterize">
+<code class="sig-name descname">rasterize</code><span class="sig-paren">(</span><em class="sig-param">pitch</em>, <em class="sig-param">origin</em>, <em class="sig-param">resolution=None</em>, <em class="sig-param">fill=True</em>, <em class="sig-param">width=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.rasterize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rasterize a Path2D object into a boolean image (“mode 1”).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pitch</strong> (<em>float</em><em>, </em><em>length in model space of a pixel edge</em>) – </p></li>
+<li><p><strong>origin</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em><em>, </em><em>origin position in model space</em>) – </p></li>
+<li><p><strong>resolution</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>int</em><em>, </em><em>resolution in pixel space</em>) – </p></li>
+<li><p><strong>fill</strong> (<em>bool</em><em>, </em><em>if True will return closed regions as filled</em>) – </p></li>
+<li><p><strong>width</strong> (<em>int</em><em>, </em><em>if not None will draw outline this wide</em><em> (</em><em>pixels</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>raster</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>PIL.Image object, mode 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.root">
+<em class="property">property </em><code class="sig-name descname">root</code><a class="headerlink" href="#trimesh.path.path.Path2D.root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Which indexes of self.paths/self.polygons_closed are root curves.
+Also known as ‘shell’ or ‘exterior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>root</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) int, list of indexes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param">count</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rejection sampling to generate random points inside a
+polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> (<em>int</em>) – Number of points to return
+If there are multiple bodies, there will
+be up to count * bodies points returned</p></li>
+<li><p><strong>factor</strong> (<em>float</em>) – How many points to test per loop
+IE, count * factor</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em><em>,</em>) – Maximum number of intersection loops
+to run, total points sampled is
+count * factor * max_iter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>hit</strong> – Random points inside polygon</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 2) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param">annotations=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the current Path2D object using matplotlib.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.simplify">
+<code class="sig-name descname">simplify</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a version of the current path with colinear segments
+merged, and circles entities replacing segmented circular paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>simplified</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Path2D object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.simplify_spline">
+<code class="sig-name descname">simplify_spline</code><span class="sig-paren">(</span><em class="sig-param">path_indexes=None</em>, <em class="sig-param">smooth=0.0002</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.simplify_spline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert paths into b-splines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path_indexes</strong> – List of indexes of self.paths to convert</p></li>
+<li><p><strong>smooth</strong> (<em>float</em>) – How much the spline should smooth the curve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>simplified</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Path2D object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.split">
+<code class="sig-name descname">split</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the current Path2D consists of n ‘root’ curves,
+split them into a list of n Path2D objects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>split</strong> – Each connected region and interiors</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) list of Path2D objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.to_3D">
+<code class="sig-name descname">to_3D</code><span class="sig-paren">(</span><em class="sig-param">transform=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.to_3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert 2D path to 3D path on the XY plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>transform</strong> (<em>(</em><em>4</em><em>, </em><em>4</em><em>) </em><em>float</em>) – If passed, will transform vertices.
+If not passed and ‘to_3D’ is in metadata
+that transform will be used.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>path_3D</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Path3D version of current path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path2D.triangulate">
+<code class="sig-name descname">triangulate</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path2D.triangulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a region- aware triangulation of the 2D path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> (<em>dict</em>) – Passed to trimesh.creation.triangulate_polygon</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>vertices</strong> (<em>(n, 2) float</em>) – 2D vertices of triangulation</p></li>
+<li><p><strong>faces</strong> (<em>(n, 3) int</em>) – Indexes of vertices for triangles</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.path.path.Path3D">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.path.</code><code class="sig-name descname">Path3D</code><span class="sig-paren">(</span><em class="sig-param">entities=None</em>, <em class="sig-param">vertices=None</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">process=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.path.Path" title="trimesh.path.path.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.path.Path</span></code></a></p>
+<dl class="method">
+<dt id="trimesh.path.path.Path3D.plot_discrete">
+<code class="sig-name descname">plot_discrete</code><span class="sig-paren">(</span><em class="sig-param">show=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path3D.plot_discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot closed curves</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>show</strong> (<em>bool</em>) – If False will not execute matplotlib.pyplot.show</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path3D.plot_entities">
+<code class="sig-name descname">plot_entities</code><span class="sig-paren">(</span><em class="sig-param">show=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path3D.plot_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot discrete version of entities without regards
+for connectivity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>show</strong> (<em>bool</em>) – If False will not execute matplotlib.pyplot.show</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path3D.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path3D.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the current Path3D object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.path.Path3D.to_planar">
+<code class="sig-name descname">to_planar</code><span class="sig-paren">(</span><em class="sig-param">to_2D=None</em>, <em class="sig-param">normal=None</em>, <em class="sig-param">check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.path.Path3D.to_planar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check to see if current vectors are all coplanar.</p>
+<p>If they are, return a Path2D and a transform which will
+transform the 2D representation back into 3 dimensions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_2D</strong> (<em>(</em><em>4</em><em>,</em><em>4</em><em>) </em><em>float</em>) – Homogeneous transformation matrix to apply,
+If not passed a plane will be fitted to vertices.</p></li>
+<li><p><strong>normal</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em><em>, or </em><em>None</em>) – Approximate normal of direction of plane
+If to_2D is not specified sign
+will be applied to fit plane normal</p></li>
+<li><p><strong>check</strong> (<em>bool</em>) – If True: Raise a ValueError if
+points aren’t coplanar</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>planar</strong> (<em>trimesh.path.Path2D</em>) – Current path transformed onto plane</p></li>
+<li><p><strong>to_3D</strong> (<em>(4,4) float</em>) – Homeogenous transformation to move planar
+back into 3D space</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.polygons">
+<span id="trimesh-path-polygons-module"></span><h2>trimesh.path.polygons module<a class="headerlink" href="#module-trimesh.path.polygons" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.polygons.edges_to_polygons">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">edges_to_polygons</code><span class="sig-paren">(</span><em class="sig-param">edges</em>, <em class="sig-param">vertices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.edges_to_polygons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an edge list of indices and associated vertices
+representing lines, generate a list of polygons.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>edges</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) </em><em>int</em>) – Indexes of vertices which represent lines</p></li>
+<li><p><strong>vertices</strong> (<em>(</em><em>m</em><em>, </em><em>2</em><em>) </em><em>float</em>) – Vertices in 2D space</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>polygons</strong> – Polygon objects with interiors</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(p,) shapely.geometry.Polygon</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.enclosure_tree">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">enclosure_tree</code><span class="sig-paren">(</span><em class="sig-param">polygons</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.enclosure_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of shapely polygons with only exteriors,
+find which curves represent the exterior shell or root curve
+and which represent holes which penetrate the exterior.</p>
+<p>This is done with an R-tree for rough overlap detection,
+and then exact polygon queries for a final result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>polygons</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>shapely.geometry.Polygon</em>) – Polygons which only have exteriors and may overlap</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>roots</strong> (<em>(m,) int</em>) – Index of polygons which are root</p></li>
+<li><p><strong>contains</strong> (<em>networkx.DiGraph</em>) – Edges indicate a polygon is
+contained by another polygon</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.medial_axis">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">medial_axis</code><span class="sig-paren">(</span><em class="sig-param">polygon</em>, <em class="sig-param">resolution=None</em>, <em class="sig-param">clip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.medial_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a shapely polygon, find the approximate medial axis
+using a voronoi diagram of evenly spaced points on the
+boundary of the polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polygon</strong> (<em>shapely.geometry.Polygon</em>) – The source geometry</p></li>
+<li><p><strong>resolution</strong> (<em>float</em>) – Distance between each sample on the polygon boundary</p></li>
+<li><p><strong>clip</strong> (<em>None</em><em>, or </em><em>(</em><em>2</em><em>,</em><em>) </em><em>int</em>) – Clip sample count to min of clip[0] and max of clip[1]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>edges</strong> (<em>(n, 2) int</em>) – Vertex indices representing line segments
+on the polygon’s medial axis</p></li>
+<li><p><strong>vertices</strong> (<em>(m, 2) float</em>) – Vertex positions in space</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.paths_to_polygons">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">paths_to_polygons</code><span class="sig-paren">(</span><em class="sig-param">paths</em>, <em class="sig-param">scale=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.paths_to_polygons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a sequence of connected points turn them into
+valid shapely Polygon objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>paths</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>sequence</em>) – Of (m,2) float, closed paths</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Approximate scale of drawing for precision</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>polys</strong> – shapely.geometry.Polygon
+None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(p,) list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.plot_polygon">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">plot_polygon</code><span class="sig-paren">(</span><em class="sig-param">polygon</em>, <em class="sig-param">show=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.plot_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a shapely polygon using matplotlib.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polygon</strong> (<em>shapely.geometry.Polygon</em>) – Polygon to be plotted</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – If True will display immediately</p></li>
+<li><p><strong>**kwargs</strong> – Passed to plt.plot</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.polygon_hash">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">polygon_hash</code><span class="sig-paren">(</span><em class="sig-param">polygon</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.polygon_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a vector containing values representitive of
+a particular polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>polygon</strong> (<em>shapely.geometry.Polygon</em>) – Input geometry</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>hashed</strong> – Representitive values representing input polygon</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(6), float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.polygon_obb">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">polygon_obb</code><span class="sig-paren">(</span><em class="sig-param">polygon</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.polygon_obb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the oriented bounding box of a Shapely polygon.</p>
+<p>The OBB is always aligned with an edge of the convex hull of the polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>polygons</strong> (<em>shapely.geometry.Polygon</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>transform</strong> (<em>(3,3) float, transformation matrix</em>) – which will move input polygon from its original position
+to the first quadrant where the AABB is the OBB</p></li>
+<li><p><strong>extents</strong> (<em>(2,) float, extents of transformed polygon</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.polygon_scale">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">polygon_scale</code><span class="sig-paren">(</span><em class="sig-param">polygon</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.polygon_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>For a Polygon object, return the diagonal length of the AABB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>polygon</strong> (<em>shapely.geometry.Polygon object</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scale</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float, length of AABB diagonal</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.polygons_obb">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">polygons_obb</code><span class="sig-paren">(</span><em class="sig-param">polygons</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.polygons_obb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the OBBs for a list of shapely.geometry.Polygons</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.random_polygon">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">random_polygon</code><span class="sig-paren">(</span><em class="sig-param">segments=8</em>, <em class="sig-param">radius=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.random_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random polygon with a maximum number of sides and approximate radius.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segments</strong> (<em>int</em><em>, </em><em>the maximum number of sides the random polygon will have</em>) – </p></li>
+<li><p><strong>radius</strong> (<em>float</em><em>, </em><em>the approximate radius of the polygon desired</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>polygon</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>shapely.geometry.Polygon object with random exterior, and no interiors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.repair_invalid">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">repair_invalid</code><span class="sig-paren">(</span><em class="sig-param">polygon</em>, <em class="sig-param">scale=None</em>, <em class="sig-param">rtol=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.repair_invalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a shapely.geometry.Polygon, attempt to return a
+valid version of the polygon through buffering tricks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polygon</strong> (<em>shapely.geometry.Polygon object</em>) – </p></li>
+<li><p><strong>rtol</strong> (<em>float</em><em>, </em><em>how close does a perimeter have to be</em>) – </p></li>
+<li><p><strong>scale</strong> (<em>float</em><em>, or </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>repaired</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>shapely.geometry.Polygon object</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – if polygon can’t be repaired:</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.resample_boundaries">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">resample_boundaries</code><span class="sig-paren">(</span><em class="sig-param">polygon</em>, <em class="sig-param">resolution</em>, <em class="sig-param">clip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.resample_boundaries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a version of a polygon with boundaries resampled
+to a specified resolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polygon</strong> (<em>shapely.geometry.Polygon object</em>) – </p></li>
+<li><p><strong>resolution</strong> (<em>float</em><em>, </em><em>desired distance between points on boundary</em>) – </p></li>
+<li><p><strong>clip</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>int</em><em>, </em><em>upper and lower bounds to clip</em>) – number of samples to (to avoid exploding counts)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict, keyword args for a Polygon(<a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.sample">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param">polygon</em>, <em class="sig-param">count</em>, <em class="sig-param">factor=1.5</em>, <em class="sig-param">max_iter=10</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rejection sampling to generate random points inside a
+polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polygon</strong> (<em>shapely.geometry.Polygon</em>) – Polygon that will contain points</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – Number of points to return</p></li>
+<li><p><strong>factor</strong> (<em>float</em>) – How many points to test per loop
+IE, count * factor</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em><em>,</em>) – Maximum number of intersection loops
+to run, total points sampled is
+count * factor * max_iter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>hit</strong> – Random points inside polygon
+where n &lt;= count</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 2) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.stack_boundaries">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">stack_boundaries</code><span class="sig-paren">(</span><em class="sig-param">boundaries</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.stack_boundaries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stack the boundaries of a polygon into a single
+(n, 2) list of vertices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>boundaries</strong> (<em>dict</em><em>, </em><em>with keys 'shell'</em><em>, </em><em>'holes'</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>stacked</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 2) float, list of vertices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.polygons.transform_polygon">
+<code class="sig-prename descclassname">trimesh.path.polygons.</code><code class="sig-name descname">transform_polygon</code><span class="sig-paren">(</span><em class="sig-param">polygon</em>, <em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.polygons.transform_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform a polygon by a a 2D homogeneous transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polygon</strong> (<em>shapely.geometry.Polygon</em>) – 2D polygon to be transformed.</p></li>
+<li><p><strong>matrix</strong> (<em>(</em><em>3</em><em>, </em><em>3</em><em>) </em><em>float</em>) – 2D homogeneous transformation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – Polygon transformed by matrix.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>shapely.geometry.Polygon</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.raster">
+<span id="trimesh-path-raster-module"></span><h2>trimesh.path.raster module<a class="headerlink" href="#module-trimesh.path.raster" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="raster-py">
+<h3>raster.py<a class="headerlink" href="#raster-py" title="Permalink to this headline">¶</a></h3>
+<p>Turn 2D vector paths into raster images, using <cite>pillow</cite></p>
+<dl class="function">
+<dt id="trimesh.path.raster.rasterize">
+<code class="sig-prename descclassname">trimesh.path.raster.</code><code class="sig-name descname">rasterize</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">pitch</em>, <em class="sig-param">origin</em>, <em class="sig-param">resolution=None</em>, <em class="sig-param">fill=True</em>, <em class="sig-param">width=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.raster.rasterize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rasterize a Path2D object into a boolean image (“mode 1”).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>Path2D object</em>) – </p></li>
+<li><p><strong>pitch</strong> (<em>float</em><em>, </em><em>length in model space of a pixel edge</em>) – </p></li>
+<li><p><strong>origin</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em><em>, </em><em>origin position in model space</em>) – </p></li>
+<li><p><strong>resolution</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>int</em><em>, </em><em>resolution in pixel space</em>) – </p></li>
+<li><p><strong>fill</strong> (<em>bool</em><em>, </em><em>if True will return closed regions as filled</em>) – </p></li>
+<li><p><strong>width</strong> (<em>int</em><em>, </em><em>if not None will draw outline this wide</em><em> (</em><em>pixels</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>raster</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>PIL.Image object, mode 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-trimesh.path.repair">
+<span id="trimesh-path-repair-module"></span><h2>trimesh.path.repair module<a class="headerlink" href="#module-trimesh.path.repair" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="repair-py">
+<h3>repair.py<a class="headerlink" href="#repair-py" title="Permalink to this headline">¶</a></h3>
+<p>Try to fix problems with closed regions.</p>
+<dl class="function">
+<dt id="trimesh.path.repair.fill_gaps">
+<code class="sig-prename descclassname">trimesh.path.repair.</code><code class="sig-name descname">fill_gaps</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">distance=0.025</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.repair.fill_gaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>For 3D line segments defined by two points, turn
+them in to an origin defined as the closest point along
+the line to the zero origin as well as a direction vector
+and start and end parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>segments</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Line segments defined by start and end points</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>origins</strong> (<em>(n, 3) float</em>) – Point on line closest to [0, 0, 0]</p></li>
+<li><p><strong>vectors</strong> (<em>(n, 3) float</em>) – Unit line directions</p></li>
+<li><p><strong>parameters</strong> (<em>(n, 2) float</em>) – Start and end distance pairs for each line</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-trimesh.path.segments">
+<span id="trimesh-path-segments-module"></span><h2>trimesh.path.segments module<a class="headerlink" href="#module-trimesh.path.segments" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="segments-py">
+<h3>segments.py<a class="headerlink" href="#segments-py" title="Permalink to this headline">¶</a></h3>
+<p>Deal with (n, 2, 3) line segments.</p>
+<dl class="function">
+<dt id="trimesh.path.segments.colinear_pairs">
+<code class="sig-prename descclassname">trimesh.path.segments.</code><code class="sig-name descname">colinear_pairs</code><span class="sig-paren">(</span><em class="sig-param">segments</em>, <em class="sig-param">radius=0.01</em>, <em class="sig-param">angle=0.01</em>, <em class="sig-param">length=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.segments.colinear_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find pairs of segments which are colinear.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segments</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>, </em><em>(</em><em>2</em><em>, </em><em>3</em><em>)</em><em>) </em><em>float</em>) – Two or three dimensional line segments</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – Maximum radius line origins can differ
+and be considered colinear</p></li>
+<li><p><strong>angle</strong> (<em>float</em>) – Maximum angle in radians segments can
+differ and still be considered colinear</p></li>
+<li><p><strong>length</strong> (<em>None</em><em> or </em><em>float</em>) – If specified, will additionally require
+that pairs have a mean vertex distance less
+than this value from each other to qualify.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>pairs</strong> – Indexes of segments which are colinear</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, 2) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.segments.overlap">
+<code class="sig-prename descclassname">trimesh.path.segments.</code><code class="sig-name descname">overlap</code><span class="sig-paren">(</span><em class="sig-param">origins</em>, <em class="sig-param">vectors</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.segments.overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the overlap of two parallel line segments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origins</strong> (<em>(</em><em>2</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Origin points of lines in space</p></li>
+<li><p><strong>vectors</strong> (<em>(</em><em>2</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Unit direction vectors of lines</p></li>
+<li><p><strong>params</strong> (<em>(</em><em>2</em><em>, </em><em>2</em><em>) </em><em>float</em>) – Two (start, end) distance pairs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>length</strong> (<em>float</em>) – Overlapping length</p></li>
+<li><p><strong>overlap</strong> (<em>(n, 2, 3) float</em>) – Line segments for overlapping distance</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.segments.parameters_to_segments">
+<code class="sig-prename descclassname">trimesh.path.segments.</code><code class="sig-name descname">parameters_to_segments</code><span class="sig-paren">(</span><em class="sig-param">origins</em>, <em class="sig-param">vectors</em>, <em class="sig-param">parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.segments.parameters_to_segments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a parametric line segment representation to
+a two point line segment representation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origins</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Line origin point</p></li>
+<li><p><strong>vectors</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Unit line directions</p></li>
+<li><p><strong>parameters</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) </em><em>float</em>) – Start and end distance pairs for each line</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>segments</strong> – Line segments defined by start and end points</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 2, 3) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.segments.segments_to_parameters">
+<code class="sig-prename descclassname">trimesh.path.segments.</code><code class="sig-name descname">segments_to_parameters</code><span class="sig-paren">(</span><em class="sig-param">segments</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.segments.segments_to_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>For 3D line segments defined by two points, turn
+them in to an origin defined as the closest point along
+the line to the zero origin as well as a direction vector
+and start and end parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>segments</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Line segments defined by start and end points</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>origins</strong> (<em>(n, 3) float</em>) – Point on line closest to [0, 0, 0]</p></li>
+<li><p><strong>vectors</strong> (<em>(n, 3) float</em>) – Unit line directions</p></li>
+<li><p><strong>parameters</strong> (<em>(n, 2) float</em>) – Start and end distance pairs for each line</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.segments.split">
+<code class="sig-prename descclassname">trimesh.path.segments.</code><code class="sig-name descname">split</code><span class="sig-paren">(</span><em class="sig-param">segments</em>, <em class="sig-param">points</em>, <em class="sig-param">atol=1e-05</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.segments.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find any points that lie on a segment (not an endpoint)
+and then split that segment into two segments.</p>
+<p>We are basically going to find the distance between
+point and both segment vertex, and see if it is with
+tolerance of the segment length.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segments</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>, </em><em>(</em><em>2</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Line segments in space</p></li>
+<li><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>(</em><em>2</em><em>, </em><em>3</em><em>)</em><em>) </em><em>float</em>) – Points in space</p></li>
+<li><p><strong>atol</strong> (<em>float</em>) – Absolute tolerance for distances</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>split</strong> – Line segments in space, split at vertices</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 2, (3 | 3) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.segments.unique">
+<code class="sig-prename descclassname">trimesh.path.segments.</code><code class="sig-name descname">unique</code><span class="sig-paren">(</span><em class="sig-param">segments</em>, <em class="sig-param">digits=5</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.segments.unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find unique line segments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segments</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>, </em><em>(</em><em>2|3</em><em>)</em><em>) </em><em>float</em>) – Line segments in space</p></li>
+<li><p><strong>digits</strong> (<em>int</em>) – How many digits to consider when merging vertices</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>unique</strong> – Segments with duplicates merged</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, 2, (2|3)) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-trimesh.path.simplify">
+<span id="trimesh-path-simplify-module"></span><h2>trimesh.path.simplify module<a class="headerlink" href="#module-trimesh.path.simplify" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.simplify.fit_circle_check">
+<code class="sig-prename descclassname">trimesh.path.simplify.</code><code class="sig-name descname">fit_circle_check</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">scale</em>, <em class="sig-param">prior=None</em>, <em class="sig-param">final=False</em>, <em class="sig-param">verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.simplify.fit_circle_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a circle, and reject the fit if:
+* the radius is larger than tol.radius_min*scale or tol.radius_max*scale
+* any segment spans more than tol.seg_angle
+* any segment is longer than tol.seg_frac*scale
+* the fit deviates by more than tol.radius_frac*radius
+* the segments on the ends deviate from tangent by more than tol.tangent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>d</em><em>) </em><em>set of points which represent a path</em>) – </p></li>
+<li><p><strong>prior</strong> (<em>(</em><em>center</em><em>, </em><em>radius</em><em>) </em><em>tuple for best guess</em><em>, or </em><em>None if unknown</em>) – </p></li>
+<li><p><strong>scale</strong> (<em>float</em><em>, </em><em>what is the overall scale of the set of points</em>) – </p></li>
+<li><p><strong>verbose</strong> (<em>boolean</em><em>, </em><em>if True output log.debug messages for the reasons</em>) – for fit rejection. Potentially generates hundreds of thousands of
+messages so only suggested in manual debugging.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>if fit is acceptable</em> – (center, radius) tuple</p></li>
+<li><p><em>else</em> – None</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.simplify.is_circle">
+<code class="sig-prename descclassname">trimesh.path.simplify.</code><code class="sig-name descname">is_circle</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">scale</em>, <em class="sig-param">verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.simplify.is_circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a set of points, quickly determine if they represent
+a circle or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>n</em><em>,</em><em>2</em><em>) </em><em>float</em><em>, </em><em>points in space</em>) – </p></li>
+<li><p><strong>scale</strong> (<em>float</em><em>, </em><em>scale of overall drawing</em>) – </p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>print all fit messages</em><em> or </em><em>not</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>control</strong> – None, if not a circle</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(3,2) float, points in space, OR</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.simplify.merge_colinear">
+<code class="sig-prename descclassname">trimesh.path.simplify.</code><code class="sig-name descname">merge_colinear</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.simplify.merge_colinear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a set of points representing a path in space,
+merge points which are colinear.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>d</em><em>) </em><em>set of points</em><em> (</em><em>where d is dimension</em><em>)</em>) – </p></li>
+<li><p><strong>scale</strong> (<em>float</em><em>, </em><em>scale of drawing</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>merged</strong> – points merged, where (j &lt; n)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(j, d) set of points with colinear and duplicate</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.simplify.points_to_spline_entity">
+<code class="sig-prename descclassname">trimesh.path.simplify.</code><code class="sig-name descname">points_to_spline_entity</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">smooth=None</em>, <em class="sig-param">count=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.simplify.points_to_spline_entity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a spline entity from a curve in space</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em><em>, </em><em>points in space</em>) – </p></li>
+<li><p><strong>smooth</strong> (<em>float</em><em>, </em><em>smoothing amount</em>) – </p></li>
+<li><p><strong>count</strong> (<em>int</em><em>, </em><em>number of samples in result</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>entity</strong> (<em>entities.BSpline object with points indexed at zero</em>)</p></li>
+<li><p><strong>control</strong> (<em>(m, dimension) float, new vertices for entity</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.simplify.resample_spline">
+<code class="sig-prename descclassname">trimesh.path.simplify.</code><code class="sig-name descname">resample_spline</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">smooth=0.001</em>, <em class="sig-param">count=None</em>, <em class="sig-param">degree=3</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.simplify.resample_spline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resample a path in space, smoothing along a b-spline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em><em>, </em><em>points in space</em>) – </p></li>
+<li><p><strong>smooth</strong> (<em>float</em><em>, </em><em>smoothing amount</em>) – </p></li>
+<li><p><strong>count</strong> (<em>number of samples in output</em>) – </p></li>
+<li><p><strong>degree</strong> (<em>int</em><em>, </em><em>degree of spline polynomial</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>resampled</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(count, dimension) float, points in space</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.simplify.simplify_basic">
+<code class="sig-prename descclassname">trimesh.path.simplify.</code><code class="sig-name descname">simplify_basic</code><span class="sig-paren">(</span><em class="sig-param">drawing</em>, <em class="sig-param">process=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.simplify.simplify_basic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge colinear segments and fit circles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>drawing</strong> (<em>Path2D object</em><em>, </em><em>will not be modified.</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>simplified</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Path2D with circles.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.simplify.simplify_spline">
+<code class="sig-prename descclassname">trimesh.path.simplify.</code><code class="sig-name descname">simplify_spline</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">smooth=None</em>, <em class="sig-param">verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.simplify.simplify_spline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace discrete curves with b-spline or Arc and
+return the result as a new Path2D object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<a class="reference internal" href="#trimesh.path.Path2D" title="trimesh.path.Path2D"><em>trimesh.path.Path2D</em></a>) – Input geometry</p></li>
+<li><p><strong>smooth</strong> (<em>float</em>) – Distance to smooth</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>simplified</strong> – Consists of Arc and BSpline entities</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D">Path2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.traversal">
+<span id="trimesh-path-traversal-module"></span><h2>trimesh.path.traversal module<a class="headerlink" href="#module-trimesh.path.traversal" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trimesh.path.traversal.PathSample">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.traversal.</code><code class="sig-name descname">PathSample</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.traversal.PathSample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="trimesh.path.traversal.PathSample.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param">distances</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.traversal.PathSample.sample" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.traversal.PathSample.truncate">
+<code class="sig-name descname">truncate</code><span class="sig-paren">(</span><em class="sig-param">distance</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.traversal.PathSample.truncate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a truncated version of the path.
+Only one vertex (at the endpoint) will be added.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.traversal.closed_paths">
+<code class="sig-prename descclassname">trimesh.path.traversal.</code><code class="sig-name descname">closed_paths</code><span class="sig-paren">(</span><em class="sig-param">entities</em>, <em class="sig-param">vertices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.traversal.closed_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paths are lists of entity indices.
+We first generate vertex paths using graph cycle algorithms,
+and then convert them to entity paths.</p>
+<p>This will also change the ordering of entity.points in place
+so a path may be traversed without having to reverse the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entities</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>entity objects</em>) – Entity objects</p></li>
+<li><p><strong>vertices</strong> (<em>(</em><em>m</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Vertex points in space</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>entity_paths</strong> – Ordered traversals of entities</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sequence of (n,) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.traversal.discretize_path">
+<code class="sig-prename descclassname">trimesh.path.traversal.</code><code class="sig-name descname">discretize_path</code><span class="sig-paren">(</span><em class="sig-param">entities</em>, <em class="sig-param">vertices</em>, <em class="sig-param">path</em>, <em class="sig-param">scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.traversal.discretize_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn a list of entity indices into a path of connected points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entities</strong> (<em>(</em><em>j</em><em>,</em><em>) </em><em>entity objects</em>) – Objects like ‘Line’, ‘Arc’, etc.</p></li>
+<li><p><strong>vertices</strong> (<em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Vertex points in space.</p></li>
+<li><p><strong>path</strong> (<em>(</em><em>m</em><em>,</em><em>) </em><em>int</em>) – Indexes of entities</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Overall scale of drawing used for
+numeric tolerances in certain cases</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>discrete</strong> – Connected points in space that lie on the
+path and can be connected with line segments.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(p, dimension) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.traversal.resample_path">
+<code class="sig-prename descclassname">trimesh.path.traversal.</code><code class="sig-name descname">resample_path</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">count=None</em>, <em class="sig-param">step=None</em>, <em class="sig-param">step_round=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.traversal.resample_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a path along (n,d) points, resample them such that the
+distance traversed along the path is constant in between each
+of the resampled points. Note that this can produce clipping at
+corners, as the original vertices are NOT guaranteed to be in the
+new, resampled path.</p>
+<p>ONLY ONE of count or step can be specified
+Result can be uniformly distributed (np.linspace) by specifying count
+Result can have a specific distance (np.arange) by specifying step</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>d</em><em>) </em><em>float</em>) – Points in space</p></li>
+<li><p><strong>count</strong> (<em>int</em><em>,</em>) – Number of points to sample evenly (aka np.linspace)</p></li>
+<li><p><strong>step</strong> (<em>float</em>) – Distance each step should take along the path (aka np.arange)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>resampled</strong> – Points on the path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(j,d) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.traversal.split">
+<code class="sig-prename descclassname">trimesh.path.traversal.</code><code class="sig-name descname">split</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.traversal.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split a Path2D into multiple Path2D objects where each
+one has exactly one root curve.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>self</strong> (<a class="reference internal" href="#trimesh.path.Path2D" title="trimesh.path.Path2D"><em>trimesh.path.Path2D</em></a>) – Input geometry</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>split</strong> – Original geometry as separate paths</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of trimesh.path.Path2D</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.traversal.vertex_graph">
+<code class="sig-prename descclassname">trimesh.path.traversal.</code><code class="sig-name descname">vertex_graph</code><span class="sig-paren">(</span><em class="sig-param">entities</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.traversal.vertex_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a set of entity objects generate a networkx.Graph
+that represents their vertex nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entities</strong> (<em>list</em>) – Objects with ‘closed’ and ‘nodes’ attributes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>graph</strong> (<em>networkx.Graph</em>) – Graph where node indexes represent vertices</p></li>
+<li><p><strong>closed</strong> (<em>(n,) int</em>) – Indexes of entities which are ‘closed’</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.traversal.vertex_to_entity_path">
+<code class="sig-prename descclassname">trimesh.path.traversal.</code><code class="sig-name descname">vertex_to_entity_path</code><span class="sig-paren">(</span><em class="sig-param">vertex_path</em>, <em class="sig-param">graph</em>, <em class="sig-param">entities</em>, <em class="sig-param">vertices=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.traversal.vertex_to_entity_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a path of vertex indices to a path of entity indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_path</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>int</em>) – Ordered list of vertex indices representing a path</p></li>
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – Vertex connectivity</p></li>
+<li><p><strong>entities</strong> (<em>(</em><em>m</em><em>,</em><em>) </em><em>list</em>) – Entity objects</p></li>
+<li><p><strong>vertices</strong> (<em>(</em><em>p</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Vertex points in space</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>entity_path</strong> – Entity indices which make up vertex_path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(q,) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.util">
+<span id="trimesh-path-util-module"></span><h2>trimesh.path.util module<a class="headerlink" href="#module-trimesh.path.util" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.util.concatenate">
+<code class="sig-prename descclassname">trimesh.path.util.</code><code class="sig-name descname">concatenate</code><span class="sig-paren">(</span><em class="sig-param">paths</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.util.concatenate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concatenate multiple paths into a single path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>paths</strong> (<em>list of Path</em><em>, </em><a class="reference internal" href="#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D"><em>Path2D</em></a><em>, or </em><em>Path3D objects</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>concat</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#trimesh.path.path.Path" title="trimesh.path.path.Path">Path</a>, <a class="reference internal" href="#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D">Path2D</a>, or Path3D object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.util.is_ccw">
+<code class="sig-prename descclassname">trimesh.path.util.</code><code class="sig-name descname">is_ccw</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.util.is_ccw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if connected planar points are counterclockwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>(</em><em>n</em><em>,</em><em>2</em><em>) </em><em>float</em><em>, </em><em>connected points on a plane</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>ccw</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool, True if points are counterclockwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trimesh.path" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trimesh.path.Path2D">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.</code><code class="sig-name descname">Path2D</code><span class="sig-paren">(</span><em class="sig-param">entities=None</em>, <em class="sig-param">vertices=None</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">process=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.path.Path" title="trimesh.path.path.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.path.Path</span></code></a></p>
+<dl class="method">
+<dt id="trimesh.path.Path2D.apply_obb">
+<code class="sig-name descname">apply_obb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.apply_obb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the current path so that its OBB is axis aligned
+and OBB center is at the origin.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.area">
+<em class="property">property </em><code class="sig-name descname">area</code><a class="headerlink" href="#trimesh.path.Path2D.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the area of the polygons interior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>area</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float, total area of polygons minus interiors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.body_count">
+<em class="property">property </em><code class="sig-name descname">body_count</code><a class="headerlink" href="#trimesh.path.Path2D.body_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.centroid">
+<em class="property">property </em><code class="sig-name descname">centroid</code><a class="headerlink" href="#trimesh.path.Path2D.centroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the centroid of the path object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>centroid</strong> – Approximate centroid of the path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(d,) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.connected_paths">
+<code class="sig-name descname">connected_paths</code><span class="sig-paren">(</span><em class="sig-param">path_id</em>, <em class="sig-param">include_self=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.connected_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an index of self.paths find other paths which
+overlap with that path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path_id</strong> (<em>int</em>) – Index of self.paths</p></li>
+<li><p><strong>include_self</strong> (<em>bool</em>) – Should the result include path_id or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>path_ids</strong> – Indexes of self.paths that overlap input path_id</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, ) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.enclosure">
+<em class="property">property </em><code class="sig-name descname">enclosure</code><a class="headerlink" href="#trimesh.path.Path2D.enclosure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Networkx Graph object of polygon enclosure.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.enclosure_directed">
+<em class="property">property </em><code class="sig-name descname">enclosure_directed</code><a class="headerlink" href="#trimesh.path.Path2D.enclosure_directed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Networkx DiGraph of polygon enclosure</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.enclosure_shell">
+<em class="property">property </em><code class="sig-name descname">enclosure_shell</code><a class="headerlink" href="#trimesh.path.Path2D.enclosure_shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of path indexes which are ‘shell’ paths, and values
+of ‘hole’ paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>corresponding</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict, {index of self.paths of shell : [indexes of holes]}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.extrude">
+<code class="sig-name descname">extrude</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.extrude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extrude the current 2D path into a 3D mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>height</strong> (<em>float</em><em>, </em><em>how far to extrude the profile</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>passed directly to meshpy.triangle.build:</em>) – <dl class="simple">
+<dt>triangle.build(mesh_info,</dt><dd><p>verbose=False,
+refinement_func=None,
+attributes=False,
+volume_constraints=True,
+max_volume=None,
+allow_boundary_steiner=True,
+allow_volume_steiner=True,
+quality_meshing=True,
+generate_edges=None,
+generate_faces=False,
+min_angle=None)</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mesh</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>trimesh object representing extruded polygon</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.identifier">
+<em class="property">property </em><code class="sig-name descname">identifier</code><a class="headerlink" href="#trimesh.path.Path2D.identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unique identifier for the path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>identifier</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(5,) float, unique identifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.identifier_md5">
+<em class="property">property </em><code class="sig-name descname">identifier_md5</code><a class="headerlink" href="#trimesh.path.Path2D.identifier_md5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an MD5 of the identifier</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.length">
+<em class="property">property </em><code class="sig-name descname">length</code><a class="headerlink" href="#trimesh.path.Path2D.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total discretized length of every entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>length</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float, summed length of every entity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.medial_axis">
+<code class="sig-name descname">medial_axis</code><span class="sig-paren">(</span><em class="sig-param">resolution=None</em>, <em class="sig-param">clip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.medial_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the approximate medial axis based
+on a voronoi diagram of evenly spaced points on the
+boundary of the polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resolution</strong> (<em>None</em><em> or </em><em>float</em>) – Distance between each sample on the polygon boundary</p></li>
+<li><p><strong>clip</strong> (<em>None</em><em>, or </em><em>(</em><em>2</em><em>,</em><em>) </em><em>float</em>) – Min, max number of samples</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>medial</strong> – Contains only medial axis of Path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Path2D object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.path_valid">
+<em class="property">property </em><code class="sig-name descname">path_valid</code><a class="headerlink" href="#trimesh.path.Path2D.path_valid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>path_valid</strong> – which are valid polygons</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) bool, indexes of self.paths self.polygons_closed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.plot_discrete">
+<code class="sig-name descname">plot_discrete</code><span class="sig-paren">(</span><em class="sig-param">show=False</em>, <em class="sig-param">annotations=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.plot_discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the closed curves of the path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.plot_entities">
+<code class="sig-name descname">plot_entities</code><span class="sig-paren">(</span><em class="sig-param">show=False</em>, <em class="sig-param">annotations=True</em>, <em class="sig-param">color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.plot_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the entities of the path, with no notion of topology</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.polygons_closed">
+<em class="property">property </em><code class="sig-name descname">polygons_closed</code><a class="headerlink" href="#trimesh.path.Path2D.polygons_closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cycles in the vertex graph, as shapely.geometry.Polygons.
+These are polygon objects for every closed circuit, with no notion
+of whether a polygon is a hole or an area. Every polygon in this
+list will have an exterior, but NO interiors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>polygons_closed</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) list of shapely.geometry.Polygon objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.polygons_full">
+<em class="property">property </em><code class="sig-name descname">polygons_full</code><a class="headerlink" href="#trimesh.path.Path2D.polygons_full" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of shapely.geometry.Polygon objects with interiors created
+by checking which closed polygons enclose which other polygons.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>full</strong> – Polygons containing interiors</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(len(self.root),) shapely.geometry.Polygon</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.rasterize">
+<code class="sig-name descname">rasterize</code><span class="sig-paren">(</span><em class="sig-param">pitch</em>, <em class="sig-param">origin</em>, <em class="sig-param">resolution=None</em>, <em class="sig-param">fill=True</em>, <em class="sig-param">width=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.rasterize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rasterize a Path2D object into a boolean image (“mode 1”).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pitch</strong> (<em>float</em><em>, </em><em>length in model space of a pixel edge</em>) – </p></li>
+<li><p><strong>origin</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em><em>, </em><em>origin position in model space</em>) – </p></li>
+<li><p><strong>resolution</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>int</em><em>, </em><em>resolution in pixel space</em>) – </p></li>
+<li><p><strong>fill</strong> (<em>bool</em><em>, </em><em>if True will return closed regions as filled</em>) – </p></li>
+<li><p><strong>width</strong> (<em>int</em><em>, </em><em>if not None will draw outline this wide</em><em> (</em><em>pixels</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>raster</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>PIL.Image object, mode 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.root">
+<em class="property">property </em><code class="sig-name descname">root</code><a class="headerlink" href="#trimesh.path.Path2D.root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Which indexes of self.paths/self.polygons_closed are root curves.
+Also known as ‘shell’ or ‘exterior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>root</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) int, list of indexes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param">count</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rejection sampling to generate random points inside a
+polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> (<em>int</em>) – Number of points to return
+If there are multiple bodies, there will
+be up to count * bodies points returned</p></li>
+<li><p><strong>factor</strong> (<em>float</em>) – How many points to test per loop
+IE, count * factor</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em><em>,</em>) – Maximum number of intersection loops
+to run, total points sampled is
+count * factor * max_iter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>hit</strong> – Random points inside polygon</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 2) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param">annotations=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the current Path2D object using matplotlib.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.simplify">
+<code class="sig-name descname">simplify</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a version of the current path with colinear segments
+merged, and circles entities replacing segmented circular paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>simplified</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Path2D object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.simplify_spline">
+<code class="sig-name descname">simplify_spline</code><span class="sig-paren">(</span><em class="sig-param">path_indexes=None</em>, <em class="sig-param">smooth=0.0002</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.simplify_spline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert paths into b-splines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path_indexes</strong> – List of indexes of self.paths to convert</p></li>
+<li><p><strong>smooth</strong> (<em>float</em>) – How much the spline should smooth the curve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>simplified</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Path2D object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.split">
+<code class="sig-name descname">split</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the current Path2D consists of n ‘root’ curves,
+split them into a list of n Path2D objects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>split</strong> – Each connected region and interiors</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) list of Path2D objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.to_3D">
+<code class="sig-name descname">to_3D</code><span class="sig-paren">(</span><em class="sig-param">transform=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.to_3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert 2D path to 3D path on the XY plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>transform</strong> (<em>(</em><em>4</em><em>, </em><em>4</em><em>) </em><em>float</em>) – If passed, will transform vertices.
+If not passed and ‘to_3D’ is in metadata
+that transform will be used.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>path_3D</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Path3D version of current path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path2D.triangulate">
+<code class="sig-name descname">triangulate</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path2D.triangulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a region- aware triangulation of the 2D path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> (<em>dict</em>) – Passed to trimesh.creation.triangulate_polygon</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>vertices</strong> (<em>(n, 2) float</em>) – 2D vertices of triangulation</p></li>
+<li><p><strong>faces</strong> (<em>(n, 3) int</em>) – Indexes of vertices for triangles</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.path.Path3D">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.path.</code><code class="sig-name descname">Path3D</code><span class="sig-paren">(</span><em class="sig-param">entities=None</em>, <em class="sig-param">vertices=None</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">process=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.path.path.Path" title="trimesh.path.path.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.path.path.Path</span></code></a></p>
+<dl class="method">
+<dt id="trimesh.path.Path3D.plot_discrete">
+<code class="sig-name descname">plot_discrete</code><span class="sig-paren">(</span><em class="sig-param">show=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path3D.plot_discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot closed curves</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>show</strong> (<em>bool</em>) – If False will not execute matplotlib.pyplot.show</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path3D.plot_entities">
+<code class="sig-name descname">plot_entities</code><span class="sig-paren">(</span><em class="sig-param">show=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path3D.plot_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot discrete version of entities without regards
+for connectivity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>show</strong> (<em>bool</em>) – If False will not execute matplotlib.pyplot.show</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path3D.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path3D.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the current Path3D object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.path.Path3D.to_planar">
+<code class="sig-name descname">to_planar</code><span class="sig-paren">(</span><em class="sig-param">to_2D=None</em>, <em class="sig-param">normal=None</em>, <em class="sig-param">check=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.Path3D.to_planar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check to see if current vectors are all coplanar.</p>
+<p>If they are, return a Path2D and a transform which will
+transform the 2D representation back into 3 dimensions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_2D</strong> (<em>(</em><em>4</em><em>,</em><em>4</em><em>) </em><em>float</em>) – Homogeneous transformation matrix to apply,
+If not passed a plane will be fitted to vertices.</p></li>
+<li><p><strong>normal</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em><em>, or </em><em>None</em>) – Approximate normal of direction of plane
+If to_2D is not specified sign
+will be applied to fit plane normal</p></li>
+<li><p><strong>check</strong> (<em>bool</em>) – If True: Raise a ValueError if
+points aren’t coplanar</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>planar</strong> (<em>trimesh.path.Path2D</em>) – Current path transformed onto plane</p></li>
+<li><p><strong>to_3D</strong> (<em>(4,4) float</em>) – Homeogenous transformation to move planar
+back into 3D space</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trimesh.path.exchange.html" class="btn btn-neutral float-right" title="trimesh.path.exchange package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trimesh.interfaces.html" class="btn btn-neutral float-left" title="trimesh.interfaces package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

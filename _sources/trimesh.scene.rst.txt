@@ -1,0 +1,46 @@
+trimesh.scene package
+=====================
+
+Submodules
+----------
+
+trimesh.scene.cameras module
+----------------------------
+
+.. automodule:: trimesh.scene.cameras
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.scene.lighting module
+-----------------------------
+
+.. automodule:: trimesh.scene.lighting
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.scene.scene module
+--------------------------
+
+.. automodule:: trimesh.scene.scene
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.scene.transforms module
+-------------------------------
+
+.. automodule:: trimesh.scene.transforms
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: trimesh.scene
+   :members:
+   :undoc-members:
+   :show-inheritance:

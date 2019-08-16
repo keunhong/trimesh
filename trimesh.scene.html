@@ -1,0 +1,1682 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trimesh.scene package &mdash; trimesh 3.2.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="trimesh.viewer package" href="trimesh.viewer.html" />
+    <link rel="prev" title="trimesh.resources package" href="trimesh.resources.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="trimesh.html">trimesh package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="trimesh.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="trimesh.exchange.html">trimesh.exchange package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.interfaces.html">trimesh.interfaces package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.path.html">trimesh.path package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.ray.html">trimesh.ray package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.resources.html">trimesh.resources package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">trimesh.scene package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.viewer.html">trimesh.viewer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.visual.html">trimesh.visual package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.voxel.html">trimesh.voxel package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.base">trimesh.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.boolean">trimesh.boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.bounds">trimesh.bounds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.caching">trimesh.caching module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.collision">trimesh.collision module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.comparison">trimesh.comparison module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.constants">trimesh.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.convex">trimesh.convex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.creation">trimesh.creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.curvature">trimesh.curvature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.decomposition">trimesh.decomposition module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.exceptions">trimesh.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.geometry">trimesh.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.graph">trimesh.graph module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.grouping">trimesh.grouping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.inertia">trimesh.inertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.integrate">trimesh.integrate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.intersections">trimesh.intersections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.interval">trimesh.interval module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.nsphere">trimesh.nsphere module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.parent">trimesh.parent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.permutate">trimesh.permutate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.points">trimesh.points module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.poses">trimesh.poses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.primitives">trimesh.primitives module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.proximity">trimesh.proximity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.registration">trimesh.registration module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.remesh">trimesh.remesh module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.rendering">trimesh.rendering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.repair">trimesh.repair module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.sample">trimesh.sample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.schemas">trimesh.schemas module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.smoothing">trimesh.smoothing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.transformations">trimesh.transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.triangles">trimesh.triangles module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.units">trimesh.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.util">trimesh.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.version">trimesh.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Module Reference</a> &raquo;</li>
+        
+          <li><a href="trimesh.html">trimesh package</a> &raquo;</li>
+        
+      <li>trimesh.scene package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/trimesh.scene.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trimesh-scene-package">
+<h1>trimesh.scene package<a class="headerlink" href="#trimesh-scene-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.scene.cameras">
+<span id="trimesh-scene-cameras-module"></span><h2>trimesh.scene.cameras module<a class="headerlink" href="#module-trimesh.scene.cameras" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trimesh.scene.cameras.Camera">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.scene.cameras.</code><code class="sig-name descname">Camera</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">resolution=None</em>, <em class="sig-param">focal=None</em>, <em class="sig-param">fov=None</em>, <em class="sig-param">z_near=0.001</em>, <em class="sig-param">z_far=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.cameras.Camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="trimesh.scene.cameras.Camera.K">
+<em class="property">property </em><code class="sig-name descname">K</code><a class="headerlink" href="#trimesh.scene.cameras.Camera.K" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the intrinsic matrix for the Camera object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>K</strong> – Intrinsic matrix for camera</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(3, 3) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.cameras.Camera.angles">
+<code class="sig-name descname">angles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.cameras.Camera.angles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ray spherical coordinates in radians.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>angles</strong> – Ray spherical coordinate angles in radians.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n, 2) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.cameras.Camera.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.cameras.Camera.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Safely get a copy of the current camera.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.cameras.Camera.focal">
+<em class="property">property </em><code class="sig-name descname">focal</code><a class="headerlink" href="#trimesh.scene.cameras.Camera.focal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the focal length in pixels for the camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>focal</strong> – Focal length in pixels</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(2,) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.cameras.Camera.fov">
+<em class="property">property </em><code class="sig-name descname">fov</code><a class="headerlink" href="#trimesh.scene.cameras.Camera.fov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the field of view in degrees.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>fov</strong> – XY field of view in degrees</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(2,) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.cameras.Camera.resolution">
+<em class="property">property </em><code class="sig-name descname">resolution</code><a class="headerlink" href="#trimesh.scene.cameras.Camera.resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the camera resolution in pixels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Camera resolution in pixels</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>resolution (2,) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.cameras.Camera.to_rays">
+<code class="sig-name descname">to_rays</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.cameras.Camera.to_rays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate ray direction vectors.</p>
+<p>Will return one ray per pixel, as set in self.resolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>vectors</strong> – Ray direction vectors in camera frame with z == -1</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n, 3) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.scene.cameras.camera_to_rays">
+<code class="sig-prename descclassname">trimesh.scene.cameras.</code><code class="sig-name descname">camera_to_rays</code><span class="sig-paren">(</span><em class="sig-param">camera</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.cameras.camera_to_rays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the trimesh.scene.Camera object to direction vectors.</p>
+<p>Will return one ray per pixel, as set in camera.resolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>camera</strong> (<em>trimesh.scene.Camera</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>vectors</strong> – Ray direction vectors in camera frame with z == -1</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 3) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.scene.cameras.look_at">
+<code class="sig-prename descclassname">trimesh.scene.cameras.</code><code class="sig-name descname">look_at</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">fov</em>, <em class="sig-param">rotation=None</em>, <em class="sig-param">distance=None</em>, <em class="sig-param">center=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.cameras.look_at" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate transform for a camera to keep a list
+of points in the camera’s field of view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Points in space</p></li>
+<li><p><strong>fov</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>float</em>) – Field of view, in DEGREES</p></li>
+<li><p><strong>rotation</strong> (<em>None</em><em>, or </em><em>(</em><em>4</em><em>, </em><em>4</em><em>) </em><em>float</em>) – Rotation matrix for initial rotation</p></li>
+<li><p><strong>center</strong> (<em>None</em><em>, or </em><em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Center of field of view.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>transform</strong> – Transformation matrix with points in view</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(4, 4) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.scene.cameras.ray_pixel_coords">
+<code class="sig-prename descclassname">trimesh.scene.cameras.</code><code class="sig-name descname">ray_pixel_coords</code><span class="sig-paren">(</span><em class="sig-param">camera</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.cameras.ray_pixel_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the x-y coordinates of rays in camera coordinates at z == -1.</p>
+<p>One coordinate pair will be given for each pixel as defined in
+camera.resolution. If reshaped, the returned array corresponds to pixels
+of the rendered image.</p>
+<p>i.e.
+<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+xy = ray_pixel_coords(camera).reshape(</p>
+<blockquote>
+<div><p>tuple(camera.coordinates) + (2,))</p>
+</div></blockquote>
+<p>top_left == xy[0, 0]
+bottom_right == xy[-1, -1]
+<a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>camera</strong> (<em>trimesh.scene.Camera</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>xy</strong> – x-y coordinates of intersection of each camera ray with the z == -1 frame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 2) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.scene.lighting">
+<span id="trimesh-scene-lighting-module"></span><h2>trimesh.scene.lighting module<a class="headerlink" href="#module-trimesh.scene.lighting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lighting-py">
+<h3>lighting.py<a class="headerlink" href="#lighting-py" title="Permalink to this headline">¶</a></h3>
+<p>Hold basic information about lights.</p>
+<p>Forked from the light model in <cite>pyrender</cite>:
+<a class="reference external" href="https://github.com/mmatl/pyrender">https://github.com/mmatl/pyrender</a></p>
+<dl class="class">
+<dt id="trimesh.scene.lighting.DirectionalLight">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.scene.lighting.</code><code class="sig-name descname">DirectionalLight</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">intensity=None</em>, <em class="sig-param">radius=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.lighting.DirectionalLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.scene.lighting.Light" title="trimesh.scene.lighting.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.scene.lighting.Light</span></code></a></p>
+<p>Directional lights are light sources that act as though they are
+infinitely far away and emit light in the direction of the local -z axis.
+This light type inherits the orientation of the node that it belongs to;
+position and scale are ignored except for their effect on the inherited
+node orientation. Because it is at an infinite distance, the light is
+not attenuated. Its intensity is defined in lumens per metre squared,
+or lux (lm/m2).</p>
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.DirectionalLight.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#trimesh.scene.lighting.DirectionalLight.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the light.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.DirectionalLight.color">
+<code class="sig-name descname">color</code><a class="headerlink" href="#trimesh.scene.lighting.DirectionalLight.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGBA value for the light’s color in linear space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>(4,) unit8</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.DirectionalLight.intensity">
+<code class="sig-name descname">intensity</code><a class="headerlink" href="#trimesh.scene.lighting.DirectionalLight.intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brightness of light. The units that this is defined in depend
+on the type of light.
+point and spot lights use luminous intensity in candela (lm/sr),
+while directional lights use illuminance in lux (lm/m2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.DirectionalLight.radius">
+<code class="sig-name descname">radius</code><a class="headerlink" href="#trimesh.scene.lighting.DirectionalLight.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cutoff distance at which light’s intensity may be considered to
+have reached zero. Supported only for point and spot lights, must be &gt; 0.
+If None, the radius is assumed to be infinite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.scene.lighting.Light">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.scene.lighting.</code><code class="sig-name descname">Light</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">intensity=None</em>, <em class="sig-param">radius=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.lighting.Light" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for all light objects.</p>
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.Light.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#trimesh.scene.lighting.Light.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the light.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.Light.color">
+<code class="sig-name descname">color</code><a class="headerlink" href="#trimesh.scene.lighting.Light.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGBA value for the light’s color in linear space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>(4,) uint8</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.Light.intensity">
+<code class="sig-name descname">intensity</code><a class="headerlink" href="#trimesh.scene.lighting.Light.intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brightness of light. The units that this is defined in depend
+on the type of light: point and spot lights use luminous intensity
+in candela (lm/sr) while directional lights use illuminance
+in lux (lm/m2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.Light.radius">
+<code class="sig-name descname">radius</code><a class="headerlink" href="#trimesh.scene.lighting.Light.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cutoff distance at which light’s intensity may be considered to
+have reached zero. Supported only for point and spot lights
+Must be &gt; 0.0
+If None, the radius is assumed to be infinite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">color</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">intensity</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">radius</code></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.scene.lighting.PointLight">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.scene.lighting.</code><code class="sig-name descname">PointLight</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">intensity=None</em>, <em class="sig-param">radius=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.lighting.PointLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.scene.lighting.Light" title="trimesh.scene.lighting.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.scene.lighting.Light</span></code></a></p>
+<p>Point lights emit light in all directions from their position in space;
+rotation and scale are ignored except for their effect on the inherited
+node position. The brightness of the light attenuates in a physically
+correct manner as distance increases from the light’s position (i.e.
+brightness goes like the inverse square of the distance). Point light
+intensity is defined in candela, which is lumens per square radian (lm/sr).</p>
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.PointLight.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#trimesh.scene.lighting.PointLight.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the light.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.PointLight.color">
+<code class="sig-name descname">color</code><a class="headerlink" href="#trimesh.scene.lighting.PointLight.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGBA value for the light’s color in linear space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>(4,) uint8</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.PointLight.intensity">
+<code class="sig-name descname">intensity</code><a class="headerlink" href="#trimesh.scene.lighting.PointLight.intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brightness of light. The units that this is defined in depend
+on the type of light.
+point and spot lights use luminous intensity in candela (lm/sr),
+while directional lights use illuminance in lux (lm/m2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.PointLight.radius">
+<code class="sig-name descname">radius</code><a class="headerlink" href="#trimesh.scene.lighting.PointLight.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cutoff distance at which light’s intensity may be considered to
+have reached zero. Supported only for point and spot lights, must be &gt; 0.
+If None, the radius is assumed to be infinite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.scene.lighting.SpotLight">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.scene.lighting.</code><code class="sig-name descname">SpotLight</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">intensity=None</em>, <em class="sig-param">radius=None</em>, <em class="sig-param">innerConeAngle=0.0</em>, <em class="sig-param">outerConeAngle=0.7853981633974483</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.lighting.SpotLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.scene.lighting.Light" title="trimesh.scene.lighting.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.scene.lighting.Light</span></code></a></p>
+<p>Spot lights emit light in a cone in the direction of the local -z axis.
+The angle and falloff of the cone is defined using two numbers, the
+<cite>innerConeAngle</cite> and <cite>outerConeAngle</cite>. As with point lights, the brightness
+also attenuates in a physically correct manner as distance increases from
+the light’s position (i.e. brightness goes like the inverse square of the
+distance). Spot light intensity refers to the brightness inside the
+<cite>innerConeAngle</cite> (and at the location of the light) and is defined in
+candela, which is lumens per square radian (lm/sr). A spot light’s position
+and orientation are inherited from its node transform. Inherited scale does
+not affect cone shape, and is ignored except for its effect on position
+and orientation.</p>
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.SpotLight.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#trimesh.scene.lighting.SpotLight.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the light.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.SpotLight.color">
+<code class="sig-name descname">color</code><a class="headerlink" href="#trimesh.scene.lighting.SpotLight.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGBA value for the light’s color in linear space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>(4,) uint8</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.SpotLight.intensity">
+<code class="sig-name descname">intensity</code><a class="headerlink" href="#trimesh.scene.lighting.SpotLight.intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brightness of light. The units that this is defined in depend
+on the type of light.
+point and spot lights use luminous intensity in candela (lm/sr),
+while directional lights use illuminance in lux (lm/m2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.SpotLight.radius">
+<code class="sig-name descname">radius</code><a class="headerlink" href="#trimesh.scene.lighting.SpotLight.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cutoff distance at which light’s intensity may be considered to
+have reached zero. Supported only for point and spot lights, must be &gt; 0.
+If None, the radius is assumed to be infinite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.SpotLight.innerConeAngle">
+<code class="sig-name descname">innerConeAngle</code><a class="headerlink" href="#trimesh.scene.lighting.SpotLight.innerConeAngle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angle, in radians, from centre of spotlight where falloff begins.
+Must be greater than or equal to <cite>0</cite> and less than <cite>outerConeAngle</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.scene.lighting.SpotLight.outerConeAngle">
+<code class="sig-name descname">outerConeAngle</code><a class="headerlink" href="#trimesh.scene.lighting.SpotLight.outerConeAngle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angle, in radians, from centre of spotlight where falloff ends.
+Must be greater than <cite>innerConeAngle</cite> and less than or equal to <cite>PI / 2.0</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">innerConeAngle</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">outerConeAngle</code></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.scene.lighting.autolight">
+<code class="sig-prename descclassname">trimesh.scene.lighting.</code><code class="sig-name descname">autolight</code><span class="sig-paren">(</span><em class="sig-param">scene</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.lighting.autolight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a list of lights for a scene that looks decent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scene</strong> (<a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene"><em>trimesh.Scene</em></a>) – Scene with geometry</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>lights</strong> (<em>[Light]</em>) – List of light objects</p></li>
+<li><p><strong>transforms</strong> (<em>(len(lights), 4, 4) float</em>) – Transformation matrices for light positions.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-trimesh.scene.scene">
+<span id="trimesh-scene-scene-module"></span><h2>trimesh.scene.scene module<a class="headerlink" href="#module-trimesh.scene.scene" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trimesh.scene.scene.Scene">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.scene.scene.</code><code class="sig-name descname">Scene</code><span class="sig-paren">(</span><em class="sig-param">geometry=None</em>, <em class="sig-param">base_frame='world'</em>, <em class="sig-param">metadata={}</em>, <em class="sig-param">graph=None</em>, <em class="sig-param">camera=None</em>, <em class="sig-param">lights=None</em>, <em class="sig-param">camera_transform=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="trimesh.html#trimesh.parent.Geometry" title="trimesh.parent.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.parent.Geometry</span></code></a></p>
+<p>A simple scene graph which can be rendered directly via
+pyglet/openGL or through other endpoints such as a
+raytracer. Meshes are added by name, which can then be
+moved by updating transform in the transform tree.</p>
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.add_geometry">
+<code class="sig-name descname">add_geometry</code><span class="sig-paren">(</span><em class="sig-param">geometry</em>, <em class="sig-param">node_name=None</em>, <em class="sig-param">geom_name=None</em>, <em class="sig-param">parent_node_name=None</em>, <em class="sig-param">transform=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.add_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a geometry to the scene.</p>
+<p>If the mesh has multiple transforms defined in its
+metadata, they will all be copied into the
+TransformForest of the current scene automatically.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>geometry</strong> (<a class="reference internal" href="trimesh.html#trimesh.base.Trimesh" title="trimesh.base.Trimesh"><em>Trimesh</em></a><em>, </em><a class="reference internal" href="trimesh.path.html#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D"><em>Path2D</em></a><em>, </em><em>Path3D PointCloud</em><em> or </em><em>list</em>) – Geometry to initially add to the scene</p></li>
+<li><p><strong>base_frame</strong> (<em>str</em><em> or </em><em>hashable</em>) – Name of base frame</p></li>
+<li><p><strong>metadata</strong> (<em>dict</em>) – Any metadata about the scene</p></li>
+<li><p><strong>graph</strong> (<a class="reference internal" href="#trimesh.scene.transforms.TransformForest" title="trimesh.scene.transforms.TransformForest"><em>TransformForest</em></a><em> or </em><em>None</em>) – A passed transform graph to use</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>node_name</strong> – Name of node in self.graph</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.apply_transform">
+<code class="sig-name descname">apply_transform</code><span class="sig-paren">(</span><em class="sig-param">transform</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.apply_transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.bounds">
+<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#trimesh.scene.scene.Scene.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the overall bounding box of the scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>bounds</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(2,3) float points for min, max corner</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.bounds_corners">
+<em class="property">property </em><code class="sig-name descname">bounds_corners</code><a class="headerlink" href="#trimesh.scene.scene.Scene.bounds_corners" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of points that represent the corners of the
+AABB of every geometry in the scene.</p>
+<p>This can be useful if you want to take the AABB in
+a specific frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>corners</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n, 3) float, points in space</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.camera">
+<em class="property">property </em><code class="sig-name descname">camera</code><a class="headerlink" href="#trimesh.scene.scene.Scene.camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the single camera for the scene. If not manually
+set one will abe automatically generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>camera</strong> – Camera object defined for the scene</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>trimesh.scene.Camera</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.camera_rays">
+<code class="sig-name descname">camera_rays</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.camera_rays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the trimesh.scene.Camera origin and ray direction vectors.</p>
+<p>Will return one ray per pixel, as set in camera.resolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>origins</strong> (<em>(3,) float</em>) – Ray origins in space</p></li>
+<li><p><strong>vectors</strong> (<em>(n, 3)</em>) – Ray direction unit vectors in world coordinates</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.camera_transform">
+<em class="property">property </em><code class="sig-name descname">camera_transform</code><a class="headerlink" href="#trimesh.scene.scene.Scene.camera_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get camera transform in the base frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>camera_transform</strong> – Camera transform in the base frame</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(4, 4), float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.centroid">
+<em class="property">property </em><code class="sig-name descname">centroid</code><a class="headerlink" href="#trimesh.scene.scene.Scene.centroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the center of the bounding box for the scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>centroid</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><ol class="arabic simple" start="3">
+<li><p>float point for center of bounding box</p></li>
+</ol>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.convert_units">
+<code class="sig-name descname">convert_units</code><span class="sig-paren">(</span><em class="sig-param">desired</em>, <em class="sig-param">guess=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.convert_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>If geometry has units defined convert them to new units.</p>
+<p>Returns a new scene with geometries and transforms scaled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>desired</strong> (<em>str</em>) – Desired final unit system: ‘inches’, ‘mm’, etc.</p></li>
+<li><p><strong>guess</strong> (<em>bool</em>) – Is the converter allowed to guess scale when models
+don’t have it specified in their metadata.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scaled</strong> – Copy of scene with scaling applied and units set
+for every model</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene">trimesh.Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.convex_hull">
+<em class="property">property </em><code class="sig-name descname">convex_hull</code><a class="headerlink" href="#trimesh.scene.scene.Scene.convex_hull" title="Permalink to this definition">¶</a></dt>
+<dd><p>The convex hull of the whole scene</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hull</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Trimesh object, convex hull of all meshes in scene</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a deep copy of the current scene</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>copied</strong> – Copy of the current scene</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene">trimesh.Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append all meshes in scene to a list of meshes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>dumped</strong> – location the scene.graph</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) list, of Trimesh objects transformed to their</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.duplicate_nodes">
+<em class="property">property </em><code class="sig-name descname">duplicate_nodes</code><a class="headerlink" href="#trimesh.scene.scene.Scene.duplicate_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a sequence of node keys of identical meshes.</p>
+<p>Will combine meshes duplicated by copying in space with different keys in
+self.geometry, as well as meshes repeated by self.nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>duplicates</strong> – identical geometry</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><ol class="loweralpha simple" start="13">
+<li><p>sequence of keys to self.nodes that represent</p></li>
+</ol>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.explode">
+<code class="sig-name descname">explode</code><span class="sig-paren">(</span><em class="sig-param">vector=None</em>, <em class="sig-param">origin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.explode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Explode a scene around a point and vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em><em> or </em><em>float</em>) – Explode radially around a direction vector or spherically</p></li>
+<li><p><strong>origin</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Point to explode around</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.export">
+<code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param">file_obj=None</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a snapshot of the current scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_type</strong> (<em>what encoding to use for meshes</em>) – ie: dict, dict64, stl</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong> – Only returned if file_obj is None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.extents">
+<em class="property">property </em><code class="sig-name descname">extents</code><a class="headerlink" href="#trimesh.scene.scene.Scene.extents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the axis aligned box size of the current scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>extents</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(3,) float, bounding box sides length</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.geometry_identifiers">
+<em class="property">property </em><code class="sig-name descname">geometry_identifiers</code><a class="headerlink" href="#trimesh.scene.scene.Scene.geometry_identifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look up geometries by identifier MD5</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>identifiers</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict, identifier md5: key in self.geometry</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#trimesh.scene.scene.Scene.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does the scene have anything in it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>is_empty</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool, True if nothing is in the scene</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.is_valid">
+<em class="property">property </em><code class="sig-name descname">is_valid</code><a class="headerlink" href="#trimesh.scene.scene.Scene.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is every geometry connected to the root node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>is_valid</strong> – Does every geometry have a transform</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.lights">
+<em class="property">property </em><code class="sig-name descname">lights</code><a class="headerlink" href="#trimesh.scene.scene.Scene.lights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of the lights in the scene. If nothing is
+set it will generate some automatically.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>lights</strong> – Lights in the scene.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[<a class="reference internal" href="#trimesh.scene.lighting.Light" title="trimesh.scene.lighting.Light">trimesh.scene.lighting.Light</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.md5">
+<code class="sig-name descname">md5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.md5" title="Permalink to this definition">¶</a></dt>
+<dd><p>MD5 of scene which will change when meshes or
+transforms are changed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hashed</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str, MD5 hash of scene</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.rezero">
+<code class="sig-name descname">rezero</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.rezero" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the current scene so that the AABB of the whole
+scene is centered at the origin.</p>
+<p>Does this by changing the base frame to a new, offset
+base frame.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.save_image">
+<code class="sig-name descname">save_image</code><span class="sig-paren">(</span><em class="sig-param">resolution=(1024</em>, <em class="sig-param">768)</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.save_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a PNG image of a scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resolution</strong> (<em>(</em><em>2</em><em>,</em><em>) </em><em>int</em><em>, </em><em>resolution to render image</em>) – </p></li>
+<li><p><strong>**kwargs</strong> (<em>passed to SceneViewer constructor</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>png</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes, render of scene in PNG form</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#trimesh.scene.scene.Scene.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>The approximate scale of the mesh</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>scale</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float, the mean of the bounding box edge lengths</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.scaled">
+<code class="sig-name descname">scaled</code><span class="sig-paren">(</span><em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.scaled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of the current scene, with meshes and scene
+transforms scaled to the requested factor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scale</strong> (<em>float</em>) – Factor to scale meshes and transforms</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scaled</strong> – A copy of the current scene but scaled</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene">trimesh.Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.set_camera">
+<code class="sig-name descname">set_camera</code><span class="sig-paren">(</span><em class="sig-param">angles=None</em>, <em class="sig-param">distance=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">resolution=None</em>, <em class="sig-param">fov=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.set_camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a camera object for self.camera, and add
+a transform to self.graph for it.</p>
+<p>If arguments are not passed sane defaults will be figured
+out which show the mesh roughly centered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angles</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Initial euler angles in radians</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – Distance from centroid</p></li>
+<li><p><strong>center</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Point camera should be center on</p></li>
+<li><p><strong>camera</strong> (<em>Camera object</em>) – Object that stores camera parameters</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param">viewer=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.Scene.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the current scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>viewer</strong> (<em>str</em>) – What kind of viewer to open, including
+‘gl’ to open a pyglet window, ‘notebook’
+for a jupyter notebook or None</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em>) – Includes <cite>smooth</cite>, which will turn
+on or off automatic smooth shading</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.triangles">
+<em class="property">property </em><code class="sig-name descname">triangles</code><a class="headerlink" href="#trimesh.scene.scene.Scene.triangles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a correctly transformed polygon soup of the
+current scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>triangles</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,3,3) float, triangles in space</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.triangles_node">
+<em class="property">property </em><code class="sig-name descname">triangles_node</code><a class="headerlink" href="#trimesh.scene.scene.Scene.triangles_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Which node of self.graph does each triangle come from.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>triangles_index</strong> – Node name for each triangle</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(len(self.triangles),)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.scene.Scene.units">
+<em class="property">property </em><code class="sig-name descname">units</code><a class="headerlink" href="#trimesh.scene.scene.Scene.units" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the units for every model in the scene, and
+raise a ValueError if there are mixed units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>units</strong> – Units for every model in the scene</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.scene.scene.append_scenes">
+<code class="sig-prename descclassname">trimesh.scene.scene.</code><code class="sig-name descname">append_scenes</code><span class="sig-paren">(</span><em class="sig-param">iterable, common=['world']</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.append_scenes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concatenate multiple scene objects into one scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterable</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><a class="reference internal" href="trimesh.html#trimesh.base.Trimesh" title="trimesh.base.Trimesh"><em>Trimesh</em></a><em> or </em><a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene"><em>Scene</em></a>) – Geometries that should be appended</p></li>
+<li><p><strong>common</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>str</em>) – Nodes that shouldn’t be remapped</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – Scene containing all geometry</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene">trimesh.Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.scene.scene.split_scene">
+<code class="sig-prename descclassname">trimesh.scene.scene.</code><code class="sig-name descname">split_scene</code><span class="sig-paren">(</span><em class="sig-param">geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.scene.split_scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a geometry, list of geometries, or a Scene
+return them as a single Scene object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>geometry</strong> (<em>splittable</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scene</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene">trimesh.Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.scene.transforms">
+<span id="trimesh-scene-transforms-module"></span><h2>trimesh.scene.transforms module<a class="headerlink" href="#module-trimesh.scene.transforms" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trimesh.scene.transforms.EnforcedForest">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.scene.transforms.</code><code class="sig-name descname">EnforcedForest</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.EnforcedForest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">networkx.classes.digraph.DiGraph</span></code></p>
+<p>A subclass of networkx.DiGraph that will raise an error if an
+edge is added which would make the DiGraph not a forest or tree.</p>
+<dl class="method">
+<dt id="trimesh.scene.transforms.EnforcedForest.add_edge">
+<code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param">u</em>, <em class="sig-param">v</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.EnforcedForest.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an edge between u and v.</p>
+<p>The nodes u and v will be automatically added if they are
+not already in the graph.</p>
+<p>Edge attributes can be specified with keywords or by providing
+a dictionary with key/value pairs.  See examples below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v</strong> (<em>u</em><em>,</em>) – Nodes can be, for example, strings or numbers.
+Nodes must be hashable (and not None) Python objects.</p></li>
+<li><p><strong>attr_dict</strong> (<em>dictionary</em><em>, </em><em>optional</em><em> (</em><em>default= no attributes</em><em>)</em>) – Dictionary of edge attributes.  Key/value pairs will
+update existing data associated with the edge.</p></li>
+<li><p><strong>attr</strong> (<em>keyword arguments</em><em>, </em><em>optional</em>) – Edge data (or labels or objects) can be assigned using
+keyword arguments.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#trimesh.scene.transforms.EnforcedForest.add_edges_from" title="trimesh.scene.transforms.EnforcedForest.add_edges_from"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_edges_from()</span></code></a></dt><dd><p>add a collection of edges</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Adding an edge that already exists updates the edge data.</p>
+<p>Many NetworkX algorithms designed for weighted graphs use as
+the edge weight a numerical value assigned to a keyword
+which by default is ‘weight’.</p>
+<p class="rubric">Examples</p>
+<p>The following all add the edge e=(1,2) to graph G:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>   <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>           <span class="c1"># explicit two-node form</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="p">)</span>             <span class="c1"># single edge as tuple of two nodes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span> <span class="p">)</span> <span class="c1"># add edges from iterable container</span>
+</pre></div>
+</div>
+<p>Associate data to edges using keywords:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">342.7</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.EnforcedForest.add_edges_from">
+<code class="sig-name descname">add_edges_from</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.EnforcedForest.add_edges_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add all the edges in ebunch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ebunch</strong> (<em>container of edges</em>) – Each edge given in the container will be added to the
+graph. The edges must be given as as 2-tuples (u,v) or
+3-tuples (u,v,d) where d is a dictionary containing edge
+data.</p></li>
+<li><p><strong>attr_dict</strong> (<em>dictionary</em><em>, </em><em>optional</em><em> (</em><em>default= no attributes</em><em>)</em>) – Dictionary of edge attributes.  Key/value pairs will
+update existing data associated with each edge.</p></li>
+<li><p><strong>attr</strong> (<em>keyword arguments</em><em>, </em><em>optional</em>) – Edge data (or labels or objects) can be assigned using
+keyword arguments.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#trimesh.scene.transforms.EnforcedForest.add_edge" title="trimesh.scene.transforms.EnforcedForest.add_edge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_edge()</span></code></a></dt><dd><p>add a single edge</p>
+</dd>
+<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_weighted_edges_from()</span></code></dt><dd><p>convenient way to add weighted edges</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Adding the same edge twice has no effect but any edge data
+will be updated when each duplicate edge is added.</p>
+<p>Edge attributes specified in edges take precedence
+over attributes specified generally.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>   <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)])</span> <span class="c1"># using a list of edge tuples</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="c1"># Add the path graph 0-1-2-3</span>
+</pre></div>
+</div>
+<p>Associate data to edges</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)],</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;WN2898&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.EnforcedForest.add_path">
+<code class="sig-name descname">add_path</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.EnforcedForest.add_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodes</strong> (<em>iterable container</em>) – A container of nodes.  A path will be constructed from
+the nodes (in order) and added to the graph.</p></li>
+<li><p><strong>attr</strong> (<em>keyword arguments</em><em>, </em><em>optional</em><em> (</em><em>default= no attributes</em><em>)</em>) – Attributes to add to every edge in path.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_star()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_cycle()</span></code></p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>   <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span><span class="n">weight</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.EnforcedForest.disconnect_path">
+<code class="sig-name descname">disconnect_path</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.EnforcedForest.disconnect_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.EnforcedForest.get_edge_data_direction">
+<code class="sig-name descname">get_edge_data_direction</code><span class="sig-paren">(</span><em class="sig-param">u</em>, <em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.EnforcedForest.get_edge_data_direction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.EnforcedForest.remove_edge">
+<code class="sig-name descname">remove_edge</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.EnforcedForest.remove_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the edge between u and v.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v</strong> (<em>u</em><em>,</em>) – Remove the edge between nodes u and v.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NetworkXError</strong> – If there is not an edge between u and v.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#trimesh.scene.transforms.EnforcedForest.remove_edges_from" title="trimesh.scene.transforms.EnforcedForest.remove_edges_from"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_edges_from()</span></code></a></dt><dd><p>remove a collection of edges</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>   <span class="c1"># or DiGraph, etc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="p">)</span> <span class="c1"># unpacks e from an edge tuple</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,{</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span><span class="mi">7</span><span class="p">})</span> <span class="c1"># an edge with attribute data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># select first part of edge tuple</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.EnforcedForest.remove_edges_from">
+<code class="sig-name descname">remove_edges_from</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.EnforcedForest.remove_edges_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all edges specified in ebunch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ebunch</strong> (<em>list</em><em> or </em><em>container of edge tuples</em>) – <p>Each edge given in the list or container will be removed
+from the graph. The edges can be:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>2-tuples (u,v) edge between u and v.</p></li>
+<li><p>3-tuples (u,v,k) where k is ignored.</p></li>
+</ul>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#trimesh.scene.transforms.EnforcedForest.remove_edge" title="trimesh.scene.transforms.EnforcedForest.remove_edge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_edge()</span></code></a></dt><dd><p>remove a single edge</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Will fail silently if an edge in ebunch is not in the graph.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>   <span class="c1"># or DiGraph, MultiGraph, MultiDiGraph, etc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ebunch</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">remove_edges_from</span><span class="p">(</span><span class="n">ebunch</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.EnforcedForest.shortest_path_undirected">
+<code class="sig-name descname">shortest_path_undirected</code><span class="sig-paren">(</span><em class="sig-param">u</em>, <em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.EnforcedForest.shortest_path_undirected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.scene.transforms.TransformForest">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.scene.transforms.</code><code class="sig-name descname">TransformForest</code><span class="sig-paren">(</span><em class="sig-param">base_frame='world'</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of the current TransformForest</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>copied</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#trimesh.scene.transforms.TransformForest" title="trimesh.scene.transforms.TransformForest">TransformForest</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.from_edgelist">
+<code class="sig-name descname">from_edgelist</code><span class="sig-paren">(</span><em class="sig-param">edges</em>, <em class="sig-param">strict=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.from_edgelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load transform data from an edge list into the current
+scene graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>edgelist</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>tuples</em>) – (node_a, node_b, {key: value})</p></li>
+<li><p><strong>strict</strong> (<em>bool</em>) – If true, raise a ValueError when a
+malformed edge is passed in a tuple.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">frame_to</em>, <em class="sig-param">frame_from=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the transform from one frame to another, assuming they are connected
+in the transform tree.</p>
+<p>If the frames are not connected a NetworkXNoPath error will be raised.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame_to</strong> (<em>hashable</em>) – Node name, usually a string (eg ‘mesh_0’)</p></li>
+<li><p><strong>frame_from</strong> (<em>hashable</em>) – Node name, usually a string (eg ‘world’).
+If None it will be set to self.base_frame</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>transform</strong> – Homogeneous transformation matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(4, 4) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.load">
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">edgelist</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load transform data from an edge list into the current
+scene graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>edgelist</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>tuples</em>) – (node_a, node_b, {key: value})</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.md5">
+<code class="sig-name descname">md5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.md5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.nodes">
+<em class="property">property </em><code class="sig-name descname">nodes</code><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of every node in the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>nodes</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) array, of node names</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.nodes_geometry">
+<em class="property">property </em><code class="sig-name descname">nodes_geometry</code><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.nodes_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>The nodes in the scene graph with geometry attached.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>nodes_geometry</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(m,) array, of node names</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the graph layout of the scene.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.to_edgelist">
+<code class="sig-name descname">to_edgelist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.to_edgelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the current transforms as a list of edge tuples, with
+each tuple having the format:
+(node_a, node_b, {metadata})</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>edgelist</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(n,) list of tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.to_flattened">
+<code class="sig-name descname">to_flattened</code><span class="sig-paren">(</span><em class="sig-param">base_frame=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.to_flattened" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the current transform graph as a flattened</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.to_gltf">
+<code class="sig-name descname">to_gltf</code><span class="sig-paren">(</span><em class="sig-param">scene</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.to_gltf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a transforms as the ‘nodes’ section of a GLTF dict.
+Flattens tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>gltf</strong> – with ‘nodes’ referencing a list of dicts</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.to_svg">
+<code class="sig-name descname">to_svg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.to_svg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.scene.transforms.TransformForest.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">frame_to</em>, <em class="sig-param">frame_from=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.TransformForest.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a transform in the tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame_from</strong> (<em>hashable object</em>) – Usually a string (eg ‘world’).
+If left as None it will be set to self.base_frame</p></li>
+<li><p><strong>frame_to</strong> (<em>hashable object</em>) – Usually a string (eg ‘mesh_0’)</p></li>
+<li><p><strong>matrix</strong> (<em>(</em><em>4</em><em>,</em><em>4</em><em>) </em><em>float</em>) – Homogeneous transformation matrix</p></li>
+<li><p><strong>quaternion</strong> (<em>(</em><em>4</em><em>,</em><em>) </em><em>float</em>) – Quaternion ordered [w, x, y, z]</p></li>
+<li><p><strong>axis</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Axis of rotation</p></li>
+<li><p><strong>angle</strong> (<em>float</em>) – Angle of rotation, in radians</p></li>
+<li><p><strong>translation</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Distance to translate</p></li>
+<li><p><strong>geometry</strong> (<em>hashable</em>) – Geometry object name, e.g. ‘mesh_0’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.scene.transforms.kwargs_to_matrix">
+<code class="sig-prename descclassname">trimesh.scene.transforms.</code><code class="sig-name descname">kwargs_to_matrix</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.scene.transforms.kwargs_to_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn a set of keyword arguments into a transformation matrix.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.scene">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trimesh.scene" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trimesh.viewer.html" class="btn btn-neutral float-right" title="trimesh.viewer package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trimesh.resources.html" class="btn btn-neutral float-left" title="trimesh.resources package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

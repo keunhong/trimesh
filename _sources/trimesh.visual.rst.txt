@@ -1,0 +1,54 @@
+trimesh.visual package
+======================
+
+Submodules
+----------
+
+trimesh.visual.color module
+---------------------------
+
+.. automodule:: trimesh.visual.color
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.visual.material module
+------------------------------
+
+.. automodule:: trimesh.visual.material
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.visual.objects module
+-----------------------------
+
+.. automodule:: trimesh.visual.objects
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.visual.resolvers module
+-------------------------------
+
+.. automodule:: trimesh.visual.resolvers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.visual.texture module
+-----------------------------
+
+.. automodule:: trimesh.visual.texture
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: trimesh.visual
+   :members:
+   :undoc-members:
+   :show-inheritance:

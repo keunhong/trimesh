@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Installation &mdash; trimesh 3.2.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Installation" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Module Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Basic Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <blockquote>
+<div><div class="toctree-wrapper compound">
+</div>
+</div></blockquote>
+<p><a class="reference external" href="http://trimsh.org"><img alt="trimesh" src="https://trimsh.org/images/logotype-a.svg" /></a></p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://travis-ci.org/mikedh/trimesh"><img alt="Build Status" src="https://travis-ci.org/mikedh/trimesh.svg?branch=master" /></a> <a class="reference external" href="https://ci.appveyor.com/project/mikedh/trimesh/branch/master"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/j8h3luwvst1tkghl/branch/master?svg=true" /></a> <a class="reference external" href="https://coveralls.io/github/mikedh/trimesh"><img alt="Coverage Status" src="https://coveralls.io/repos/github/mikedh/trimesh/badge.svg" /></a> <a class="reference external" href="https://badge.fury.io/py/trimesh"><img alt="PyPI version" src="https://badge.fury.io/py/trimesh.svg" /></a>
+<a class="reference external" href="https://circleci.com/gh/mikedh/trimesh/tree/master"><img alt="CircleCI" src="https://circleci.com/gh/mikedh/trimesh/tree/master.svg?style=svg" /></a> <a class="reference external" href="https://gitter.im/trimsh/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/trimsh/Lobby" src="https://badges.gitter.im/trimsh/Lobby.svg" /></a></p>
+<p>Trimesh is a pure Python (2.7-3.4+) library for loading and using
+<a class="reference external" href="https://en.wikipedia.org/wiki/Triangle_mesh">triangular meshes</a> with
+an emphasis on watertight surfaces. The goal of the library is to
+provide a full featured and well tested Trimesh object which allows for
+easy manipulation and analysis, in the style of the Polygon object in
+the <a class="reference external" href="https://github.com/Toblerity/Shapely">Shapely library</a>.</p>
+<p>The API is mostly stable, but this should not be relied on and is not
+guaranteed: install a specific version if you plan on deploying
+something using trimesh.</p>
+<p>Pull requests are appreciated and responded to promptly! If you’d like
+to contribute, here is an <a class="reference external" href="https://github.com/mikedh/trimesh/issues/199">up to date list of potential
+enhancements</a> although
+things not on that list are also welcome. Here are some <a class="reference external" href="https://github.com/mikedh/trimesh/blob/master/trimesh/exchange/README.md">tips for
+writing mesh code in
+Python.</a></p>
+<div class="section" id="basic-installation">
+<h1>Basic Installation<a class="headerlink" href="#basic-installation" title="Permalink to this headline">¶</a></h1>
+<p>Keeping <code class="docutils literal notranslate"><span class="pre">trimesh</span></code> easy to install is a core goal, thus the <em>only</em> hard
+dependency is <a class="reference external" href="http://www.numpy.org/">numpy</a>. Installing other
+packages adds functionality but is not required. For the easiest install
+with just numpy, <code class="docutils literal notranslate"><span class="pre">pip</span></code> can generally install <code class="docutils literal notranslate"><span class="pre">trimesh</span></code> cleanly on
+Windows, Linux, and OSX:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install trimesh
+</pre></div>
+</div>
+<p>For more functionality, like convex hulls (<code class="docutils literal notranslate"><span class="pre">scipy</span></code>), graph operations
+(<code class="docutils literal notranslate"><span class="pre">networkx</span></code>), faster ray queries (<code class="docutils literal notranslate"><span class="pre">pyembree</span></code>), vector path handling
+(<code class="docutils literal notranslate"><span class="pre">shapely</span></code> and <code class="docutils literal notranslate"><span class="pre">rtree</span></code>), preview windows (<code class="docutils literal notranslate"><span class="pre">pyglet</span></code>), faster cache
+checks (<code class="docutils literal notranslate"><span class="pre">xxhash</span></code>) and more, the easiest way to get a full <code class="docutils literal notranslate"><span class="pre">trimesh</span></code>
+install is a <a class="reference external" href="https://conda.io/miniconda.html">conda environment</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this will install all soft dependencies available on your current platform</span>
+conda install -c conda-forge trimesh
+</pre></div>
+</div>
+<p>To install <code class="docutils literal notranslate"><span class="pre">trimesh</span></code> with all the soft dependencies which install
+cleanly on Windows, Linux, and OSX using <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install trimesh<span class="o">[</span>easy<span class="o">]</span>
+</pre></div>
+</div>
+<p>Further information is available in the <a class="reference external" href="https://trimsh.org/install.html">advanced installation
+documentation</a>.</p>
+</div>
+<div class="section" id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<p>Here is an example of loading a mesh from file and colorizing its faces.
+Here is a nicely formatted <a class="reference external" href="https://trimsh.org/examples/quick_start.html">ipython notebook
+version</a> of this
+example. Also check out the <a class="reference external" href="https://trimsh.org/examples/section.html">cross section
+example</a> or possibly the
+<a class="reference external" href="https://github.com/mikedh/trimesh/blob/master/examples/integrate.ipynb">integration of a function over a mesh
+example</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">trimesh</span>
+
+<span class="c1"># attach to logger so trimesh messages will be printed to console</span>
+<span class="n">trimesh</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">attach_to_log</span><span class="p">()</span>
+
+<span class="c1"># mesh objects can be created from existing faces and vertex data</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">trimesh</span><span class="o">.</span><span class="n">Trimesh</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span>
+                       <span class="n">faces</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1"># by default, Trimesh will do a light processing, which will</span>
+<span class="c1"># remove any NaN values and merge vertices that share position</span>
+<span class="c1"># if you want to not do this on load, you can pass `process=False`</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">trimesh</span><span class="o">.</span><span class="n">Trimesh</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span>
+                       <span class="n">faces</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span>
+                       <span class="n">process</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="c1"># mesh objects can be loaded from a file name or from a buffer</span>
+<span class="c1"># you can pass any of the kwargs for the `Trimesh` constructor</span>
+<span class="c1"># to `trimesh.load`, including `process=False` if you would like</span>
+<span class="c1"># to preserve the original loaded data without merging vertices</span>
+<span class="c1"># STL files will be a soup of disconnected triangles without</span>
+<span class="c1"># merging vertices however and will not register as watertight</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">trimesh</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../models/featuretype.STL&#39;</span><span class="p">)</span>
+
+<span class="c1"># is the current mesh watertight?</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">is_watertight</span>
+
+<span class="c1"># what&#39;s the euler number for the mesh?</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">euler_number</span>
+
+<span class="c1"># the convex hull is another Trimesh object that is available as a property</span>
+<span class="c1"># lets compare the volume of our mesh with the volume of its convex hull</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">volume</span> <span class="o">/</span> <span class="n">mesh</span><span class="o">.</span><span class="n">convex_hull</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span>
+
+<span class="c1"># since the mesh is watertight, it means there is a</span>
+<span class="c1"># volumetric center of mass which we can set as the origin for our mesh</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">vertices</span> <span class="o">-=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">center_mass</span>
+
+<span class="c1"># what&#39;s the moment of inertia for the mesh?</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">moment_inertia</span>
+
+<span class="c1"># if there are multiple bodies in the mesh we can split the mesh by</span>
+<span class="c1"># connected components of face adjacency</span>
+<span class="c1"># since this example mesh is a single watertight body we get a list of one mesh</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="c1"># facets are groups of coplanar adjacent faces</span>
+<span class="c1"># set each facet to a random color</span>
+<span class="c1"># colors are 8 bit RGBA by default (n, 4) np.uint8</span>
+<span class="k">for</span> <span class="n">facet</span> <span class="ow">in</span> <span class="n">mesh</span><span class="o">.</span><span class="n">facets</span><span class="p">:</span>
+    <span class="n">mesh</span><span class="o">.</span><span class="n">visual</span><span class="o">.</span><span class="n">face_colors</span><span class="p">[</span><span class="n">facet</span><span class="p">]</span> <span class="o">=</span> <span class="n">trimesh</span><span class="o">.</span><span class="n">visual</span><span class="o">.</span><span class="n">random_color</span><span class="p">()</span>
+
+<span class="c1"># preview mesh in an opengl window if you installed pyglet with pip</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># transform method can be passed a (4, 4) matrix and will cleanly apply the transform</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">apply_transform</span><span class="p">(</span><span class="n">trimesh</span><span class="o">.</span><span class="n">transformations</span><span class="o">.</span><span class="n">random_rotation_matrix</span><span class="p">())</span>
+
+<span class="c1"># axis aligned bounding box is available</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">bounding_box</span><span class="o">.</span><span class="n">extents</span>
+
+<span class="c1"># a minimum volume oriented bounding box also available</span>
+<span class="c1"># primitives are subclasses of Trimesh objects which automatically generate</span>
+<span class="c1"># faces and vertices from data stored in the &#39;primitive&#39; attribute</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">bounding_box_oriented</span><span class="o">.</span><span class="n">primitive</span><span class="o">.</span><span class="n">extents</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">bounding_box_oriented</span><span class="o">.</span><span class="n">primitive</span><span class="o">.</span><span class="n">transform</span>
+
+<span class="c1"># show the mesh appended with its oriented bounding box</span>
+<span class="c1"># the bounding box is a trimesh.primitives.Box object, which subclasses</span>
+<span class="c1"># Trimesh and lazily evaluates to fill in vertices and faces when requested</span>
+<span class="c1"># (press w in viewer to see triangles)</span>
+<span class="p">(</span><span class="n">mesh</span> <span class="o">+</span> <span class="n">mesh</span><span class="o">.</span><span class="n">bounding_box_oriented</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># bounding spheres and bounding cylinders of meshes are also</span>
+<span class="c1"># available, and will be the minimum volume version of each</span>
+<span class="c1"># except in certain degenerate cases, where they will be no worse</span>
+<span class="c1"># than a least squares fit version of the primitive.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">bounding_box_oriented</span><span class="o">.</span><span class="n">volume</span><span class="p">,</span>
+      <span class="n">mesh</span><span class="o">.</span><span class="n">bounding_cylinder</span><span class="o">.</span><span class="n">volume</span><span class="p">,</span>
+      <span class="n">mesh</span><span class="o">.</span><span class="n">bounding_sphere</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="features">
+<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Import meshes from binary/ASCII STL, Wavefront OBJ, ASCII OFF,
+binary/ASCII PLY, GLTF/GLB 2.0, 3MF, XAML, 3DXML, etc.</p></li>
+<li><p>Import and export 2D or 3D vector paths from/to DXF or SVG files</p></li>
+<li><p>Import geometry files using the GMSH SDK if installed (BREP, STEP,
+IGES, INP, BDF, etc)</p></li>
+<li><p>Export meshes as binary STL, binary PLY, ASCII OFF, OBJ, GLTF/GLB
+2.0, COLLADA, etc.</p></li>
+<li><p>Export meshes using the GMSH SDK if installed (Abaqus INP, Nastran
+BDF, etc)</p></li>
+<li><p>Preview meshes using pyglet or in- line in jupyter notebooks using
+three.js</p></li>
+<li><p>Automatic hashing of numpy arrays for change tracking using MD5, zlib
+CRC, or xxhash</p></li>
+<li><p>Internal caching of computed values validated from hashes</p></li>
+<li><p>Fast loading of binary files through importers written by defining
+custom numpy dtypes</p></li>
+<li><p>Calculate face adjacencies, face angles, vertex defects, etc.</p></li>
+<li><p>Calculate cross sections, i.e. the slicing operation used in 3D
+printing</p></li>
+<li><p>Slice meshes with one or multiple arbitrary planes and return the
+resulting surface</p></li>
+<li><p>Split mesh based on face connectivity using networkx, graph-tool, or
+scipy.sparse</p></li>
+<li><p>Calculate mass properties, including volume, center of mass, moment
+of inertia, principal components of inertia vectors and components</p></li>
+<li><p>Repair simple problems with triangle winding, normals, and quad/tri
+holes</p></li>
+<li><p>Convex hulls of meshes</p></li>
+<li><p>Compute rotation/translation/tessellation invariant identifier and
+find duplicate meshes</p></li>
+<li><p>Determine if a mesh is watertight, convex, etc.</p></li>
+<li><p>Uniformly sample the surface of a mesh</p></li>
+<li><p>Ray-mesh queries including location, triangle index, etc.</p></li>
+<li><p>Boolean operations on meshes (intersection, union, difference) using
+OpenSCAD or Blender as a back end. Note that mesh booleans in general
+are usually slow and unreliable</p></li>
+<li><p>Voxelize watertight meshes</p></li>
+<li><p>Volume mesh generation (TETgen) using Gmsh SDK</p></li>
+<li><p>Smooth watertight meshes using laplacian smoothing algorithms
+(Classic, Taubin, Humphrey)</p></li>
+<li><p>Subdivide faces of a mesh</p></li>
+<li><p>Minimum volume oriented bounding boxes for meshes</p></li>
+<li><p>Minimum volume bounding spheres</p></li>
+<li><p>Symbolic integration of functions over triangles</p></li>
+<li><p>Calculate nearest point on mesh surface and signed distance</p></li>
+<li><p>Determine if a point lies inside or outside of a well constructed
+mesh using signed distance</p></li>
+<li><p>Primitive objects (Box, Cylinder, Sphere, Extrusion) which are
+subclassed Trimesh objects and have all the same features (inertia,
+viewers, etc)</p></li>
+<li><p>Simple scene graph and transform tree which can be rendered (pyglet
+window, three.js in a jupyter notebook,
+<a class="reference external" href="https://github.com/mmatl/pyrender">pyrender</a>) or exported.</p></li>
+<li><p>Many utility functions, like transforming points, unitizing vectors,
+aligning vectors, tracking numpy arrays for changes, grouping rows,
+etc.</p></li>
+</ul>
+</div>
+<div class="section" id="viewer">
+<h1>Viewer<a class="headerlink" href="#viewer" title="Permalink to this headline">¶</a></h1>
+<p>Trimesh includes an optional <code class="docutils literal notranslate"><span class="pre">pyglet</span></code> based viewer for debugging and
+inspecting. In the mesh view window, opened with <code class="docutils literal notranslate"><span class="pre">mesh.show()</span></code>, the
+following commands can be used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mouse</span> <span class="pre">click</span> <span class="pre">+</span> <span class="pre">drag</span></code> rotates the view</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctl</span> <span class="pre">+</span> <span class="pre">mouse</span> <span class="pre">click</span> <span class="pre">+</span> <span class="pre">drag</span></code> pans the view</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouse</span> <span class="pre">wheel</span></code> zooms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">z</span></code> returns to the base view</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code> toggles wireframe mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> toggles backface culling</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> toggles between fullscreen and windowed mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> maximizes the window</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code> closes the window</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> toggles an XYZ-RGB axis marker between three states: off, at
+world frame, or at every frame</p></li>
+</ul>
+<p>If called from inside a <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> notebook, <code class="docutils literal notranslate"><span class="pre">mesh.show()</span></code> displays
+an in-line preview using <code class="docutils literal notranslate"><span class="pre">three.js</span></code> to display the mesh or scene. For
+more complete rendering (PBR, better lighting, shaders, better
+off-screen support, etc)
+<a class="reference external" href="https://github.com/mmatl/pyrender">pyrender</a> is designed to
+interoperate with <code class="docutils literal notranslate"><span class="pre">trimesh</span></code> objects.</p>
+</div>
+<div class="section" id="projects-using-trimesh">
+<h1>Projects Using Trimesh<a class="headerlink" href="#projects-using-trimesh" title="Permalink to this headline">¶</a></h1>
+<p>You can check out the <a class="reference external" href="https://github.com/mikedh/trimesh/network/dependents">Github
+network</a> for
+things using trimesh. A select few:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/mmatl/pyrender">pyrender</a> Render scenes using
+nice looking PBR materials</p></li>
+<li><p><a class="reference external" href="https://github.com/mmatl/urdfpy">urdfpy</a> Load URDF robot
+descriptions</p></li>
+<li><p><a class="reference external" href="https://github.com/marcomusy/vtkplotter">vtkplotter</a> Visualize
+meshes interactively</p></li>
+<li><p><a class="reference external" href="https://users.fmrib.ox.ac.uk/~paulmc/fsleyes/userdoc/latest/quick_start.html">fsleyes</a>
+View MRI images and brain data</p></li>
+</ul>
+</div>
+<div class="section" id="which-mesh-format-should-i-use">
+<h1>Which Mesh Format Should I Use?<a class="headerlink" href="#which-mesh-format-should-i-use" title="Permalink to this headline">¶</a></h1>
+<p>Quick recommendation: <code class="docutils literal notranslate"><span class="pre">GLB</span></code> or <code class="docutils literal notranslate"><span class="pre">STL</span></code>. Every time you replace <code class="docutils literal notranslate"><span class="pre">OBJ</span></code>
+with <code class="docutils literal notranslate"><span class="pre">GLB</span></code> an angel gets its wings.</p>
+<p>If you want things like by-index faces, instancing, colors, textures,
+etc, <code class="docutils literal notranslate"><span class="pre">GLB</span></code> is a terrific choice. GLTF/GLB is an <a class="reference external" href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0">extremely well
+specified</a>
+modern format that is easy and fast to parse: it has a JSON header
+describing data in a binary blob. It has a simple hierarchical scene
+graph, a great looking modern physically based material system, support
+in <a class="reference external" href="https://github.com/KhronosGroup/glTF/issues/1058">dozens-to-hundreds of
+libraries</a>, and a
+<a class="reference external" href="https://www.khronos.org/news/press/significant-gltf-momentum-for-efficient-transmission-of-3d-scenes-models">John Carmack
+endorsment</a>.</p>
+<p>In the wild, <code class="docutils literal notranslate"><span class="pre">STL</span></code> is perhaps the most common format. <code class="docutils literal notranslate"><span class="pre">STL</span></code> files
+are extremely simple: it is basically just a list of triangles. They are
+very robust and an excellent choice for basic geometry.</p>
+<p>Wavefront <code class="docutils literal notranslate"><span class="pre">OBJ</span></code> is also pretty common: unfortunately OBJ doesn’t have
+a widely accepted specification so every importer and exporter
+implements things slightly differently, making it tough to support. It
+also allows unfortunate things like arbitrary sized polygons, has a face
+representation which is easy to mess up, references other files for
+materials and textures, arbitrarily interleaves data, and is slow to
+parse. Give <code class="docutils literal notranslate"><span class="pre">GLB</span></code> or <code class="docutils literal notranslate"><span class="pre">PLY</span></code> a try as an alternative!</p>
+</div>
+<div class="section" id="how-can-i-cite-this-library">
+<h1>How can I cite this library?<a class="headerlink" href="#how-can-i-cite-this-library" title="Permalink to this headline">¶</a></h1>
+<p>A question that comes up pretty frequently is <a class="reference external" href="https://github.com/mikedh/trimesh/issues?utf8=1&amp;q=cite">how to cite the
+library.</a> A
+quick BibTex recommendation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">trimesh</span><span class="p">,</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{{</span><span class="n">Dawson</span><span class="o">-</span><span class="n">Haggerty</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span><span class="p">}},</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">trimesh</span><span class="p">},</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">trimsh</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="p">},</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="mf">3.2</span><span class="o">.</span><span class="mi">0</span><span class="p">},</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2019</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">8</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="containers">
+<h1>Containers<a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h1>
+<p>If you want to deploy something in a container that uses trimesh,
+automated <code class="docutils literal notranslate"><span class="pre">debian:buster-slim</span></code> based builds with trimesh and
+dependencies are available on Docker Hub:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">mikedh/trimesh</span></code></p>
+<p><a class="reference external" href="https://github.com/mikedh/trimesh/tree/master/examples/dockerRender">Here’s an
+example</a>
+of how to render meshes using LLVMpipe and XVFB inside a container.</p>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#conda-install">Conda Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#ubuntu-notes">Ubuntu Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#windows-notes">Windows Notes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#quick-tour">Quick Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#cross-sections">Cross Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#proximity-queries">Proximity Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#path-finding">Path Finding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#ray-tests">Ray Tests</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-reference">
+<h2>Module Reference<a class="headerlink" href="#module-reference" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Module Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trimesh.html">trimesh package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install.html" class="btn btn-neutral float-right" title="Advanced Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

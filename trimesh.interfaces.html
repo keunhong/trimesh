@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trimesh.interfaces package &mdash; trimesh 3.2.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="trimesh.path package" href="trimesh.path.html" />
+    <link rel="prev" title="trimesh.exchange package" href="trimesh.exchange.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="trimesh.html">trimesh package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="trimesh.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="trimesh.exchange.html">trimesh.exchange package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">trimesh.interfaces package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.path.html">trimesh.path package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.ray.html">trimesh.ray package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.resources.html">trimesh.resources package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.scene.html">trimesh.scene package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.viewer.html">trimesh.viewer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.visual.html">trimesh.visual package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.voxel.html">trimesh.voxel package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.base">trimesh.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.boolean">trimesh.boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.bounds">trimesh.bounds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.caching">trimesh.caching module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.collision">trimesh.collision module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.comparison">trimesh.comparison module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.constants">trimesh.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.convex">trimesh.convex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.creation">trimesh.creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.curvature">trimesh.curvature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.decomposition">trimesh.decomposition module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.exceptions">trimesh.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.geometry">trimesh.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.graph">trimesh.graph module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.grouping">trimesh.grouping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.inertia">trimesh.inertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.integrate">trimesh.integrate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.intersections">trimesh.intersections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.interval">trimesh.interval module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.nsphere">trimesh.nsphere module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.parent">trimesh.parent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.permutate">trimesh.permutate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.points">trimesh.points module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.poses">trimesh.poses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.primitives">trimesh.primitives module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.proximity">trimesh.proximity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.registration">trimesh.registration module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.remesh">trimesh.remesh module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.rendering">trimesh.rendering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.repair">trimesh.repair module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.sample">trimesh.sample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.schemas">trimesh.schemas module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.smoothing">trimesh.smoothing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.transformations">trimesh.transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.triangles">trimesh.triangles module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.units">trimesh.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.util">trimesh.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.version">trimesh.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Module Reference</a> &raquo;</li>
+        
+          <li><a href="trimesh.html">trimesh package</a> &raquo;</li>
+        
+      <li>trimesh.interfaces package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/trimesh.interfaces.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trimesh-interfaces-package">
+<h1>trimesh.interfaces package<a class="headerlink" href="#trimesh-interfaces-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.interfaces.blender">
+<span id="trimesh-interfaces-blender-module"></span><h2>trimesh.interfaces.blender module<a class="headerlink" href="#module-trimesh.interfaces.blender" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.interfaces.blender.boolean">
+<code class="sig-prename descclassname">trimesh.interfaces.blender.</code><code class="sig-name descname">boolean</code><span class="sig-paren">(</span><em class="sig-param">meshes</em>, <em class="sig-param">operation='difference'</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.interfaces.blender.boolean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.interfaces.generic">
+<span id="trimesh-interfaces-generic-module"></span><h2>trimesh.interfaces.generic module<a class="headerlink" href="#module-trimesh.interfaces.generic" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trimesh.interfaces.generic.MeshScript">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.interfaces.generic.</code><code class="sig-name descname">MeshScript</code><span class="sig-paren">(</span><em class="sig-param">meshes</em>, <em class="sig-param">script</em>, <em class="sig-param">tmpfile_ext='stl'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.interfaces.generic.MeshScript" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="trimesh.interfaces.generic.MeshScript.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">command</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.interfaces.generic.MeshScript.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.interfaces.gmsh">
+<span id="trimesh-interfaces-gmsh-module"></span><h2>trimesh.interfaces.gmsh module<a class="headerlink" href="#module-trimesh.interfaces.gmsh" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.interfaces.gmsh.load_gmsh">
+<code class="sig-prename descclassname">trimesh.interfaces.gmsh.</code><code class="sig-name descname">load_gmsh</code><span class="sig-paren">(</span><em class="sig-param">file_name</em>, <em class="sig-param">gmsh_args=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.interfaces.gmsh.load_gmsh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a surface mesh from CAD model in Open Cascade
+Breap (.brep), Step (.stp or .step) and Iges formats
+Or returns a surface mesh from 3D volume mesh using gmsh.</p>
+<p>For a list of possible options to pass to GMSH, check:
+<a class="reference external" href="http://gmsh.info/doc/texinfo/gmsh.html">http://gmsh.info/doc/texinfo/gmsh.html</a></p>
+<p>An easy way to install the GMSH SDK is through the <cite>gmsh-sdk</cite>
+package on PyPi, which downloads and sets up gmsh:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pip</span> <span class="n">install</span> <span class="n">gmsh</span><span class="o">-</span><span class="n">sdk</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – Location of the file to be imported</p></li>
+<li><p><strong>gmsh_args</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) </em><em>list</em>) – List of (parameter, value) pairs to be passed to
+gmsh.option.setNumber</p></li>
+<li><p><strong>max_element</strong> (<em>float</em><em> or </em><em>None</em>) – Maximum length of an element in the volume mesh</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mesh</strong> – Surface mesh of input geometry</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh">trimesh.Trimesh</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.interfaces.gmsh.to_volume">
+<code class="sig-prename descclassname">trimesh.interfaces.gmsh.</code><code class="sig-name descname">to_volume</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">file_name=None</em>, <em class="sig-param">max_element=None</em>, <em class="sig-param">mesher_id=1</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.interfaces.gmsh.to_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a surface mesh to a 3D volume mesh generated by gmsh.</p>
+<p>An easy way to install the gmsh sdk is through the gmsh-sdk
+package on pypi, which downloads and sets up gmsh:</p>
+<blockquote>
+<div><p>pip install gmsh-sdk</p>
+</div></blockquote>
+<p>Algorithm details, although check gmsh docs for more information:
+The “Delaunay” algorithm is split into three separate steps.
+First, an initial mesh of the union of all the volumes in the model is performed,
+without inserting points in the volume. The surface mesh is then recovered using H.
+Si’s boundary recovery algorithm Tetgen/BR. Then a three-dimensional version of the
+2D Delaunay algorithm described above is applied to insert points in the volume to
+respect the mesh size constraints.</p>
+<p>The Frontal” algorithm uses J. Schoeberl’s Netgen algorithm.
+The “HXT” algorithm is a new efficient and parallel reimplementaton
+of the Delaunay algorithm.
+The “MMG3D” algorithm (experimental) allows to generate
+anisotropic tetrahedralizations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh"><em>trimesh.Trimesh</em></a>) – Surface mesh of input geometry</p></li>
+<li><p><strong>file_name</strong> (<em>str</em><em> or </em><em>None</em>) – Location to save output, in .msh (gmsh) or .bdf (Nastran) format</p></li>
+<li><p><strong>max_element</strong> (<em>float</em><em> or </em><em>None</em>) – Maximum length of an element in the volume mesh</p></li>
+<li><p><strong>mesher_id</strong> (<em>int</em>) – 3D unstructured algorithms:
+1: Delaunay, 4: Frontal, 7: MMG3D, 10: HXT</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – MSH data, only returned if file_name is None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None or bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.interfaces.scad">
+<span id="trimesh-interfaces-scad-module"></span><h2>trimesh.interfaces.scad module<a class="headerlink" href="#module-trimesh.interfaces.scad" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.interfaces.scad.boolean">
+<code class="sig-prename descclassname">trimesh.interfaces.scad.</code><code class="sig-name descname">boolean</code><span class="sig-paren">(</span><em class="sig-param">meshes</em>, <em class="sig-param">operation='difference'</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.interfaces.scad.boolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run an operation on a set of meshes</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.interfaces.scad.interface_scad">
+<code class="sig-prename descclassname">trimesh.interfaces.scad.</code><code class="sig-name descname">interface_scad</code><span class="sig-paren">(</span><em class="sig-param">meshes</em>, <em class="sig-param">script</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.interfaces.scad.interface_scad" title="Permalink to this definition">¶</a></dt>
+<dd><p>A way to interface with openSCAD which is itself an interface
+to the CGAL CSG bindings.
+CGAL is very stable if difficult to install/use, so this function provides a
+tempfile- happy solution for getting the basic CGAL CSG functionality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>meshes</strong> (<em>list of Trimesh objects</em>) – </p></li>
+<li><p><strong>script</strong> (<em>string of the script to send to scad.</em>) – Trimesh objects can be referenced in the script as
+$mesh_0, $mesh_1, etc.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.interfaces.vhacd">
+<span id="trimesh-interfaces-vhacd-module"></span><h2>trimesh.interfaces.vhacd module<a class="headerlink" href="#module-trimesh.interfaces.vhacd" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.interfaces.vhacd.convex_decomposition">
+<code class="sig-prename descclassname">trimesh.interfaces.vhacd.</code><code class="sig-name descname">convex_decomposition</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.interfaces.vhacd.convex_decomposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run VHACD to generate an approximate convex decomposition
+of a single mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mesh</strong> (<a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh"><em>trimesh.Trimesh</em></a>) – Mesh to be decomposed into convex components</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>meshes</strong> – List of convex meshes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n,) <a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh">trimesh.Trimesh</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.interfaces">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trimesh.interfaces" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trimesh.path.html" class="btn btn-neutral float-right" title="trimesh.path package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trimesh.exchange.html" class="btn btn-neutral float-left" title="trimesh.exchange package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

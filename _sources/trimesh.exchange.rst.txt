@@ -1,0 +1,126 @@
+trimesh.exchange package
+========================
+
+Submodules
+----------
+
+trimesh.exchange.assimp module
+------------------------------
+
+.. automodule:: trimesh.exchange.assimp
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.binvox module
+------------------------------
+
+.. automodule:: trimesh.exchange.binvox
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.dae module
+---------------------------
+
+.. automodule:: trimesh.exchange.dae
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.export module
+------------------------------
+
+.. automodule:: trimesh.exchange.export
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.gltf module
+----------------------------
+
+.. automodule:: trimesh.exchange.gltf
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.load module
+----------------------------
+
+.. automodule:: trimesh.exchange.load
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.misc module
+----------------------------
+
+.. automodule:: trimesh.exchange.misc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.obj module
+---------------------------
+
+.. automodule:: trimesh.exchange.obj
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.openctm module
+-------------------------------
+
+.. automodule:: trimesh.exchange.openctm
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.ply module
+---------------------------
+
+.. automodule:: trimesh.exchange.ply
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.stl module
+---------------------------
+
+.. automodule:: trimesh.exchange.stl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.threemf module
+-------------------------------
+
+.. automodule:: trimesh.exchange.threemf
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.urdf module
+----------------------------
+
+.. automodule:: trimesh.exchange.urdf
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.exchange.xml\_based module
+----------------------------------
+
+.. automodule:: trimesh.exchange.xml_based
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: trimesh.exchange
+   :members:
+   :undoc-members:
+   :show-inheritance:

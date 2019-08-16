@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trimesh.path.exchange package &mdash; trimesh 3.2.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="trimesh.ray package" href="trimesh.ray.html" />
+    <link rel="prev" title="trimesh.path package" href="trimesh.path.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="trimesh.html">trimesh package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="trimesh.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="trimesh.exchange.html">trimesh.exchange package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.interfaces.html">trimesh.interfaces package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="trimesh.path.html">trimesh.path package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.ray.html">trimesh.ray package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.resources.html">trimesh.resources package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.scene.html">trimesh.scene package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.viewer.html">trimesh.viewer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.visual.html">trimesh.visual package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.voxel.html">trimesh.voxel package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.base">trimesh.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.boolean">trimesh.boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.bounds">trimesh.bounds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.caching">trimesh.caching module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.collision">trimesh.collision module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.comparison">trimesh.comparison module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.constants">trimesh.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.convex">trimesh.convex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.creation">trimesh.creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.curvature">trimesh.curvature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.decomposition">trimesh.decomposition module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.exceptions">trimesh.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.geometry">trimesh.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.graph">trimesh.graph module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.grouping">trimesh.grouping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.inertia">trimesh.inertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.integrate">trimesh.integrate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.intersections">trimesh.intersections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.interval">trimesh.interval module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.nsphere">trimesh.nsphere module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.parent">trimesh.parent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.permutate">trimesh.permutate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.points">trimesh.points module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.poses">trimesh.poses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.primitives">trimesh.primitives module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.proximity">trimesh.proximity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.registration">trimesh.registration module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.remesh">trimesh.remesh module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.rendering">trimesh.rendering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.repair">trimesh.repair module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.sample">trimesh.sample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.schemas">trimesh.schemas module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.smoothing">trimesh.smoothing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.transformations">trimesh.transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.triangles">trimesh.triangles module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.units">trimesh.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.util">trimesh.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.version">trimesh.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Module Reference</a> &raquo;</li>
+        
+          <li><a href="trimesh.html">trimesh package</a> &raquo;</li>
+        
+          <li><a href="trimesh.path.html">trimesh.path package</a> &raquo;</li>
+        
+      <li>trimesh.path.exchange package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/trimesh.path.exchange.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trimesh-path-exchange-package">
+<h1>trimesh.path.exchange package<a class="headerlink" href="#trimesh-path-exchange-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.path.exchange.dxf">
+<span id="trimesh-path-exchange-dxf-module"></span><h2>trimesh.path.exchange.dxf module<a class="headerlink" href="#module-trimesh.path.exchange.dxf" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.dxf.bulge_to_arcs">
+<code class="sig-prename descclassname">trimesh.path.exchange.dxf.</code><code class="sig-name descname">bulge_to_arcs</code><span class="sig-paren">(</span><em class="sig-param">lines</em>, <em class="sig-param">bulge</em>, <em class="sig-param">bulge_idx</em>, <em class="sig-param">is_closed=False</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.dxf.bulge_to_arcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polylines can have “vertex bulge,” which means the polyline
+has an arc tangent to segments, rather than meeting at a
+vertex.</p>
+<p>From Autodesk reference:
+The bulge is the tangent of one fourth the included
+angle for an arc segment, made negative if the arc
+goes clockwise from the start point to the endpoint.
+A bulge of 0 indicates a straight segment, and a
+bulge of 1 is a semicircle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lines</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) </em><em>float</em>) – Polyline vertices in order</p></li>
+<li><p><strong>bulge</strong> (<em>(</em><em>m</em><em>,</em><em>) </em><em>float</em>) – Vertex bulge value</p></li>
+<li><p><strong>bulge_idx</strong> (<em>(</em><em>m</em><em>,</em><em>) </em><em>float</em>) – Which index of lines is bulge associated with</p></li>
+<li><p><strong>is_closed</strong> (<em>bool</em>) – Is segment closed</p></li>
+<li><p><strong>metadata</strong> (<em>None</em><em>, or </em><em>dict</em>) – Entity metadata to add</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>vertices</strong> (<em>(a, 2) float</em>) – New vertices for poly-arc</p></li>
+<li><p><strong>entities</strong> (<em>(b,) entities.Entity</em>) – New entities, either line or arc</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.dxf.export_dxf">
+<code class="sig-prename descclassname">trimesh.path.exchange.dxf.</code><code class="sig-name descname">export_dxf</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">layers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.dxf.export_dxf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a 2D path object to a DXF file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<a class="reference internal" href="trimesh.path.html#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D"><em>trimesh.path.path.Path2D</em></a>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str, path formatted as a DXF file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.dxf.get_key">
+<code class="sig-prename descclassname">trimesh.path.exchange.dxf.</code><code class="sig-name descname">get_key</code><span class="sig-paren">(</span><em class="sig-param">blob</em>, <em class="sig-param">field</em>, <em class="sig-param">code</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.dxf.get_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a loaded (n, 2) blob and a field name
+get a value by code.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.dxf.load_dwg">
+<code class="sig-prename descclassname">trimesh.path.exchange.dxf.</code><code class="sig-name descname">load_dwg</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.dxf.load_dwg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load DWG files by converting them to DXF files using
+TeighaFileConverter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>file- like object</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – kwargs for a Path2D constructor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.dxf.load_dxf">
+<code class="sig-prename descclassname">trimesh.path.exchange.dxf.</code><code class="sig-name descname">load_dxf</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.dxf.load_dxf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a DXF file to a dictionary containing vertices and
+entities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>file</em><em> or </em><em>file- like object</em><em> (</em><em>has object.read method</em><em>)</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict, keys are  entities, vertices and metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange.export">
+<span id="trimesh-path-exchange-export-module"></span><h2>trimesh.path.exchange.export module<a class="headerlink" href="#module-trimesh.path.exchange.export" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.export.export_dict">
+<code class="sig-prename descclassname">trimesh.path.exchange.export.</code><code class="sig-name descname">export_dict</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.export.export_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a path as a dict of kwargs for the Path constructor.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.export.export_path">
+<code class="sig-prename descclassname">trimesh.path.exchange.export.</code><code class="sig-name descname">export_path</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">file_obj=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.export.export_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Path object to a file- like object, or to a filename</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>None</em><em>, </em><em>str</em><em>, or </em><em>file object</em>) – A filename string or a file-like object</p></li>
+<li><p><strong>file_type</strong> (<em>None</em><em> or </em><em>str</em>) – File type, e.g.: ‘svg’, ‘dxf’</p></li>
+<li><p><strong>kwargs</strong> (<em>passed to loader</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>exported</strong> – Data exported</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str or bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange.load">
+<span id="trimesh-path-exchange-load-module"></span><h2>trimesh.path.exchange.load module<a class="headerlink" href="#module-trimesh.path.exchange.load" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.load.load_path">
+<code class="sig-prename descclassname">trimesh.path.exchange.load.</code><code class="sig-name descname">load_path</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.load.load_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a file to a Path object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>One of the following:</em>) – <ul>
+<li><p>Path, Path2D, or Path3D objects</p></li>
+<li><p>open file object (dxf or svg)</p></li>
+<li><p>file name (dxf or svg)</p></li>
+<li><p>shapely.geometry.Polygon</p></li>
+<li><p>shapely.geometry.MultiLineString</p></li>
+<li><p>dict with kwargs for Path constructor</p></li>
+<li><p>(n,2,(2|3)) float, line segments</p></li>
+</ul>
+</p></li>
+<li><p><strong>file_type</strong> (<em>str</em>) – Type of file is required if file
+object passed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>path</strong> – Data as a native trimesh Path object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.path.html#trimesh.path.path.Path" title="trimesh.path.path.Path">Path</a>, <a class="reference internal" href="trimesh.path.html#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D">Path2D</a>, Path3D object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.load.path_formats">
+<code class="sig-prename descclassname">trimesh.path.exchange.load.</code><code class="sig-name descname">path_formats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.load.path_formats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of supported path formats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>loaders</strong> – Extensions of loadable formats, ie:
+[‘svg’, ‘dxf’]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange.misc">
+<span id="trimesh-path-exchange-misc-module"></span><h2>trimesh.path.exchange.misc module<a class="headerlink" href="#module-trimesh.path.exchange.misc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.dict_to_path">
+<code class="sig-prename descclassname">trimesh.path.exchange.misc.</code><code class="sig-name descname">dict_to_path</code><span class="sig-paren">(</span><em class="sig-param">as_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.dict_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn a pure dict into a dict containing entity objects that
+can be sent directly to a Path constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>as_dict</strong> (<em>dict</em>) – Has keys: ‘vertices’, ‘entities’</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – Has keys: ‘vertices’, ‘entities’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.edges_to_path">
+<code class="sig-prename descclassname">trimesh.path.exchange.misc.</code><code class="sig-name descname">edges_to_path</code><span class="sig-paren">(</span><em class="sig-param">edges</em>, <em class="sig-param">vertices</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.edges_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an edge list of indices and associated vertices
+representing lines, generate kwargs for a Path object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>edges</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>) </em><em>int</em>) – Vertex indices of line segments</p></li>
+<li><p><strong>vertices</strong> (<em>(</em><em>m</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Vertex positions where dimension is 2 or 3</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict, kwargs for Path constructor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.faces_to_path">
+<code class="sig-prename descclassname">trimesh.path.exchange.misc.</code><code class="sig-name descname">faces_to_path</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">face_ids=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.faces_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a mesh and face indices find the outline edges and
+turn them into a Path3D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh"><em>trimesh.Trimesh</em></a>) – Triangulated surface in 3D</p></li>
+<li><p><strong>face_ids</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>int</em>) – Indexes referencing mesh.faces</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – Kwargs for Path3D constructor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.lines_to_path">
+<code class="sig-prename descclassname">trimesh.path.exchange.misc.</code><code class="sig-name descname">lines_to_path</code><span class="sig-paren">(</span><em class="sig-param">lines</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.lines_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn line segments into a Path2D or Path3D object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lines</strong> (<em>(</em><em>n</em><em>, </em><em>2</em><em>, </em><em>dimension</em><em>) or </em><em>(</em><em>n</em><em>, </em><em>dimension</em><em>) </em><em>float</em>) – Line segments or connected polyline curve in 2D or 3D</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – kwargs for Path constructor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.linestrings_to_path">
+<code class="sig-prename descclassname">trimesh.path.exchange.misc.</code><code class="sig-name descname">linestrings_to_path</code><span class="sig-paren">(</span><em class="sig-param">multi</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.linestrings_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load shapely LineString objects into a trimesh.path.Path2D object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>multi</strong> (<em>shapely.geometry.LineString</em><em> or </em><em>MultiLineString</em>) – Input 2D geometry</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – Keyword arguments for Path2D constructor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.polygon_to_path">
+<code class="sig-prename descclassname">trimesh.path.exchange.misc.</code><code class="sig-name descname">polygon_to_path</code><span class="sig-paren">(</span><em class="sig-param">polygon</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.polygon_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load shapely Polygon objects into a trimesh.path.Path2D object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>polygon</strong> (<em>shapely.geometry.Polygon</em>) – Input geometry</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – Keyword arguments for Path2D constructor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange.svg_io">
+<span id="trimesh-path-exchange-svg-io-module"></span><h2>trimesh.path.exchange.svg_io module<a class="headerlink" href="#module-trimesh.path.exchange.svg_io" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.svg_io.export_svg">
+<code class="sig-prename descclassname">trimesh.path.exchange.svg_io.</code><code class="sig-name descname">export_svg</code><span class="sig-paren">(</span><em class="sig-param">drawing</em>, <em class="sig-param">return_path=False</em>, <em class="sig-param">layers=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.svg_io.export_svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Path2D object into an SVG file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>drawing</strong> (<a class="reference internal" href="trimesh.path.html#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D"><em>Path2D</em></a>) – Source geometry</p></li>
+<li><p><strong>return_path</strong> (<em>bool</em>) – If True return only path string</p></li>
+<li><p><strong>layers</strong> (<em>None</em><em>, or </em><em>[</em><em>str</em><em>]</em>) – Only export specified layers</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>as_svg</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str, XML formatted as SVG</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.svg_io.svg_to_path">
+<code class="sig-prename descclassname">trimesh.path.exchange.svg_io.</code><code class="sig-name descname">svg_to_path</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">file_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.svg_io.svg_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an SVG file into a Path2D object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>open file object</em>) – Contains SVG data</p></li>
+<li><p><strong>file_type</strong> (<em>None</em>) – Not used</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – With kwargs for Path2D constructor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.svg_io.transform_to_matrices">
+<code class="sig-prename descclassname">trimesh.path.exchange.svg_io.</code><code class="sig-name descname">transform_to_matrices</code><span class="sig-paren">(</span><em class="sig-param">transform</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.svg_io.transform_to_matrices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an SVG transform string to an array of matrices.</p>
+<dl class="simple">
+<dt>&gt; transform = “rotate(-10 50 100)</dt><dd><p>translate(-36 45.5)
+skewX(40)
+scale(1 0.5)”</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>transform</strong> (<em>str</em>) – Contains transformation information in SVG form</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>matrices</strong> – Multiple transformation matrices from input transform string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 3, 3) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trimesh.path.exchange" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trimesh.ray.html" class="btn btn-neutral float-right" title="trimesh.ray package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trimesh.path.html" class="btn btn-neutral float-left" title="trimesh.path package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

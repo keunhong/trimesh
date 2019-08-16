@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Installation &mdash; trimesh 3.2.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="Basic Installation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conda-install">Conda Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuntu-notes">Ubuntu Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows-notes">Windows Notes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Module Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Advanced Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/install.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-installation">
+<h1>Advanced Installation<a class="headerlink" href="#advanced-installation" title="Permalink to this headline">¶</a></h1>
+<p>The minimal dependancies for <code class="docutils literal notranslate"><span class="pre">trimesh</span></code> are
+<a class="reference external" href="http://www.numpy.org/">numpy</a>, <a class="reference external" href="http://www.scipy.org/">scipy</a> and
+<a class="reference external" href="https://networkx.github.io/">networkx</a>.</p>
+<p>All other dependancies are ‘soft’, or trimesh will only fail if a function is called that requires something not installed. If you do the most basic pip install, it will only require those three packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install trimesh
+</pre></div>
+</div>
+<div class="section" id="conda-install">
+<h2>Conda Install<a class="headerlink" href="#conda-install" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to get going on the most platforms is through Conda.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install Miniconda if you have no conda:</span>
+<span class="c1"># https://conda.io/docs/install/quick.html</span>
+<span class="c1"># if you are on Linux and feeling lazy, just run:</span>
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  --no-check-certificate -O miniconda.sh
+bash miniconda.sh -b -p /opt/conda<span class="p">;</span> rm miniconda.sh
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/conda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+conda update -q conda
+conda create -q -n conda_env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6
+<span class="nb">source</span> activate conda_env
+
+<span class="c1"># install most trimesh requirements with built components from conda-forge</span>
+conda config --add channels conda-forge  <span class="c1"># rtree, shapely, pyembree</span>
+conda install shapely rtree graph-tool pyembree numpy scipy
+conda install -c conda-forge scikit-image
+
+<span class="c1"># install trimesh and all possible dependancies</span>
+<span class="c1"># if this fails try: pip install trimesh[easy]</span>
+pip install trimesh<span class="o">[</span>all<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu-notes">
+<h2>Ubuntu Notes<a class="headerlink" href="#ubuntu-notes" title="Permalink to this headline">¶</a></h2>
+<p>Blender and openSCAD are soft dependancies used for boolean operations with subprocess, you can get them with apt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install openscad blender
+</pre></div>
+</div>
+</div>
+<div class="section" id="windows-notes">
+<h2>Windows Notes<a class="headerlink" href="#windows-notes" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to get going on Windows is to install the <a class="reference external" href="https://www.continuum.io/downloads">Anaconda
+Python distribution</a>.</p>
+<p>Most requirements are available as above, but to get <code class="docutils literal notranslate"><span class="pre">meshpy</span></code> the easiest way is from the <a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">Unofficial Windows Binaries from Christoph Gohlke</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Basic Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

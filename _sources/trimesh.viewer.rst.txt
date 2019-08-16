@@ -1,0 +1,46 @@
+trimesh.viewer package
+======================
+
+Submodules
+----------
+
+trimesh.viewer.notebook module
+------------------------------
+
+.. automodule:: trimesh.viewer.notebook
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.viewer.trackball module
+-------------------------------
+
+.. automodule:: trimesh.viewer.trackball
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.viewer.widget module
+----------------------------
+
+.. automodule:: trimesh.viewer.widget
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+trimesh.viewer.windowed module
+------------------------------
+
+.. automodule:: trimesh.viewer.windowed
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: trimesh.viewer
+   :members:
+   :undoc-members:
+   :show-inheritance:

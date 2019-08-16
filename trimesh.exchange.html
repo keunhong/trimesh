@@ -1,0 +1,1587 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trimesh.exchange package &mdash; trimesh 3.2.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="trimesh.interfaces package" href="trimesh.interfaces.html" />
+    <link rel="prev" title="trimesh package" href="trimesh.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="trimesh.html">trimesh package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="trimesh.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">trimesh.exchange package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.interfaces.html">trimesh.interfaces package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.path.html">trimesh.path package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.ray.html">trimesh.ray package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.resources.html">trimesh.resources package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.scene.html">trimesh.scene package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.viewer.html">trimesh.viewer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.visual.html">trimesh.visual package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.voxel.html">trimesh.voxel package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.base">trimesh.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.boolean">trimesh.boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.bounds">trimesh.bounds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.caching">trimesh.caching module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.collision">trimesh.collision module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.comparison">trimesh.comparison module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.constants">trimesh.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.convex">trimesh.convex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.creation">trimesh.creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.curvature">trimesh.curvature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.decomposition">trimesh.decomposition module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.exceptions">trimesh.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.geometry">trimesh.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.graph">trimesh.graph module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.grouping">trimesh.grouping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.inertia">trimesh.inertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.integrate">trimesh.integrate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.intersections">trimesh.intersections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.interval">trimesh.interval module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.nsphere">trimesh.nsphere module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.parent">trimesh.parent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.permutate">trimesh.permutate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.points">trimesh.points module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.poses">trimesh.poses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.primitives">trimesh.primitives module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.proximity">trimesh.proximity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.registration">trimesh.registration module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.remesh">trimesh.remesh module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.rendering">trimesh.rendering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.repair">trimesh.repair module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.sample">trimesh.sample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.schemas">trimesh.schemas module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.smoothing">trimesh.smoothing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.transformations">trimesh.transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.triangles">trimesh.triangles module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.units">trimesh.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.util">trimesh.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.version">trimesh.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Module Reference</a> &raquo;</li>
+        
+          <li><a href="trimesh.html">trimesh package</a> &raquo;</li>
+        
+      <li>trimesh.exchange package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/trimesh.exchange.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trimesh-exchange-package">
+<h1>trimesh.exchange package<a class="headerlink" href="#trimesh-exchange-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.exchange.assimp">
+<span id="trimesh-exchange-assimp-module"></span><h2>trimesh.exchange.assimp module<a class="headerlink" href="#module-trimesh.exchange.assimp" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.assimp.load_cyassimp">
+<code class="sig-prename descclassname">trimesh.exchange.assimp.</code><code class="sig-name descname">load_cyassimp</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.assimp.load_cyassimp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a file using the cyassimp bindings.</p>
+<p>The easiest way to install these is with conda:
+conda install -c menpo/label/master cyassimp</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>str</em><em>, or </em><em>file object</em>) – File path or object containing mesh data</p></li>
+<li><p><strong>file_type</strong> (<em>str</em>) – File extension, aka ‘stl’</p></li>
+<li><p><strong>resolver</strong> (<a class="reference internal" href="trimesh.visual.html#trimesh.visual.resolvers.Resolver" title="trimesh.visual.resolvers.Resolver"><em>trimesh.visual.resolvers.Resolver</em></a>) – Used to load referenced data (like texture files)</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em>) – Passed through to mesh constructor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>meshes</strong> – Contain kwargs for Trimesh constructor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n,) list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.assimp.load_pyassimp">
+<code class="sig-prename descclassname">trimesh.exchange.assimp.</code><code class="sig-name descname">load_pyassimp</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.assimp.load_pyassimp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the pyassimp library to load a mesh from a file object
+and type or file name if file_obj is a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>str</em><em>, or </em><em>file object</em>) – File path or object containing mesh data</p></li>
+<li><p><strong>file_type</strong> (<em>str</em>) – File extension, aka ‘stl’</p></li>
+<li><p><strong>resolver</strong> (<a class="reference internal" href="trimesh.visual.html#trimesh.visual.resolvers.Resolver" title="trimesh.visual.resolvers.Resolver"><em>trimesh.visual.resolvers.Resolver</em></a>) – Used to load referenced data (like texture files)</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em>) – Passed through to mesh constructor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scene</strong> – Native trimesh copy of assimp scene</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene">trimesh.Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.assimp.loader">
+<code class="sig-prename descclassname">trimesh.exchange.assimp.</code><code class="sig-name descname">loader</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.assimp.loader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the pyassimp library to load a mesh from a file object
+and type or file name if file_obj is a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>str</em><em>, or </em><em>file object</em>) – File path or object containing mesh data</p></li>
+<li><p><strong>file_type</strong> (<em>str</em>) – File extension, aka ‘stl’</p></li>
+<li><p><strong>resolver</strong> (<a class="reference internal" href="trimesh.visual.html#trimesh.visual.resolvers.Resolver" title="trimesh.visual.resolvers.Resolver"><em>trimesh.visual.resolvers.Resolver</em></a>) – Used to load referenced data (like texture files)</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em>) – Passed through to mesh constructor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scene</strong> – Native trimesh copy of assimp scene</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene">trimesh.Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.binvox">
+<span id="trimesh-exchange-binvox-module"></span><h2>trimesh.exchange.binvox module<a class="headerlink" href="#module-trimesh.exchange.binvox" title="Permalink to this headline">¶</a></h2>
+<p>Parsing functions for Binvox files.</p>
+<p><a class="reference external" href="https://www.patrickmin.com/binvox/binvox.html">https://www.patrickmin.com/binvox/binvox.html</a></p>
+<p>Exporting meshes as binvox files requires binvox CL tool to be on your path.</p>
+<dl class="class">
+<dt id="trimesh.exchange.binvox.Binvox">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">Binvox</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">shape</em>, <em class="sig-param">translate</em>, <em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.Binvox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="method">
+<dt id="trimesh.exchange.binvox.Binvox.rle_data">
+<em class="property">property </em><code class="sig-name descname">rle_data</code><a class="headerlink" href="#trimesh.exchange.binvox.Binvox.rle_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.exchange.binvox.Binvox.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#trimesh.exchange.binvox.Binvox.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.exchange.binvox.Binvox.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.exchange.binvox.Binvox.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.exchange.binvox.Binvox.translate">
+<em class="property">property </em><code class="sig-name descname">translate</code><a class="headerlink" href="#trimesh.exchange.binvox.Binvox.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.exchange.binvox.Binvoxer">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">Binvoxer</code><span class="sig-paren">(</span><em class="sig-param">dimension=32</em>, <em class="sig-param">file_type='binvox'</em>, <em class="sig-param">z_buffer_carving=True</em>, <em class="sig-param">z_buffer_voting=True</em>, <em class="sig-param">dilated_carving=False</em>, <em class="sig-param">exact=False</em>, <em class="sig-param">bounding_box=None</em>, <em class="sig-param">remove_internal=False</em>, <em class="sig-param">center=False</em>, <em class="sig-param">rotate_x=0</em>, <em class="sig-param">rotate_z=0</em>, <em class="sig-param">wireframe=False</em>, <em class="sig-param">fit=False</em>, <em class="sig-param">block_id=None</em>, <em class="sig-param">use_material_block_id=False</em>, <em class="sig-param">use_offscreen_pbuffer=True</em>, <em class="sig-param">downsample_factor=None</em>, <em class="sig-param">downsample_threshold=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">binvox_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.Binvoxer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Interface for binvox CL tool.</p>
+<p>This class is responsible purely for making calls to the CL tool. It
+makes no attempt to integrate with the rest of trimesh at all.</p>
+<p>Constructor args configure command line options.</p>
+<p><cite>Binvoxer.__call__</cite> operates on the path to a mode file.</p>
+<p>If using this interface in published works, please cite the references
+below.</p>
+<p>See CL tool website for further details.</p>
+<p><a class="reference external" href="https://www.patrickmin.com/binvox/">https://www.patrickmin.com/binvox/</a></p>
+<dl>
+<dt>&#64;article{nooruddin03,</dt><dd><p>author = {Fakir S. Nooruddin and Greg Turk},
+title = {Simplification and Repair of Polygonal Models Using Volumetric</p>
+<blockquote>
+<div><p>Techniques},</p>
+</div></blockquote>
+<p>journal = {IEEE Transactions on Visualization and Computer Graphics},
+volume = {9},
+number = {2},
+pages = {191–205},
+year = {2003}</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>&#64;Misc{binvox,</dt><dd><p>author = {Patrick Min},
+title =  {binvox},
+howpublished = {{       t <a class="reference external" href="http://www.patrickmin.com/binvox">http://www.patrickmin.com/binvox</a>} or</p>
+<blockquote>
+<div><p>{       t <a class="reference external" href="https://www.google.com/search?q=binvox">https://www.google.com/search?q=binvox</a>}},</p>
+</div></blockquote>
+<p>year =  {2004 - 2019},
+note = {Accessed: yyyy-mm-dd}</p>
+</dd>
+</dl>
+<p>}</p>
+<dl class="attribute">
+<dt id="trimesh.exchange.binvox.Binvoxer.SUPPORTED_INPUT_TYPES">
+<code class="sig-name descname">SUPPORTED_INPUT_TYPES</code><em class="property"> = ('ug', 'obj', 'off', 'dfx', 'xgl', 'pov', 'brep', 'ply', 'jot')</em><a class="headerlink" href="#trimesh.exchange.binvox.Binvoxer.SUPPORTED_INPUT_TYPES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="trimesh.exchange.binvox.Binvoxer.SUPPORTED_OUTPUT_TYPES">
+<code class="sig-name descname">SUPPORTED_OUTPUT_TYPES</code><em class="property"> = ('binvox', 'hips', 'mira', 'vtk', 'raw', 'schematic', 'msh')</em><a class="headerlink" href="#trimesh.exchange.binvox.Binvoxer.SUPPORTED_OUTPUT_TYPES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.exchange.binvox.Binvoxer.file_type">
+<em class="property">property </em><code class="sig-name descname">file_type</code><a class="headerlink" href="#trimesh.exchange.binvox.Binvoxer.file_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.binvox.binvox_bytes">
+<code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">binvox_bytes</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">shape</em>, <em class="sig-param">translate=(0</em>, <em class="sig-param">0</em>, <em class="sig-param">0)</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.binvox_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a binary representation of binvox data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rle_data</strong> (<em>numpy array</em>) – Run-length encoded numpy array.</p></li>
+<li><p><strong>shape</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>int</em>) – Shape of voxel grid.</p></li>
+<li><p><strong>translate</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Translation of voxels</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Length of entire voxel grid.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – Suitable for writing to binary file</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.binvox.binvox_header">
+<code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">binvox_header</code><span class="sig-paren">(</span><em class="sig-param">shape</em>, <em class="sig-param">translate</em>, <em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.binvox_header" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Get a binvox header string.</p>
+<p>shape: length 3 iterable of ints denoting shape of voxel grid.
+translate: length 3 iterable of floats denoting translation.
+scale: num length of entire voxel grid.</p>
+<p>string including “data</p>
+</div></blockquote>
+<p>” line.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.binvox.export_binvox">
+<code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">export_binvox</code><span class="sig-paren">(</span><em class="sig-param">voxel</em>, <em class="sig-param">axis_order='xzy'</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.export_binvox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export <cite>trimesh.voxel.VoxelGrid</cite> instance to bytes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voxel</strong> (<cite>trimesh.voxel.VoxelGrid</cite>) – Assumes axis ordering of <cite>xyz</cite> and encodes
+in binvox default <cite>xzy</cite> ordering.</p></li>
+<li><p><strong>axis_order</strong> (<em>str</em>) – Eements in (‘x’, ‘y’, ‘z’, 0, 1, 2), the order
+of axes to encode data (standard is ‘xzy’ for binvox). <cite>voxel</cite>
+data is assumed to be in order ‘xyz’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – Representation according to binvox spec</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.binvox.load_binvox">
+<code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">load_binvox</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">axis_order='xzy'</em>, <em class="sig-param">file_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.load_binvox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load trimesh <cite>VoxelGrid</cite> instance from file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>file-like object</em>) – Contains binvox data</p></li>
+<li><p><strong>resolver</strong> (<em>unused</em>) – </p></li>
+<li><p><strong>axis_order</strong> (<em>str</em>) – Order of axes in encoded data.
+Binvox default is ‘xzy’, but ‘xyz’ may be faster
+where this is not relevant.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – Loaded voxel data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.voxel.html#trimesh.voxel.VoxelGrid" title="trimesh.voxel.VoxelGrid">trimesh.voxel.VoxelGrid</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.binvox.parse_binvox">
+<code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">parse_binvox</code><span class="sig-paren">(</span><em class="sig-param">fp</em>, <em class="sig-param">writeable=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.parse_binvox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a binvox file, spec at
+<a class="reference external" href="https://www.patrickmin.com/binvox/binvox.html">https://www.patrickmin.com/binvox/binvox.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fp</strong> (<em>file-object</em>) – File like object with binvox file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>binvox</strong> (<em>namedtuple</em>) – Containing data</p></li>
+<li><p><strong>rle</strong> (<em>numpy array</em>) – Run length encoded data</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>IOError</strong> – If invalid binvox file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.binvox.parse_binvox_header">
+<code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">parse_binvox_header</code><span class="sig-paren">(</span><em class="sig-param">fp</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.parse_binvox_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the header from a binvox file.
+Spec available:
+<a class="reference external" href="https://www.patrickmin.com/binvox/binvox.html">https://www.patrickmin.com/binvox/binvox.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fp</strong> (<em>file-object</em>) – File like object with binvox file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>shape</strong> (<em>tuple</em>) – Shape of binvox according to binvox spec</p></li>
+<li><p><strong>translate</strong> (<em>tuple</em>) – Translation</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Scale of voxels</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>IOError</strong> – If invalid binvox file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.binvox.voxel_from_binvox">
+<code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">voxel_from_binvox</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">shape</em>, <em class="sig-param">translate=None</em>, <em class="sig-param">scale=1.0</em>, <em class="sig-param">axis_order='xzy'</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.voxel_from_binvox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factory for building from data associated with binvox files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rle_data</strong> (<em>numpy</em>) – Run-length-encoded of flat voxel
+values, or a <cite>trimesh.rle.RunLengthEncoding</cite> object.
+See <cite>trimesh.rle</cite> documentation for description of encoding</p></li>
+<li><p><strong>shape</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>int</em>) – Shape of voxel grid.</p></li>
+<li><p><strong>translate</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – Translation of voxels</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Length of entire voxel grid.</p></li>
+<li><p><strong>encoded_axes</strong> (<em>iterable</em>) – With values in (‘x’, ‘y’, ‘z’, 0, 1, 2),
+where x =&gt; 0, y =&gt; 1, z =&gt; 2
+denoting the order of axes in the encoded data. binvox by
+default saves in xzy order, but using <cite>xyz</cite> (or (0, 1, 2)) will
+be faster in some circumstances.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – Loaded voxels</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.voxel.html#trimesh.voxel.base.VoxelGrid" title="trimesh.voxel.base.VoxelGrid">VoxelGrid</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.binvox.voxelize_mesh">
+<code class="sig-prename descclassname">trimesh.exchange.binvox.</code><code class="sig-name descname">voxelize_mesh</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">binvoxer=None</em>, <em class="sig-param">export_type='off'</em>, <em class="sig-param">**binvoxer_kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.binvox.voxelize_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interface for voxelizing Trimesh object via the binvox tool.</p>
+<p>Implementation simply saved the mesh in the specified export_type then
+runs the <cite>Binvoxer.__call__</cite> (using either the supplied <cite>binvoxer</cite> or
+creating one via <cite>binvoxer_kwargs</cite>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<em>Trimesh object to voxelize.</em>) – </p></li>
+<li><p><strong>binvoxer</strong> (<em>optional Binvoxer instance.</em>) – </p></li>
+<li><p><strong>export_type</strong> (<em>file type to export mesh as temporarily for Binvoxer to</em>) – operate on.</p></li>
+<li><p><strong>**binvoxer_kwargs</strong> (<em>kwargs for creating a new Binvoxer instance. If binvoxer</em>) – if provided, this must be empty.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>VoxelGrid</cite> object resulting.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.dae">
+<span id="trimesh-exchange-dae-module"></span><h2>trimesh.exchange.dae module<a class="headerlink" href="#module-trimesh.exchange.dae" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.dae.export_collada">
+<code class="sig-prename descclassname">trimesh.exchange.dae.</code><code class="sig-name descname">export_collada</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.dae.export_collada" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a mesh or a list of meshes as a COLLADA .dae file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mesh</strong> (<em>Trimesh object</em><em> or </em><em>list of Trimesh objects</em>) – The mesh(es) to export.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str, string of COLLADA format output</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.dae.load_collada">
+<code class="sig-prename descclassname">trimesh.exchange.dae.</code><code class="sig-name descname">load_collada</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.dae.load_collada" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a COLLADA (.dae) file into a list of trimesh kwargs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>file object</em>) – Containing a COLLADA file</p></li>
+<li><p><strong>resolver</strong> (<em>trimesh.visual.Resolver</em><em> or </em><em>None</em>) – For loading referenced files, like texture images</p></li>
+<li><p><strong>kwargs</strong> – Passed to trimesh.Trimesh.__init__</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – kwargs for Trimesh constructor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.dae.load_zae">
+<code class="sig-prename descclassname">trimesh.exchange.dae.</code><code class="sig-name descname">load_zae</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.dae.load_zae" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a ZAE file, which is just a zipped DAE file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>file object</em>) – Contains ZAE data</p></li>
+<li><p><strong>resolver</strong> (<em>trimesh.visual.Resolver</em>) – Resolver to load additional assets</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em>) – Passed to load_collada</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – Results of loading</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.export">
+<span id="trimesh-exchange-export-module"></span><h2>trimesh.exchange.export module<a class="headerlink" href="#module-trimesh.exchange.export" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.export.export_dict">
+<code class="sig-prename descclassname">trimesh.exchange.export.</code><code class="sig-name descname">export_dict</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">encoding=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.export.export_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a mesh to a dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<em>Trimesh object</em>) – Mesh to be exported</p></li>
+<li><p><strong>encoding</strong> (<em>str</em><em>, or </em><em>None</em>) – ‘base64’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong> – Data stored in dict</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.export.export_dict64">
+<code class="sig-prename descclassname">trimesh.exchange.export.</code><code class="sig-name descname">export_dict64</code><span class="sig-paren">(</span><em class="sig-param">mesh</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.export.export_dict64" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a mesh as a dictionary, with data encoded
+to base64.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.export.export_json">
+<code class="sig-prename descclassname">trimesh.exchange.export.</code><code class="sig-name descname">export_json</code><span class="sig-paren">(</span><em class="sig-param">mesh</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.export.export_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.export.export_mesh">
+<code class="sig-prename descclassname">trimesh.exchange.export.</code><code class="sig-name descname">export_mesh</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">file_obj</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.export.export_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Trimesh object to a file- like object, or to a filename</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>str</em><em>, </em><em>file-like</em>) – Where should mesh be exported to</p></li>
+<li><p><strong>file_type</strong> (<em>str</em><em> or </em><em>None</em>) – Represents file type (eg: ‘stl’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>exported</strong> – Result of exporter</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes or str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.export.export_msgpack">
+<code class="sig-prename descclassname">trimesh.exchange.export.</code><code class="sig-name descname">export_msgpack</code><span class="sig-paren">(</span><em class="sig-param">mesh</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.export.export_msgpack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.export.export_off">
+<code class="sig-prename descclassname">trimesh.exchange.export.</code><code class="sig-name descname">export_off</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">digits=10</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.export.export_off" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a mesh as an OFF file, a simple text format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh"><em>trimesh.Trimesh</em></a>) – Geometry to export</p></li>
+<li><p><strong>digits</strong> (<em>int</em>) – Number of digits to include on floats</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong> – OFF format output</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.export.scene_to_dict">
+<code class="sig-prename descclassname">trimesh.exchange.export.</code><code class="sig-name descname">scene_to_dict</code><span class="sig-paren">(</span><em class="sig-param">scene</em>, <em class="sig-param">use_base64=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.export.scene_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Scene object as a dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scene</strong> (<a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene"><em>trimesh.Scene</em></a>) – Scene object to be exported</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>as_dict</strong> – Scene as a dict</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.gltf">
+<span id="trimesh-exchange-gltf-module"></span><h2>trimesh.exchange.gltf module<a class="headerlink" href="#module-trimesh.exchange.gltf" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gltf-py">
+<h3>gltf.py<a class="headerlink" href="#gltf-py" title="Permalink to this headline">¶</a></h3>
+<p>Provides GLTF 2.0 exports of trimesh.Trimesh objects
+as GL_TRIANGLES, and trimesh.Path2D/Path3D as GL_LINES</p>
+<dl class="function">
+<dt id="trimesh.exchange.gltf.export_glb">
+<code class="sig-prename descclassname">trimesh.exchange.gltf.</code><code class="sig-name descname">export_glb</code><span class="sig-paren">(</span><em class="sig-param">scene</em>, <em class="sig-param">extras=None</em>, <em class="sig-param">include_normals=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.gltf.export_glb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a scene as a binary GLTF (GLB) file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scene</strong> (<a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene"><em>trimesh.Scene</em></a>) – Input geometry</p></li>
+<li><p><strong>extras</strong> (<em>JSON serializable</em>) – Will be stored in the extras field</p></li>
+<li><p><strong>include_normals</strong> (<em>bool</em>) – Include vertex normals in output file?</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>exported</strong> – Exported result in GLB 2.0</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.gltf.export_gltf">
+<code class="sig-prename descclassname">trimesh.exchange.gltf.</code><code class="sig-name descname">export_gltf</code><span class="sig-paren">(</span><em class="sig-param">scene</em>, <em class="sig-param">extras=None</em>, <em class="sig-param">include_normals=False</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.gltf.export_gltf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a scene object as a GLTF directory.</p>
+<p>This puts each mesh into a separate file (i.e. a <cite>buffer</cite>)
+as opposed to one larger file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scene</strong> (<a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene"><em>trimesh.Scene</em></a>) – Scene to be exported</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong> – Format: {file name : file data}</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.gltf.get_schema">
+<code class="sig-prename descclassname">trimesh.exchange.gltf.</code><code class="sig-name descname">get_schema</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.gltf.get_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a copy of the GLTF 2.0 schema with references resolved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>schema</strong> – A copy of the GLTF 2.0 schema without external references.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.gltf.load_glb">
+<code class="sig-prename descclassname">trimesh.exchange.gltf.</code><code class="sig-name descname">load_glb</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">**mesh_kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.gltf.load_glb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a GLTF file in the binary GLB format into a trimesh.Scene.</p>
+<p>Implemented from specification:
+<a class="reference external" href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0">https://github.com/KhronosGroup/glTF/tree/master/specification/2.0</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>file- like object</em>) – Containing GLB data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – Kwargs to instantiate a trimesh.Scene</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.gltf.load_gltf">
+<code class="sig-prename descclassname">trimesh.exchange.gltf.</code><code class="sig-name descname">load_gltf</code><span class="sig-paren">(</span><em class="sig-param">file_obj=None</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">**mesh_kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.gltf.load_gltf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a GLTF file, which consists of a directory structure
+with multiple files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>None</em><em> or </em><em>file-like</em>) – Object containing header JSON, or None</p></li>
+<li><p><strong>resolver</strong> (<em>trimesh.visual.Resolver</em>) – Object which can be used to load other files by name</p></li>
+<li><p><strong>**mesh_kwargs</strong> (<em>dict</em>) – Passed to mesh constructor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – Arguments to create scene</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.gltf.validate">
+<code class="sig-prename descclassname">trimesh.exchange.gltf.</code><code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param">header</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.gltf.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate a GLTF 2.0 header against the schema.</p>
+<p>Returns result from:
+<cite>jsonschema.validate(header, schema=get_schema())</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>header</strong> (<em>dict</em>) – Populated GLTF 2.0 header</p>
+</dd>
+</dl>
+<p>:raises err : jsonschema.exceptions.ValidationError: If the tree is an invalid GLTF2.0 header</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-trimesh.exchange.load">
+<span id="trimesh-exchange-load-module"></span><h2>trimesh.exchange.load module<a class="headerlink" href="#module-trimesh.exchange.load" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.load.available_formats">
+<code class="sig-prename descclassname">trimesh.exchange.load.</code><code class="sig-name descname">available_formats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.load.available_formats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of all available loaders</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>loaders</strong> – Extensions of available loaders
+i.e. ‘stl’, ‘ply’, ‘dxf’, etc.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.load.load">
+<code class="sig-prename descclassname">trimesh.exchange.load.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.load.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a mesh or vectorized path into objects like
+Trimesh, Path2D, Path3D, Scene</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>str</em><em>, or </em><em>file- like object</em>) – The source of the data to be loadeded</p></li>
+<li><p><strong>file_type</strong> (<em>str</em>) – What kind of file type do we have (eg: ‘stl’)</p></li>
+<li><p><strong>resolver</strong> (<em>trimesh.visual.Resolver</em>) – Object to load referenced assets like materials and textures</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em>) – Passed to geometry __init__</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>geometry</strong> – Loaded geometry as trimesh classes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.base.Trimesh" title="trimesh.base.Trimesh">Trimesh</a>, <a class="reference internal" href="trimesh.path.html#trimesh.path.path.Path2D" title="trimesh.path.path.Path2D">Path2D</a>, <a class="reference internal" href="trimesh.path.html#trimesh.path.path.Path3D" title="trimesh.path.path.Path3D">Path3D</a>, <a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene">Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.load.load_compressed">
+<code class="sig-prename descclassname">trimesh.exchange.load.</code><code class="sig-name descname">load_compressed</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">mixed=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.load.load_compressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a compressed archive load all the geometry that
+we can from it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>open file-like object</em>) – Containing compressed data</p></li>
+<li><p><strong>file_type</strong> (<em>str</em>) – Type of the archive file</p></li>
+<li><p><strong>mixed</strong> (<em>bool</em>) – If False, for archives containing both 2D and 3D
+data will only load the 3D data into the Scene.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scene</strong> – Geometry loaded in to a Scene object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Scene" title="trimesh.Scene">trimesh.Scene</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.load.load_kwargs">
+<code class="sig-prename descclassname">trimesh.exchange.load.</code><code class="sig-name descname">load_kwargs</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.load.load_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load geometry from a properly formatted dict or kwargs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.load.load_remote">
+<code class="sig-prename descclassname">trimesh.exchange.load.</code><code class="sig-name descname">load_remote</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.load.load_remote" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a mesh at a remote URL into a local trimesh object.</p>
+<p>This must be called explicitly rather than automatically
+from trimesh.load to ensure users don’t accidentally make
+network requests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>string</em>) – URL containing mesh file</p></li>
+<li><p><strong>**kwargs</strong> (passed to <cite>load</cite>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.load.mesh_formats">
+<code class="sig-prename descclassname">trimesh.exchange.load.</code><code class="sig-name descname">mesh_formats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.load.mesh_formats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of mesh formats</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>loaders</strong> – Extensions of available mesh loaders
+i.e. ‘stl’, ‘ply’, etc.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.load.parse_file_args">
+<code class="sig-prename descclassname">trimesh.exchange.load.</code><code class="sig-name descname">parse_file_args</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">file_type</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.load.parse_file_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a file_obj and a file_type try to turn them into a file-like
+object and a lowercase string of file type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>str: if string represents a file path</em><em>, </em><em>returns</em>) – <blockquote>
+<div><p>file_obj:   an ‘rb’ opened file object of the path
+file_type:  the extension from the file path</p>
+</div></blockquote>
+<dl>
+<dt>str: if string is NOT a path, but has JSON-like special characters</dt><dd><p>file_obj:   the same string passed as file_obj
+file_type:  set to ‘json’</p>
+</dd>
+<dt>str: string is a valid URL</dt><dd><p>file_obj: an open ‘rb’ file object with retrieved data
+file_type: from the extension</p>
+</dd>
+<dt>str: string is not an existing path or a JSON-like object</dt><dd><p>ValueError will be raised as we can’t do anything with input</p>
+</dd>
+<dt>file like object: we cannot grab information on file_type automatically</dt><dd><p>ValueError will be raised if file_type is None
+file_obj:  same as input
+file_type: same as input</p>
+</dd>
+<dt>other object: like a shapely.geometry.Polygon, etc:</dt><dd><p>file_obj:  same as input
+file_type: if None initially, set to the class name</p>
+<blockquote>
+<div><p>(in lower case), otherwise passed through</p>
+</div></blockquote>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>file_type</strong> (<em>str</em><em>, </em><em>type of file and handled according to above</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>loadable object</em>)</p></li>
+<li><p><strong>file_type</strong> (<em>str, lower case of the type of file (eg ‘stl’, ‘dae’, etc)</em>)</p></li>
+<li><p><strong>metadata</strong> (<em>dict, any metadata</em>)</p></li>
+<li><p><strong>opened</strong> (<em>bool, did we open the file or not</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.misc">
+<span id="trimesh-exchange-misc-module"></span><h2>trimesh.exchange.misc module<a class="headerlink" href="#module-trimesh.exchange.misc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.misc.load_dict">
+<code class="sig-prename descclassname">trimesh.exchange.misc.</code><code class="sig-name descname">load_dict</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.misc.load_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load multiple input types into kwargs for a Trimesh constructor.
+Tries to extract keys:
+‘faces’
+‘vertices’
+‘face_normals’
+‘vertex_normals’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>accepts multiple forms</em>) – <p>-dict: has keys for vertices and faces as (n,3) numpy arrays
+-dict: has keys for vertices/faces (n,3) arrays encoded as dicts/base64</p>
+<blockquote>
+<div><p>with trimesh.util.array_to_encoded/trimesh.util.encoded_to_array</p>
+</div></blockquote>
+<p>-str:  json blob as dict with either straight array or base64 values
+-file object: json blob of dict</p>
+</p></li>
+<li><p><strong>file_type</strong> (<em>not used</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – -vertices: (n,3) float
+-faces:    (n,3) int
+-face_normals: (n,3) float (optional)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict with keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.misc.load_msgpack">
+<code class="sig-prename descclassname">trimesh.exchange.misc.</code><code class="sig-name descname">load_msgpack</code><span class="sig-paren">(</span><em class="sig-param">blob</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.misc.load_msgpack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a dict packed with msgpack into kwargs for
+a Trimesh constructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>blob</strong> (<em>bytes</em>) – msgpack packed dict containing
+keys ‘vertices’ and ‘faces’</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – Keyword args for Trimesh constructor, aka
+mesh=trimesh.Trimesh(<a href="#id3"><span class="problematic" id="id4">**</span></a>loaded)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.misc.load_off">
+<code class="sig-prename descclassname">trimesh.exchange.misc.</code><code class="sig-name descname">load_off</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.misc.load_off" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an OFF file into the kwargs for a Trimesh constructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>file object</em>) – Contains an OFF file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – kwargs for Trimesh constructor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.obj">
+<span id="trimesh-exchange-obj-module"></span><h2>trimesh.exchange.obj module<a class="headerlink" href="#module-trimesh.exchange.obj" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.obj.export_obj">
+<code class="sig-prename descclassname">trimesh.exchange.obj.</code><code class="sig-name descname">export_obj</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">include_normals=True</em>, <em class="sig-param">include_color=True</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.obj.export_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a mesh as a Wavefront OBJ file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mesh</strong> (<a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh"><em>trimesh.Trimesh</em></a>) – Mesh to be exported</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong> – OBJ format output</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.obj.load_obj">
+<code class="sig-prename descclassname">trimesh.exchange.obj.</code><code class="sig-name descname">load_obj</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">split_object=False</em>, <em class="sig-param">group_material=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.obj.load_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a Wavefront OBJ file into kwargs for a trimesh.Scene
+object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>file like object</em>) – Contains OBJ data</p></li>
+<li><p><strong>resolver</strong> (<a class="reference internal" href="trimesh.visual.html#trimesh.visual.resolvers.Resolver" title="trimesh.visual.resolvers.Resolver"><em>trimesh.visual.resolvers.Resolver</em></a>) – Allow assets such as referenced textures and
+material files to be loaded</p></li>
+<li><p><strong>split_object</strong> (<em>bool</em>) – Split meshes at each <cite>o</cite> declared in file</p></li>
+<li><p><strong>group_material</strong> (<em>bool</em>) – Group faces that share the same material
+into the same mesh.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – Keyword arguments which can be loaded by
+trimesh.exchange.load.load_kwargs into a trimesh.Scene</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.obj.parse_mtl">
+<code class="sig-prename descclassname">trimesh.exchange.obj.</code><code class="sig-name descname">parse_mtl</code><span class="sig-paren">(</span><em class="sig-param">mtl</em>, <em class="sig-param">resolver=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.obj.parse_mtl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a loaded MTL file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mtl</strong> (<em>str</em><em> or </em><em>bytes</em>) – Data from an MTL file</p></li>
+<li><p><strong>resolver</strong> (<em>trimesh.visual.Resolver</em>) – Fetch assets by name from files, web, or other</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mtllibs</strong> – Each dict has keys: newmtl, map_Kd, Kd</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.openctm">
+<span id="trimesh-exchange-openctm-module"></span><h2>trimesh.exchange.openctm module<a class="headerlink" href="#module-trimesh.exchange.openctm" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.openctm.load_ctm">
+<code class="sig-prename descclassname">trimesh.exchange.openctm.</code><code class="sig-name descname">load_ctm</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">file_type=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.openctm.load_ctm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load OpenCTM files from a file object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>open file- like object</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>loaded</strong> –</p>
+<dl class="simple">
+<dt>kwargs for a Trimesh constructor:</dt><dd><dl class="simple">
+<dt>{vertices: (n,3) float, vertices</dt><dd><p>faces:    (m,3) int, indexes of vertices}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.ply">
+<span id="trimesh-exchange-ply-module"></span><h2>trimesh.exchange.ply module<a class="headerlink" href="#module-trimesh.exchange.ply" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.ply.element_colors">
+<code class="sig-prename descclassname">trimesh.exchange.ply.</code><code class="sig-name descname">element_colors</code><span class="sig-paren">(</span><em class="sig-param">element</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.ply.element_colors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an element, try to extract RGBA color from
+properties and return them as an (n,3|4) array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> (<em>dict</em><em>, </em><em>containing color keys</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>colors</strong> (<em>(n,(3|4)</em>)</p></li>
+<li><p><strong>signal</strong> (<em>float, estimate of range</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.ply.elements_to_kwargs">
+<code class="sig-prename descclassname">trimesh.exchange.ply.</code><code class="sig-name descname">elements_to_kwargs</code><span class="sig-paren">(</span><em class="sig-param">elements</em>, <em class="sig-param">fix_texture</em>, <em class="sig-param">image</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.ply.elements_to_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an elements data structure, extract the keyword
+arguments that a Trimesh object constructor will expect.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>elements</strong> (<em>OrderedDict object</em><em>, </em><em>with fields and data loaded</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – eg: mesh = trimesh.Trimesh(<a href="#id5"><span class="problematic" id="id6">**</span></a>kwargs)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict, with keys for Trimesh constructor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.ply.export_draco">
+<code class="sig-prename descclassname">trimesh.exchange.ply.</code><code class="sig-name descname">export_draco</code><span class="sig-paren">(</span><em class="sig-param">mesh</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.ply.export_draco" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a mesh using Google’s Draco compressed format.</p>
+<p>Only works if draco_encoder is in your PATH:
+<a class="reference external" href="https://github.com/google/draco">https://github.com/google/draco</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mesh</strong> (<em>Trimesh object</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – DRC file bytes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str or bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.ply.export_ply">
+<code class="sig-prename descclassname">trimesh.exchange.ply.</code><code class="sig-name descname">export_ply</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">encoding='binary'</em>, <em class="sig-param">vertex_normal=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.ply.export_ply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a mesh in the PLY format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<em>Trimesh object</em>) – </p></li>
+<li><p><strong>encoding</strong> (<em>[</em><em>'ascii'|'binary_little_endian'</em><em>]</em>) – </p></li>
+<li><p><strong>vertex_normal</strong> (<em>include vertex normals</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes of result</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.ply.load_draco">
+<code class="sig-prename descclassname">trimesh.exchange.ply.</code><code class="sig-name descname">load_draco</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.ply.load_draco" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a mesh from Google’s Draco format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>file- like object</em>) – Contains data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – Keyword arguments to construct a Trimesh object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.ply.load_ply">
+<code class="sig-prename descclassname">trimesh.exchange.ply.</code><code class="sig-name descname">load_ply</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">resolver=None</em>, <em class="sig-param">fix_texture=True</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.ply.load_ply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a PLY file from an open file object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_obj</strong> (<em>an open file- like object</em>) – Source data, ASCII or binary PLY</p></li>
+<li><p><strong>resolver</strong> (<a class="reference internal" href="trimesh.visual.html#trimesh.visual.resolvers.Resolver" title="trimesh.visual.resolvers.Resolver"><em>trimesh.visual.resolvers.Resolver</em></a>) – Object which can resolve assets</p></li>
+<li><p><strong>fix_texture</strong> (<em>bool</em>) – If True, will re- index vertices and faces
+so vertices with different UV coordinates
+are disconnected.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mesh_kwargs</strong> – Data which can be passed to
+Trimesh constructor, eg: a = Trimesh(<a href="#id7"><span class="problematic" id="id8">**</span></a>mesh_kwargs)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.ply.parse_header">
+<code class="sig-prename descclassname">trimesh.exchange.ply.</code><code class="sig-name descname">parse_header</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.ply.parse_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the ASCII header of a PLY file, and leave the file object
+at the position of the start of data but past the header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>open file object</em>) – Positioned at the start of the file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>elements</strong> (<em>collections.OrderedDict</em>) – Fields and data types populated</p></li>
+<li><p><strong>is_ascii</strong> (<em>bool</em>) – Whether the data is ASCII or binary</p></li>
+<li><p><strong>image_name</strong> (<em>None or str</em>) – File name of TextureFile</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.ply.ply_ascii">
+<code class="sig-prename descclassname">trimesh.exchange.ply.</code><code class="sig-name descname">ply_ascii</code><span class="sig-paren">(</span><em class="sig-param">elements</em>, <em class="sig-param">file_obj</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.ply.ply_ascii" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load data from an ASCII PLY file into an existing elements data structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>elements</strong> (<em>OrderedDict object</em><em>, </em><em>populated from the file header.</em>) – object will be modified to add data by this function.</p></li>
+<li><p><strong>file_obj</strong> (<em>open file object</em><em>, </em><em>with current position at the start</em>) – of the data section (past the header)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.ply.ply_binary">
+<code class="sig-prename descclassname">trimesh.exchange.ply.</code><code class="sig-name descname">ply_binary</code><span class="sig-paren">(</span><em class="sig-param">elements</em>, <em class="sig-param">file_obj</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.ply.ply_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the data from a binary PLY file into the elements data structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>elements</strong> (<em>OrderedDict object</em><em>, </em><em>populated from the file header.</em>) – object will be modified to add data by this function.</p></li>
+<li><p><strong>file_obj</strong> (<em>open file object</em><em>, </em><em>with current position at the start</em>) – of the data section (past the header)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.stl">
+<span id="trimesh-exchange-stl-module"></span><h2>trimesh.exchange.stl module<a class="headerlink" href="#module-trimesh.exchange.stl" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="trimesh.exchange.stl.HeaderError">
+<em class="property">exception </em><code class="sig-prename descclassname">trimesh.exchange.stl.</code><code class="sig-name descname">HeaderError</code><a class="headerlink" href="#trimesh.exchange.stl.HeaderError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.stl.export_stl">
+<code class="sig-prename descclassname">trimesh.exchange.stl.</code><code class="sig-name descname">export_stl</code><span class="sig-paren">(</span><em class="sig-param">mesh</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.stl.export_stl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Trimesh object into a binary STL file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mesh</strong> (<em>Trimesh object</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes, representing mesh in binary STL form</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.stl.export_stl_ascii">
+<code class="sig-prename descclassname">trimesh.exchange.stl.</code><code class="sig-name descname">export_stl_ascii</code><span class="sig-paren">(</span><em class="sig-param">mesh</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.stl.export_stl_ascii" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Trimesh object into an ASCII STL file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mesh</strong> (<a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh"><em>trimesh.Trimesh</em></a>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>export</strong> – Mesh represented as an ASCII STL file</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.stl.load_stl">
+<code class="sig-prename descclassname">trimesh.exchange.stl.</code><code class="sig-name descname">load_stl</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.stl.load_stl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an STL file from a file object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>open file-like object</em>) – Containing STL data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – kwargs for a Trimesh constructor with keys:
+vertices:     (n,3) float, vertices
+faces:        (m,3) int, indexes of vertices
+face_normals: (m,3) float, normal vector of each face</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.stl.load_stl_ascii">
+<code class="sig-prename descclassname">trimesh.exchange.stl.</code><code class="sig-name descname">load_stl_ascii</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.stl.load_stl_ascii" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an ASCII STL file from a file object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>open file- like object</em>) – Containing input data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – kwargs for a Trimesh constructor with keys:
+vertices:     (n,3) float, vertices
+faces:        (m,3) int, indexes of vertices
+face_normals: (m,3) float, normal vector of each face</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.stl.load_stl_binary">
+<code class="sig-prename descclassname">trimesh.exchange.stl.</code><code class="sig-name descname">load_stl_binary</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.stl.load_stl_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a binary STL file from a file object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>open file- like object</em>) – Containing STL data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>loaded</strong> – vertices:     (n,3) float, vertices
+faces:        (m,3) int, indexes of vertices
+face_normals: (m,3) float, normal vector of each face</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>kwargs for a Trimesh constructor with keys:</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.threemf">
+<span id="trimesh-exchange-threemf-module"></span><h2>trimesh.exchange.threemf module<a class="headerlink" href="#module-trimesh.exchange.threemf" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.threemf.load_3MF">
+<code class="sig-prename descclassname">trimesh.exchange.threemf.</code><code class="sig-name descname">load_3MF</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">postprocess=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.threemf.load_3MF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a 3MF formatted file into a Trimesh scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>file object</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict, with keys ‘graph’, ‘geometry’, ‘base_frame’</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.urdf">
+<span id="trimesh-exchange-urdf-module"></span><h2>trimesh.exchange.urdf module<a class="headerlink" href="#module-trimesh.exchange.urdf" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.urdf.export_urdf">
+<code class="sig-prename descclassname">trimesh.exchange.urdf.</code><code class="sig-name descname">export_urdf</code><span class="sig-paren">(</span><em class="sig-param">mesh, directory, scale=1.0, color=[0.75, 0.75, 0.75], **kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.urdf.export_urdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Trimesh object into a URDF package for physics simulation.
+This breaks the mesh into convex pieces and writes them to the same
+directory as the .urdf file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<em>Trimesh object</em>) – </p></li>
+<li><p><strong>directory</strong> (<em>str</em>) – The directory path for the URDF package</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mesh</strong> – Multi-body mesh containing convex decomposition</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Trimesh object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange.xml_based">
+<span id="trimesh-exchange-xml-based-module"></span><h2>trimesh.exchange.xml_based module<a class="headerlink" href="#module-trimesh.exchange.xml_based" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.exchange.xml_based.load_3DXML">
+<code class="sig-prename descclassname">trimesh.exchange.xml_based.</code><code class="sig-name descname">load_3DXML</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.xml_based.load_3DXML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a 3DXML scene into kwargs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>file object</em>) – Open and containing 3DXML data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>kwargs</strong> – Can be passed to trimesh.exchange.load.load_kwargs</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.xml_based.load_XAML">
+<code class="sig-prename descclassname">trimesh.exchange.xml_based.</code><code class="sig-name descname">load_XAML</code><span class="sig-paren">(</span><em class="sig-param">file_obj</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.xml_based.load_XAML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a 3D XAML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_obj</strong> (<em>file object</em>) – Open, containing XAML file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – kwargs for a trimesh constructor, including:
+vertices:       (n,3) np.float64, points in space
+faces:          (m,3) np.int64, indices of vertices
+face_colors:    (m,4) np.uint8, RGBA colors
+vertex_normals: (n,3) np.float64, vertex normals</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.exchange.xml_based.print_element">
+<code class="sig-prename descclassname">trimesh.exchange.xml_based.</code><code class="sig-name descname">print_element</code><span class="sig-paren">(</span><em class="sig-param">element</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.exchange.xml_based.print_element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pretty- print an lxml.etree element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> (<em>etree element</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.exchange">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trimesh.exchange" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trimesh.interfaces.html" class="btn btn-neutral float-right" title="trimesh.interfaces package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trimesh.html" class="btn btn-neutral float-left" title="trimesh package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

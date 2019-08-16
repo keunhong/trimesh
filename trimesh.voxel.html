@@ -1,0 +1,2640 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trimesh.voxel package &mdash; trimesh 3.2.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="trimesh.visual package" href="trimesh.visual.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="trimesh.html">trimesh package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="trimesh.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="trimesh.exchange.html">trimesh.exchange package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.interfaces.html">trimesh.interfaces package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.path.html">trimesh.path package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.ray.html">trimesh.ray package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.resources.html">trimesh.resources package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.scene.html">trimesh.scene package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.viewer.html">trimesh.viewer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.visual.html">trimesh.visual package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">trimesh.voxel package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.base">trimesh.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.boolean">trimesh.boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.bounds">trimesh.bounds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.caching">trimesh.caching module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.collision">trimesh.collision module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.comparison">trimesh.comparison module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.constants">trimesh.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.convex">trimesh.convex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.creation">trimesh.creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.curvature">trimesh.curvature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.decomposition">trimesh.decomposition module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.exceptions">trimesh.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.geometry">trimesh.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.graph">trimesh.graph module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.grouping">trimesh.grouping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.inertia">trimesh.inertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.integrate">trimesh.integrate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.intersections">trimesh.intersections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.interval">trimesh.interval module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.nsphere">trimesh.nsphere module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.parent">trimesh.parent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.permutate">trimesh.permutate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.points">trimesh.points module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.poses">trimesh.poses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.primitives">trimesh.primitives module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.proximity">trimesh.proximity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.registration">trimesh.registration module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.remesh">trimesh.remesh module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.rendering">trimesh.rendering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.repair">trimesh.repair module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.sample">trimesh.sample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.schemas">trimesh.schemas module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.smoothing">trimesh.smoothing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.transformations">trimesh.transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.triangles">trimesh.triangles module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.units">trimesh.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.util">trimesh.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.version">trimesh.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Module Reference</a> &raquo;</li>
+        
+          <li><a href="trimesh.html">trimesh package</a> &raquo;</li>
+        
+      <li>trimesh.voxel package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/trimesh.voxel.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trimesh-voxel-package">
+<h1>trimesh.voxel package<a class="headerlink" href="#trimesh-voxel-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.voxel.base">
+<span id="trimesh-voxel-base-module"></span><h2>trimesh.voxel.base module<a class="headerlink" href="#module-trimesh.voxel.base" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="voxel-py">
+<h3>voxel.py<a class="headerlink" href="#voxel-py" title="Permalink to this headline">¶</a></h3>
+<p>Convert meshes to a simple voxel data structure and back again.</p>
+<dl class="class">
+<dt id="trimesh.voxel.base.VoxelGrid">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.base.</code><code class="sig-name descname">VoxelGrid</code><span class="sig-paren">(</span><em class="sig-param">encoding</em>, <em class="sig-param">transform=None</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="trimesh.html#trimesh.parent.Geometry" title="trimesh.parent.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.parent.Geometry</span></code></a></p>
+<p>Store 3D voxels.</p>
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.apply_transform">
+<code class="sig-name descname">apply_transform</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.apply_transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.as_boxes">
+<code class="sig-name descname">as_boxes</code><span class="sig-paren">(</span><em class="sig-param">colors=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.as_boxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A rough Trimesh representation of the voxels with a box
+for each filled voxel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>colors</strong> (<em>(</em><em>3</em><em>,</em><em>) or </em><em>(</em><em>4</em><em>,</em><em>) </em><em>float</em><em> or </em><em>uint8</em>) – (X, Y, Z, 3) or (X, Y, Z, 4) float or uint8
+Where matrix.shape == (X, Y, Z)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mesh</strong> – Mesh with one box per filled cell.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh">trimesh.Trimesh</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.bounds">
+<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.bounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.crc">
+<code class="sig-name descname">crc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.crc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.element_volume">
+<em class="property">property </em><code class="sig-name descname">element_volume</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.element_volume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.encoding">
+<em class="property">property </em><code class="sig-name descname">encoding</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>Encoding</cite> object providing the occupancy grid.</p>
+<p>See <cite>trimesh.voxel.encoding</cite> for implementations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.extents">
+<em class="property">property </em><code class="sig-name descname">extents</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.extents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.fill">
+<code class="sig-name descname">fill</code><span class="sig-paren">(</span><em class="sig-param">method='holes'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutates self by filling in the encoding according to <cite>morphology.fill</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>implementation key</em><em>, </em><em>one of</em>) – <cite>trimesh.voxel.morphology.fill.fillers</cite> keys</p></li>
+<li><p><strong>**kwargs</strong> (<em>additional kwargs passed to the keyed implementation</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>self after replacing encoding with a filled version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.filled_count">
+<em class="property">property </em><code class="sig-name descname">filled_count</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.filled_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>int, number of occupied voxels in the grid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.hollow">
+<code class="sig-name descname">hollow</code><span class="sig-paren">(</span><em class="sig-param">structure=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.hollow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutates self by removing internal voxels leaving only surface elements.</p>
+<p>Surviving elements are those in encoding that are adjacent to an empty
+voxel, where adjacency is controlled by <cite>structure</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>structure</strong> (<em>adjacency structure. If None</em><em>, </em><em>square connectivity is used.</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>self after replacing encoding with a surface version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.indices_to_points">
+<code class="sig-name descname">indices_to_points</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.indices_to_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.is_filled">
+<code class="sig-name descname">is_filled</code><span class="sig-paren">(</span><em class="sig-param">point</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.is_filled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query points to see if the voxel cells they lie in are
+filled or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Points in space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>is_filled</strong> – Is cell occupied or not for each point</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n,) bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.marching_cubes">
+<em class="property">property </em><code class="sig-name descname">marching_cubes</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.marching_cubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A marching cubes Trimesh representation of the voxels.</p>
+<p>No effort was made to clean or smooth the result in any way;
+it is merely the result of applying the scikit-image
+measure.marching_cubes function to self.encoding.dense.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>meshed</strong> – object, as returned by marching cubes algorithm.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Trimesh object representing the current voxel</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.matrix">
+<em class="property">property </em><code class="sig-name descname">matrix</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a DENSE matrix of the current voxel encoding</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>dense</strong> – Numpy array of dense matrix
+Shortcut to voxel.encoding.dense</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(a, b, c) bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.md5">
+<code class="sig-name descname">md5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.md5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.origin">
+<em class="property">property </em><code class="sig-name descname">origin</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated. Use <cite>self.translation</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.pitch">
+<em class="property">property </em><code class="sig-name descname">pitch</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.pitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uniform scaling factor representing the side length of each voxel.</p>
+<p>Raises a <cite>RuntimeError</cite> if <cite>self.transformation</cite> has rotation or shear
+components of has non-uniform scaling.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.points">
+<em class="property">property </em><code class="sig-name descname">points</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.points" title="Permalink to this definition">¶</a></dt>
+<dd><p>The center of each filled cell as a list of points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>points</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(self.filled, 3) float, list of points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.points_to_indices">
+<code class="sig-name descname">points_to_indices</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.points_to_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert points to indices in the matrix array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em><em>, </em><em>point in space</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>indices</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 3) int array of indices into self.encoding</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.revoxelized">
+<code class="sig-name descname">revoxelized</code><span class="sig-paren">(</span><em class="sig-param">shape</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.revoxelized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new VoxelGrid without rotations, reflections or shearing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shape</strong> (<em>3-tuple of ints denoting the shape of the returned VoxelGrid.</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>VoxelGrid of the given shape with (possibly non-uniform) scale and</em></p></li>
+<li><p><em>translation transformation matrix.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>3-element float representing per-axis scale.</p>
+<p>Raises a <cite>RuntimeError</cite> if <cite>self.transform</cite> has rotation or
+shear components.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>3-tuple of ints denoting shape of occupancy grid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the current set of voxels into a trimesh for visualization
+and show that via its built- in preview method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.sparse_indices">
+<em class="property">property </em><code class="sig-name descname">sparse_indices</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.sparse_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>(n, 3) int array of sparse indices of occupied voxels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.strip">
+<code class="sig-name descname">strip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.strip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutate self by stripping leading/trailing planes of zeros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>self after mutation occurs in-place</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.transform">
+<em class="property">property </em><code class="sig-name descname">transform</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>4x4 homogeneous transformation matrix.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.translation">
+<em class="property">property </em><code class="sig-name descname">translation</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Location of voxel at [0, 0, 0].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.base.VoxelGrid.volume">
+<em class="property">property </em><code class="sig-name descname">volume</code><a class="headerlink" href="#trimesh.voxel.base.VoxelGrid.volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>What is the volume of the filled cells in the current voxel object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>volume</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float, volume of filled cells</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-trimesh.voxel.creation">
+<span id="trimesh-voxel-creation-module"></span><h2>trimesh.voxel.creation module<a class="headerlink" href="#module-trimesh.voxel.creation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.voxel.creation.local_voxelize">
+<code class="sig-prename descclassname">trimesh.voxel.creation.</code><code class="sig-name descname">local_voxelize</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">point</em>, <em class="sig-param">pitch</em>, <em class="sig-param">radius</em>, <em class="sig-param">fill=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.creation.local_voxelize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Voxelize a mesh in the region of a cube around a point. When fill=True,
+uses proximity.contains to fill the resulting voxels so may be meaningless
+for non-watertight meshes. Useful to reduce memory cost for small values of
+pitch as opposed to global voxelization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh"><em>trimesh.Trimesh</em></a>) – Source geometry</p></li>
+<li><p><strong>point</strong> (<em>(</em><em>3</em><em>, </em><em>) </em><em>float</em>) – Point in space to voxelize around</p></li>
+<li><p><strong>pitch</strong> (<em>float</em>) – Side length of a single voxel cube</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – Number of voxel cubes to return in each direction.</p></li>
+<li><p><strong>kwargs</strong> (<em>parameters to pass to voxelize_subdivide</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>voxels</strong> – or None if the volume is empty</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>VoxelGrid instance with resolution (m, m, m) where m=2*radius+1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.creation.voxelize">
+<code class="sig-prename descclassname">trimesh.voxel.creation.</code><code class="sig-name descname">voxelize</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">pitch</em>, <em class="sig-param">method='subdivide'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.creation.voxelize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Voxelize the given mesh using the specified implementation.</p>
+<p>See <cite>voxelizers</cite> for available implementations or to add your own, e.g. via
+<cite>voxelizers[‘custom_key’] = custom_fn</cite>.</p>
+<p><cite>custom_fn</cite> should have signature <cite>(mesh, pitch, **kwargs) -&gt; VoxelGrid</cite>
+and should not modify encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<em>Trimesh object</em><em> (</em><em>left unchanged</em><em>)</em><em></em>) – </p></li>
+<li><p><strong>pitch</strong> (<em>float</em><em>, </em><em>side length of each voxel.</em>) – </p></li>
+<li><p><strong>method</strong> (implementation method. Must be in <cite>fillers</cite>.) – </p></li>
+<li><p><strong>**kwargs</strong> (<em>additional kwargs passed to the specified implementation.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A VoxelGrid instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.voxel.encoding">
+<span id="trimesh-voxel-encoding-module"></span><h2>trimesh.voxel.encoding module<a class="headerlink" href="#module-trimesh.voxel.encoding" title="Permalink to this headline">¶</a></h2>
+<p>OO interfaces to encodings for ND arrays which caching.</p>
+<dl class="class">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">BinaryRunLengthEncoding</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.voxel.encoding.RunLengthEncoding" title="trimesh.voxel.encoding.RunLengthEncoding"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.voxel.encoding.RunLengthEncoding</span></code></a></p>
+<p>1D binary run length encoding.</p>
+<p>See <cite>trimesh.voxel.runlength</cite> documentation for implementation details.</p>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.binary_run_length_data">
+<code class="sig-name descname">binary_run_length_data</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.binary_run_length_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.dense">
+<em class="property">property </em><code class="sig-name descname">dense</code><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.from_brle">
+<em class="property">static </em><code class="sig-name descname">from_brle</code><span class="sig-paren">(</span><em class="sig-param">brle_data</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.from_brle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.from_dense">
+<em class="property">static </em><code class="sig-name descname">from_dense</code><span class="sig-paren">(</span><em class="sig-param">dense_data</em>, <em class="sig-param">encoding_dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.from_dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.from_rle">
+<em class="property">static </em><code class="sig-name descname">from_rle</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.from_rle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.gather">
+<code class="sig-name descname">gather</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.gather" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.gather_nd">
+<code class="sig-name descname">gather_nd</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.gather_nd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.mask">
+<code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.run_length_data">
+<code class="sig-name descname">run_length_data</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.run_length_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.sorted_gather">
+<code class="sig-name descname">sorted_gather</code><span class="sig-paren">(</span><em class="sig-param">ordered_indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.sorted_gather" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.sparse_components">
+<em class="property">property </em><code class="sig-name descname">sparse_components</code><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.sparse_components" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.sparse_indices">
+<em class="property">property </em><code class="sig-name descname">sparse_indices</code><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.sparse_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.sparse_values">
+<em class="property">property </em><code class="sig-name descname">sparse_values</code><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.sparse_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.stripped">
+<em class="property">property </em><code class="sig-name descname">stripped</code><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.stripped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get encoding with all zeros stripped from the start and end
+of each axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>encoding</strong> (<em>?</em>)</p></li>
+<li><p><strong>padding</strong> (<em>(n, 2) int</em>) – Padding at the start and end that was stripped</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.BinaryRunLengthEncoding.sum">
+<em class="property">property </em><code class="sig-name descname">sum</code><a class="headerlink" href="#trimesh.voxel.encoding.BinaryRunLengthEncoding.sum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.voxel.encoding.DenseEncoding">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">DenseEncoding</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.voxel.encoding.Encoding" title="trimesh.voxel.encoding.Encoding"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.voxel.encoding.Encoding</span></code></a></p>
+<p>Simple <cite>Encoding</cite> implementation based on a numpy ndarray.</p>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.dense">
+<em class="property">property </em><code class="sig-name descname">dense</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.dtype">
+<em class="property">property </em><code class="sig-name descname">dtype</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.flat">
+<em class="property">property </em><code class="sig-name descname">flat</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.flat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.gather">
+<code class="sig-name descname">gather</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.gather" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.gather_nd">
+<code class="sig-name descname">gather_nd</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.gather_nd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.mask">
+<code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.reshape">
+<code class="sig-name descname">reshape</code><span class="sig-paren">(</span><em class="sig-param">shape</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.reshape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.sparse_components">
+<em class="property">property </em><code class="sig-name descname">sparse_components</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.sparse_components" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.sparse_indices">
+<em class="property">property </em><code class="sig-name descname">sparse_indices</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.sparse_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.sparse_values">
+<em class="property">property </em><code class="sig-name descname">sparse_values</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.sparse_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.DenseEncoding.sum">
+<em class="property">property </em><code class="sig-name descname">sum</code><a class="headerlink" href="#trimesh.voxel.encoding.DenseEncoding.sum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.voxel.encoding.Encoding">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">Encoding</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for objects that implement a specific subset of of ndarray ops.</p>
+<p>This presents a unified interface for various different ways of encoding
+conceptually dense arrays and to interoperate between them.</p>
+<p>Example implementations are ND sparse arrays, run length encoded arrays
+and dense encodings (wrappers around np.ndarrays).</p>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.binary_run_length_data">
+<code class="sig-name descname">binary_run_length_data</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.binary_run_length_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.copy">
+<em class="property">abstract </em><code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.crc">
+<code class="sig-name descname">crc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.crc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.data">
+<em class="property">property </em><code class="sig-name descname">data</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.dense">
+<em class="property">abstract property </em><code class="sig-name descname">dense</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.dtype">
+<em class="property">abstract property </em><code class="sig-name descname">dtype</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.flat">
+<em class="property">property </em><code class="sig-name descname">flat</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.flat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.flip">
+<code class="sig-name descname">flip</code><span class="sig-paren">(</span><em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.flip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.gather_nd">
+<em class="property">abstract </em><code class="sig-name descname">gather_nd</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.gather_nd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.get_value">
+<em class="property">abstract </em><code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.mask">
+<em class="property">abstract </em><code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.md5">
+<code class="sig-name descname">md5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.md5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.mutable">
+<em class="property">property </em><code class="sig-name descname">mutable</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.mutable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.ndims">
+<em class="property">property </em><code class="sig-name descname">ndims</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.ndims" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.reshape">
+<code class="sig-name descname">reshape</code><span class="sig-paren">(</span><em class="sig-param">shape</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.reshape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.run_length_data">
+<code class="sig-name descname">run_length_data</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.run_length_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.shape">
+<em class="property">abstract property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.size">
+<em class="property">abstract property </em><code class="sig-name descname">size</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.sparse_components">
+<em class="property">property </em><code class="sig-name descname">sparse_components</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.sparse_components" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.sparse_indices">
+<em class="property">abstract property </em><code class="sig-name descname">sparse_indices</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.sparse_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.sparse_values">
+<em class="property">abstract property </em><code class="sig-name descname">sparse_values</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.sparse_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.stripped">
+<em class="property">property </em><code class="sig-name descname">stripped</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.stripped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get encoding with all zeros stripped from the start and end
+of each axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>encoding</strong> (<em>?</em>)</p></li>
+<li><p><strong>padding</strong> (<em>(n, 2) int</em>) – Padding at the start and end that was stripped</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.sum">
+<em class="property">abstract property </em><code class="sig-name descname">sum</code><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.sum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.Encoding.transpose">
+<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><em class="sig-param">perm</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.Encoding.transpose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.voxel.encoding.FlattenedEncoding">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">FlattenedEncoding</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.FlattenedEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.voxel.encoding.LazyIndexMap" title="trimesh.voxel.encoding.LazyIndexMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.voxel.encoding.LazyIndexMap</span></code></a></p>
+<p>Lazily flattened encoding.</p>
+<p>Dense equivalent is np.reshape(data, (-1,)) (np.flatten creates a copy).</p>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlattenedEncoding.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.FlattenedEncoding.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlattenedEncoding.dense">
+<em class="property">property </em><code class="sig-name descname">dense</code><a class="headerlink" href="#trimesh.voxel.encoding.FlattenedEncoding.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlattenedEncoding.flat">
+<em class="property">property </em><code class="sig-name descname">flat</code><a class="headerlink" href="#trimesh.voxel.encoding.FlattenedEncoding.flat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlattenedEncoding.mask">
+<code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.FlattenedEncoding.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlattenedEncoding.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.encoding.FlattenedEncoding.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.voxel.encoding.FlippedEncoding">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">FlippedEncoding</code><span class="sig-paren">(</span><em class="sig-param">encoding</em>, <em class="sig-param">axes</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.FlippedEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.voxel.encoding.LazyIndexMap" title="trimesh.voxel.encoding.LazyIndexMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.voxel.encoding.LazyIndexMap</span></code></a></p>
+<p>Encoding with entries flipped along one or more axes.</p>
+<p>Dense equivalent is <cite>np.flip</cite></p>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlippedEncoding.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.FlippedEncoding.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlippedEncoding.dense">
+<em class="property">property </em><code class="sig-name descname">dense</code><a class="headerlink" href="#trimesh.voxel.encoding.FlippedEncoding.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlippedEncoding.flip">
+<code class="sig-name descname">flip</code><span class="sig-paren">(</span><em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.FlippedEncoding.flip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlippedEncoding.mask">
+<code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.FlippedEncoding.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.FlippedEncoding.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.encoding.FlippedEncoding.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.voxel.encoding.LazyIndexMap">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">LazyIndexMap</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.LazyIndexMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.voxel.encoding.Encoding" title="trimesh.voxel.encoding.Encoding"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.voxel.encoding.Encoding</span></code></a></p>
+<p>Abstract class for implementing lazy index mapping operations.</p>
+<p>Implementations include transpose, flatten/reshaping and flipping</p>
+<dl class="simple">
+<dt>Derived classes must implement:</dt><dd><ul class="simple">
+<li><p>_to_base_indices(indices)</p></li>
+<li><p>_from_base_indices(base_indices)</p></li>
+<li><p>shape</p></li>
+<li><p>dense</p></li>
+<li><p>mask(mask)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.LazyIndexMap.dtype">
+<em class="property">property </em><code class="sig-name descname">dtype</code><a class="headerlink" href="#trimesh.voxel.encoding.LazyIndexMap.dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.LazyIndexMap.gather_nd">
+<code class="sig-name descname">gather_nd</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.LazyIndexMap.gather_nd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.LazyIndexMap.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.LazyIndexMap.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.LazyIndexMap.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#trimesh.voxel.encoding.LazyIndexMap.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.LazyIndexMap.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#trimesh.voxel.encoding.LazyIndexMap.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.LazyIndexMap.sparse_indices">
+<em class="property">property </em><code class="sig-name descname">sparse_indices</code><a class="headerlink" href="#trimesh.voxel.encoding.LazyIndexMap.sparse_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.LazyIndexMap.sparse_values">
+<em class="property">property </em><code class="sig-name descname">sparse_values</code><a class="headerlink" href="#trimesh.voxel.encoding.LazyIndexMap.sparse_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.LazyIndexMap.sum">
+<em class="property">property </em><code class="sig-name descname">sum</code><a class="headerlink" href="#trimesh.voxel.encoding.LazyIndexMap.sum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">RunLengthEncoding</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.voxel.encoding.Encoding" title="trimesh.voxel.encoding.Encoding"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.voxel.encoding.Encoding</span></code></a></p>
+<p>1D run length encoding.</p>
+<p>See <cite>trimesh.voxel.runlength</cite> documentation for implementation details.</p>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.binary_run_length_data">
+<code class="sig-name descname">binary_run_length_data</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.binary_run_length_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.crc">
+<code class="sig-name descname">crc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.crc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.dense">
+<em class="property">property </em><code class="sig-name descname">dense</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.dtype">
+<em class="property">property </em><code class="sig-name descname">dtype</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.from_brle">
+<em class="property">static </em><code class="sig-name descname">from_brle</code><span class="sig-paren">(</span><em class="sig-param">brle_data</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.from_brle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.from_dense">
+<em class="property">static </em><code class="sig-name descname">from_dense</code><span class="sig-paren">(</span><em class="sig-param">dense_data</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em>, <em class="sig-param">encoding_dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.from_dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.from_rle">
+<em class="property">static </em><code class="sig-name descname">from_rle</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.from_rle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.gather">
+<code class="sig-name descname">gather</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.gather" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.gather_nd">
+<code class="sig-name descname">gather_nd</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.gather_nd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.mask">
+<code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.md5">
+<code class="sig-name descname">md5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.md5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.ndims">
+<em class="property">property </em><code class="sig-name descname">ndims</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.ndims" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.run_length_data">
+<code class="sig-name descname">run_length_data</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.run_length_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.sorted_gather">
+<code class="sig-name descname">sorted_gather</code><span class="sig-paren">(</span><em class="sig-param">ordered_indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.sorted_gather" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.sparse_components">
+<em class="property">property </em><code class="sig-name descname">sparse_components</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.sparse_components" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.sparse_indices">
+<em class="property">property </em><code class="sig-name descname">sparse_indices</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.sparse_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.sparse_values">
+<em class="property">property </em><code class="sig-name descname">sparse_values</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.sparse_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.stripped">
+<em class="property">property </em><code class="sig-name descname">stripped</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.stripped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get encoding with all zeros stripped from the start and end
+of each axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>encoding</strong> (<em>?</em>)</p></li>
+<li><p><strong>padding</strong> (<em>(n, 2) int</em>) – Padding at the start and end that was stripped</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.RunLengthEncoding.sum">
+<em class="property">property </em><code class="sig-name descname">sum</code><a class="headerlink" href="#trimesh.voxel.encoding.RunLengthEncoding.sum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.voxel.encoding.ShapedEncoding">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">ShapedEncoding</code><span class="sig-paren">(</span><em class="sig-param">encoding</em>, <em class="sig-param">shape</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.ShapedEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.voxel.encoding.LazyIndexMap" title="trimesh.voxel.encoding.LazyIndexMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.voxel.encoding.LazyIndexMap</span></code></a></p>
+<p>Lazily reshaped encoding.</p>
+<p>Numpy equivalent is <cite>np.reshape</cite></p>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.ShapedEncoding.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.ShapedEncoding.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.ShapedEncoding.dense">
+<em class="property">property </em><code class="sig-name descname">dense</code><a class="headerlink" href="#trimesh.voxel.encoding.ShapedEncoding.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.ShapedEncoding.flat">
+<em class="property">property </em><code class="sig-name descname">flat</code><a class="headerlink" href="#trimesh.voxel.encoding.ShapedEncoding.flat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.ShapedEncoding.mask">
+<code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.ShapedEncoding.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.ShapedEncoding.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.encoding.ShapedEncoding.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.encoding.SparseBinaryEncoding">
+<code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">SparseBinaryEncoding</code><span class="sig-paren">(</span><em class="sig-param">indices</em>, <em class="sig-param">shape=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.SparseBinaryEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenient factory constructor for SparseEncodings with values all ones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indices</strong> (<em>(</em><em>m</em><em>, </em><em>n</em><em>) </em><em>sparse indices into conceptual rank-n array</em>) – </p></li>
+<li><p><strong>shape</strong> (<em>length n iterable</em><em> or </em><em>None. If None</em><em>, </em><em>maximum of indices along first</em>) – axis + 1 is used</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>rank n bool <cite>SparseEncoding</cite> with True values at each index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.voxel.encoding.SparseEncoding">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">SparseEncoding</code><span class="sig-paren">(</span><em class="sig-param">indices</em>, <em class="sig-param">values</em>, <em class="sig-param">shape=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.voxel.encoding.Encoding" title="trimesh.voxel.encoding.Encoding"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.voxel.encoding.Encoding</span></code></a></p>
+<p><cite>Encoding</cite> implementation based on an ND sparse implementation.</p>
+<p>Since the scipy.sparse implementations are for 2D arrays only, this
+implementation uses a single-column CSC matrix with index
+raveling/unraveling.</p>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.dense">
+<em class="property">property </em><code class="sig-name descname">dense</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.dtype">
+<em class="property">property </em><code class="sig-name descname">dtype</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.from_dense">
+<em class="property">static </em><code class="sig-name descname">from_dense</code><span class="sig-paren">(</span><em class="sig-param">dense_data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.from_dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.gather_nd">
+<code class="sig-name descname">gather_nd</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.gather_nd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.mask">
+<code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.ndims">
+<em class="property">property </em><code class="sig-name descname">ndims</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.ndims" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.sparse_components">
+<em class="property">property </em><code class="sig-name descname">sparse_components</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.sparse_components" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.sparse_indices">
+<em class="property">property </em><code class="sig-name descname">sparse_indices</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.sparse_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.sparse_values">
+<em class="property">property </em><code class="sig-name descname">sparse_values</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.sparse_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.stripped">
+<em class="property">property </em><code class="sig-name descname">stripped</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.stripped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get encoding with all zeros stripped from the start/end of each axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>SparseEncoding with same values but indices shifted down</dt><dd><p>by padding[:, 0]</p>
+</dd>
+<dt>padding: (n, 2) array of ints denoting padding at the start/end</dt><dd><p>that was stripped</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>encoding</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.SparseEncoding.sum">
+<em class="property">property </em><code class="sig-name descname">sum</code><a class="headerlink" href="#trimesh.voxel.encoding.SparseEncoding.sum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trimesh.voxel.encoding.TransposedEncoding">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.encoding.</code><code class="sig-name descname">TransposedEncoding</code><span class="sig-paren">(</span><em class="sig-param">base_encoding</em>, <em class="sig-param">perm</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trimesh.voxel.encoding.LazyIndexMap" title="trimesh.voxel.encoding.LazyIndexMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.voxel.encoding.LazyIndexMap</span></code></a></p>
+<p>Lazily transposed encoding</p>
+<p>Dense equivalent is <cite>np.transpose</cite></p>
+<dl class="method">
+<dt id="trimesh.voxel.encoding.TransposedEncoding.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.TransposedEncoding.data">
+<em class="property">property </em><code class="sig-name descname">data</code><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.TransposedEncoding.dense">
+<em class="property">property </em><code class="sig-name descname">dense</code><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.TransposedEncoding.gather">
+<code class="sig-name descname">gather</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding.gather" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.TransposedEncoding.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.TransposedEncoding.mask">
+<code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.TransposedEncoding.perm">
+<em class="property">property </em><code class="sig-name descname">perm</code><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding.perm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.TransposedEncoding.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.encoding.TransposedEncoding.transpose">
+<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><em class="sig-param">perm</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.encoding.TransposedEncoding.transpose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.voxel.morphology">
+<span id="trimesh-voxel-morphology-module"></span><h2>trimesh.voxel.morphology module<a class="headerlink" href="#module-trimesh.voxel.morphology" title="Permalink to this headline">¶</a></h2>
+<p>Basic morphology operations that create new encodings.</p>
+<dl class="function">
+<dt id="trimesh.voxel.morphology.binary_closing">
+<code class="sig-prename descclassname">trimesh.voxel.morphology.</code><code class="sig-name descname">binary_closing</code><span class="sig-paren">(</span><em class="sig-param">encoding</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.morphology.binary_closing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encoding wrapper around scipy.ndimage.morphology.binary_closing.</p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.ndimage.morphology.binary_closing.html#scipy.ndimage.morphology.binary_closing">https://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.ndimage.morphology.binary_closing.html#scipy.ndimage.morphology.binary_closing</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.morphology.binary_dilation">
+<code class="sig-prename descclassname">trimesh.voxel.morphology.</code><code class="sig-name descname">binary_dilation</code><span class="sig-paren">(</span><em class="sig-param">encoding</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.morphology.binary_dilation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encoding wrapper around scipy.ndimage.morphology.binary_dilation.</p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.ndimage.morphology.binary_dilation.html#scipy.ndimage.morphology.binary_dilation">https://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.ndimage.morphology.binary_dilation.html#scipy.ndimage.morphology.binary_dilation</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.morphology.fill">
+<code class="sig-prename descclassname">trimesh.voxel.morphology.</code><code class="sig-name descname">fill</code><span class="sig-paren">(</span><em class="sig-param">encoding</em>, <em class="sig-param">method='base'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.morphology.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the given encoding using the specified implementation.</p>
+<p>See <cite>fillers</cite> for available implementations or to add your own, e.g. via
+<cite>fillers[‘custom_key’] = custom_fn</cite>.</p>
+<p><cite>custom_fn</cite> should have signature <cite>(encoding, **kwargs) -&gt; filled_encoding</cite>
+and should not modify encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding</strong> (<em>Encoding object</em><em> (</em><em>left unchanged</em><em>)</em><em></em>) – </p></li>
+<li><p><strong>method</strong> (method present in <cite>fillers</cite>.) – </p></li>
+<li><p><strong>**kwargs</strong> (<em>additional kwargs passed to the specified implementation.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A new filled Encoding object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.morphology.surface">
+<code class="sig-prename descclassname">trimesh.voxel.morphology.</code><code class="sig-name descname">surface</code><span class="sig-paren">(</span><em class="sig-param">encoding</em>, <em class="sig-param">structure=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.morphology.surface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get elements on the surface of encoding.</p>
+<p>A surface element is any one in encoding that is adjacent to an empty
+voxel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding</strong> (<a class="reference internal" href="#trimesh.voxel.encoding.Encoding" title="trimesh.voxel.encoding.Encoding"><em>Encoding</em></a><em> or </em><em>dense rank-3 array</em>) – </p></li>
+<li><p><strong>structure</strong> (<em>adjacency structure. If None</em><em>, </em><em>square connectivity is used.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>new surface Encoding.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.voxel.ops">
+<span id="trimesh-voxel-ops-module"></span><h2>trimesh.voxel.ops module<a class="headerlink" href="#module-trimesh.voxel.ops" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.voxel.ops.boolean_sparse">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">boolean_sparse</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">operation=&lt;ufunc 'logical_and'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.boolean_sparse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find common rows between two arrays very quickly
+using 3D boolean sparse matrices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>(</em><em>n</em><em>, </em><em>d</em><em>)  </em><em>int</em><em>, </em><em>coordinates in space</em>) – </p></li>
+<li><p><strong>b</strong> (<em>(</em><em>m</em><em>, </em><em>d</em><em>)  </em><em>int</em><em>, </em><em>coordinates in space</em>) – </p></li>
+<li><p><strong>operation</strong> (<em>numpy operation function</em><em>, </em><em>ie:</em>) – np.logical_and
+np.logical_or</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>coords</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(q, d) int, coordinates in space</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.fill_base">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">fill_base</code><span class="sig-paren">(</span><em class="sig-param">sparse_indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.fill_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a sparse surface voxelization, fill in between columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sparse_indices</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>int</em><em>, </em><em>location of filled cells</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>filled</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, 3) int, location of filled cells</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.fill_orthographic">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">fill_orthographic</code><span class="sig-paren">(</span><em class="sig-param">dense</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.fill_orthographic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.fill_voxelization">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">fill_voxelization</code><span class="sig-paren">(</span><em class="sig-param">sparse_indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.fill_voxelization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a sparse surface voxelization, fill in between columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sparse_indices</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>int</em><em>, </em><em>location of filled cells</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>filled</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, 3) int, location of filled cells</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.indices_to_points">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">indices_to_points</code><span class="sig-paren">(</span><em class="sig-param">indices</em>, <em class="sig-param">pitch=None</em>, <em class="sig-param">origin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.indices_to_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert indices of an (n,m,p) matrix into a set of voxel center points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indices</strong> (<em>(</em><em>q</em><em>, </em><em>3</em><em>) </em><em>int</em><em>, </em><em>index of voxel matrix</em><em> (</em><em>n</em><em>,</em><em>m</em><em>,</em><em>p</em><em>)</em>) – </p></li>
+<li><p><strong>pitch</strong> (<em>float</em><em>, </em><em>what pitch was the voxel matrix computed with</em>) – </p></li>
+<li><p><strong>origin</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em><em>, </em><em>what is the origin of the voxel matrix</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>points</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(q, 3) float, list of points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.matrix_to_marching_cubes">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">matrix_to_marching_cubes</code><span class="sig-paren">(</span><em class="sig-param">matrix</em>, <em class="sig-param">pitch=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.matrix_to_marching_cubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an (n,m,p) matrix into a mesh, using marching_cubes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>(</em><em>n</em><em>, </em><em>m</em><em>, </em><em>p</em><em>) </em><em>bool</em>) – Occupancy array</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mesh</strong> – Mesh generated by meshing voxels using
+the marching cubes algorithm in skimage</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh">trimesh.Trimesh</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.matrix_to_points">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">matrix_to_points</code><span class="sig-paren">(</span><em class="sig-param">matrix</em>, <em class="sig-param">pitch=None</em>, <em class="sig-param">origin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.matrix_to_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an (n,m,p) matrix into a set of points for each voxel center.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>(</em><em>n</em><em>,</em><em>m</em><em>,</em><em>p</em><em>) </em><em>bool</em><em>, </em><em>voxel matrix</em>) – </p></li>
+<li><p><strong>pitch</strong> (<em>float</em><em>, </em><em>what pitch was the voxel matrix computed with</em>) – </p></li>
+<li><p><strong>origin</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em><em>, </em><em>what is the origin of the voxel matrix</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>points</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(q, 3) list of points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.multibox">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">multibox</code><span class="sig-paren">(</span><em class="sig-param">centers</em>, <em class="sig-param">colors=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.multibox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Trimesh object with a box at every center.</p>
+<p>Doesn’t do anything nice or fancy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>centers</strong> (<em>(</em><em>n</em><em>,</em><em>3</em><em>) </em><em>float</em><em>, </em><em>center of boxes that are occupied</em>) – </p></li>
+<li><p><strong>pitch</strong> (<em>float</em><em>, </em><em>the edge length of a voxel</em>) – </p></li>
+<li><p><strong>colors</strong> (<em>(</em><em>3</em><em>,</em><em>) or </em><em>(</em><em>4</em><em>,</em><em>) or </em><em>(</em><em>n</em><em>,</em><em>3</em><em>) or </em><em>(</em><em>n</em><em>, </em><em>4</em><em>) </em><em>float</em><em>, </em><em>color of boxes</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rough</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Trimesh object representing inputs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.points_to_indices">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">points_to_indices</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">pitch=None</em>, <em class="sig-param">origin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.points_to_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert center points of an (n,m,p) matrix into its indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>(</em><em>q</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Center points of voxel matrix (n,m,p)</p></li>
+<li><p><strong>pitch</strong> (<em>float</em>) – What pitch was the voxel matrix computed with</p></li>
+<li><p><strong>origin</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><em>float</em>) – What is the origin of the voxel matrix</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>indices</strong> – List of indices</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(q, 3) int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.points_to_marching_cubes">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">points_to_marching_cubes</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">pitch=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.points_to_marching_cubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mesh points by assuming they fill a voxel box, and then
+running marching cubes on them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Points in 3D space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mesh</strong> – Points meshed using marching cubes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh">trimesh.Trimesh</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.sparse_to_matrix">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">sparse_to_matrix</code><span class="sig-paren">(</span><em class="sig-param">sparse</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.sparse_to_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take a sparse (n,3) list of integer indexes of filled cells,
+turn it into a dense (m,o,p) matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sparse</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>int</em>) – Index of filled cells</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dense</strong> – Matrix of filled cells</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(m, o, p) bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.ops.strip_array">
+<code class="sig-prename descclassname">trimesh.voxel.ops.</code><code class="sig-name descname">strip_array</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.ops.strip_array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.voxel.runlength">
+<span id="trimesh-voxel-runlength-module"></span><h2>trimesh.voxel.runlength module<a class="headerlink" href="#module-trimesh.voxel.runlength" title="Permalink to this headline">¶</a></h2>
+<p>Numpy encode/decode/utility implementations for run length encodings.</p>
+<p># Run Length Encoded Features</p>
+<p>Encoding/decoding functions for run length encoded data.</p>
+<p>We include code for two variations:</p>
+<ul class="simple">
+<li><p>run length encoding (RLE)</p></li>
+<li><p>binary run length encdoing (BRLE)</p></li>
+</ul>
+<p>RLE stores sequences of repeated values as the value followed by its count, e.g.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">dense_to_rle([5,</span> <span class="pre">5,</span> <span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">6])</span> <span class="pre">==</span> <span class="pre">[5,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">1]</span>
+<span class="pre">`</span></code></p>
+<p>i.e. the value <cite>5</cite> is repeated <cite>2</cite> times, then <cite>3</cite> is repeated <cite>1</cite> time, <cite>2</cite> is
+repeated <cite>4</cite> times and <cite>6</cite> is repeated <cite>1</cite> time.</p>
+<p>BRLE is an optimized form for when the stored values can only be <cite>0</cite> or <cite>1</cite>.
+This means we only need to save the counts, and assume the values alternate
+(starting at <cite>0</cite>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">dense_to_brle([1,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0])</span> <span class="pre">==</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">7,</span> <span class="pre">2]</span>
+<span class="pre">`</span></code></p>
+<p>i.e. the value zero occurs <cite>0</cite> times, followed by <cite>2</cite> ones, <cite>4</cite> zeros, <cite>7</cite> ones
+and <cite>2</cite> zeros.</p>
+<p>Sequences with counts exceeding the data type’s maximum value have to be
+handled carefully. For example, the <cite>uint8</cite> encoding of 300 zeros
+(<cite>uint8</cite> has a max value of 255) is:</p>
+<ul class="simple">
+<li><p>RLE: <cite>[0, 255, 0, 45]</cite>  (<cite>0</cite> repeated <cite>255</cite> times + <cite>0</cite> repeated <cite>45</cite> times)</p></li>
+<li><p>BRLE: <cite>[255, 0, 45, 0]</cite> (<cite>255</cite> zeros + <cite>0</cite> ones + <cite>45</cite> zeros + <cite>0</cite> ones)</p></li>
+</ul>
+<p>This module contains implementations of various RLE/BRLE operations.</p>
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_gather_1d">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_gather_1d</code><span class="sig-paren">(</span><em class="sig-param">brle_data</em>, <em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_gather_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gather BRLE data values at the provided dense indices.</p>
+<p>This is equivalent to <cite>rle_to_dense(rle_data)[indices]</cite> but the
+implementation does not require the construction of the dense array.</p>
+<p>If indices is known to be in order, use <cite>sorted_brle_gather_1d</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rle_data</strong> (<em>run length encoded data</em>) – </p></li>
+<li><p><strong>indices</strong> (<em>dense indices</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>numpy array, dense data at indices, same length as indices and dtype as</em></p></li>
+<li><p><em>rle_data</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_gatherer_1d">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_gatherer_1d</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_gatherer_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a gather function at the given indices.</p>
+<p>Because gathering on BRLE data requires sorting, for instances where
+gathering at the same indices on different RLE data this can save the
+sorting process.</p>
+<p>If only gathering on a single RLE iterable, use <cite>brle_gather_1d</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>indices</strong> (<em>iterable of integers</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>gather function, mapping <cite>(rle_data, dtype=None) -&gt; values</cite>.</p></li>
+<li><p><cite>values</cite> will have the same length as <cite>indices</cite> and dtype provided,</p></li>
+<li><p><em>or rle_data.dtype if no dtype is provided.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_length">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_length</code><span class="sig-paren">(</span><em class="sig-param">brle</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optimized implementation of <cite>len(brle_to_dense(brle))</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_logical_not">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_logical_not</code><span class="sig-paren">(</span><em class="sig-param">brle</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_logical_not" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the BRLE encoding of the <cite>logical_not`ed dense form of `brle</cite>.</p>
+<p>Equivalent to <cite>dense_to_brle(np.logical_not(brle_to_dense(brle)))</cite> but
+highly optimized - just pads brle with a 0 on each end (or strips is
+existing endpoints are both zero).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>brle</strong> (<em>rank 1 int array of binary run length encoded data</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>rank 1 int array of binary run length encoded data corresponding to</em></p></li>
+<li><p><em>element-wise not of the input.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_mask">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_mask</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform masking of the input binary run-length data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>brle_data</strong> (<em>iterable of binary run length encoded data</em>) – </p></li>
+<li><p><strong>mask</strong> (<em>iterable of bools corresponding to the dense mask.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>iterable dense values of brle_data wherever mask is True.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_reverse">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_reverse</code><span class="sig-paren">(</span><em class="sig-param">brle_data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to dense_to_brle(brle_to_dense(brle_data)[-1::-1]).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_strip">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_strip</code><span class="sig-paren">(</span><em class="sig-param">brle_data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_strip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove leading and trailing zeros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>brle_data</strong> (<em>binary run length encoded data.</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>(stripped_brle_data, padding)</em></p></li>
+<li><p><strong>stripped_brle_data</strong> (<em>rle data without any leading or trailing zeros</em>)</p></li>
+<li><p><strong>padding</strong> (<em>2-element dense padding</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_to_brle">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_to_brle</code><span class="sig-paren">(</span><em class="sig-param">brle</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_to_brle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Almost the identity function.</p>
+<p>Checks for possible merges and required splits.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_to_dense">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_to_dense</code><span class="sig-paren">(</span><em class="sig-param">brle_data</em>, <em class="sig-param">vals=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_to_dense" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode binary run length encoded data to dense.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>brle_data</strong> (<em>BRLE counts of False/True values</em>) – </p></li>
+<li><p><strong>vals</strong> (if not <cite>None</cite>, a length 2 array/list/tuple with False/True substitute) – values, e.g. brle_to_dense([2, 3, 1, 0], [7, 9]) == [7, 7, 9, 9, 9, 7]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>rank 1 dense data of dtype <cite>bool if vals is None else vals.dtype</cite></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError if vals it not None and shape is not</strong><strong> (</strong><strong>2</strong><strong>,</strong><strong>)</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_to_rle">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_to_rle</code><span class="sig-paren">(</span><em class="sig-param">brle</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_to_rle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.brle_to_sparse">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">brle_to_sparse</code><span class="sig-paren">(</span><em class="sig-param">brle_data</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.brle_to_sparse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.dense_to_brle">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">dense_to_brle</code><span class="sig-paren">(</span><em class="sig-param">dense_data</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.dense_to_brle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the binary run length encoding of <cite>dense_data</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dense_data</strong> (<em>rank 1 bool array of data to encode.</em>) – </p></li>
+<li><p><strong>dtype</strong> (<em>numpy int type.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Binary run length encoded rank 1 array of dtype <cite>dtype</cite>.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValuError if dense_data is not a rank 1 bool array.</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.dense_to_rle">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">dense_to_rle</code><span class="sig-paren">(</span><em class="sig-param">dense_data</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.dense_to_rle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get run length encoding of the provided dense data.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.merge_brle_lengths">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">merge_brle_lengths</code><span class="sig-paren">(</span><em class="sig-param">lengths</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.merge_brle_lengths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of split_long_brle_lengths.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.merge_rle_lengths">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">merge_rle_lengths</code><span class="sig-paren">(</span><em class="sig-param">values</em>, <em class="sig-param">lengths</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.merge_rle_lengths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of split_long_rle_lengths except returns normal python lists.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_gather_1d">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_gather_1d</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">indices</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_gather_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gather RLE data values at the provided dense indices.</p>
+<p>This is equivalent to <cite>rle_to_dense(rle_data)[indices]</cite> but the
+implementation does not require the construction of the dense array.</p>
+<p>If indices is known to be in order, use <cite>sorted_gather_1d</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rle_data</strong> (<em>run length encoded data</em>) – </p></li>
+<li><p><strong>indices</strong> (<em>dense indices</em>) – </p></li>
+<li><p><strong>dtype</strong> (<em>numpy dtype. If not provided</em><em>, </em><em>uses rle_data.dtype</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>numpy array, dense data at indices, same length as indices and dtype as</em></p></li>
+<li><p><em>rle_data</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_gatherer_1d">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_gatherer_1d</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_gatherer_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a gather function at the given indices.</p>
+<p>Because gathering on RLE data requires sorting, for instances where
+gathering at the same indices on different RLE data this can save the
+sorting process.</p>
+<p>If only gathering on a single RLE iterable, use <cite>rle_gather_1d</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>indices</strong> (<em>iterable of integers</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>gather function, mapping <cite>(rle_data, dtype=None) -&gt; values</cite>.</p></li>
+<li><p><cite>values</cite> will have the same length as <cite>indices</cite> and dtype provided,</p></li>
+<li><p><em>or rle_data.dtype if no dtype is provided.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_length">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_length</code><span class="sig-paren">(</span><em class="sig-param">rle</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optimized implementation of <cite>len(rle_to_dense(rle_to_brle(rle)))</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_mask">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_mask</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform masking of the input run-length data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rle_data</strong> (<em>iterable of run length encoded data</em>) – </p></li>
+<li><p><strong>mask</strong> (<em>iterable of bools corresponding to the dense mask.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>iterable of dense values of rle_data wherever mask is True.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_reverse">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_reverse</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the rle encoding of the reversed dense array.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_strip">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_strip</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_strip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove leading and trailing zeros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rle_data</strong> (<em>run length encoded data</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>stripped_rle_data: rle data without any leading or trailing zeros
+padding: 2-element dense padding</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(stripped_rle_data, padding)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_to_brle">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_to_brle</code><span class="sig-paren">(</span><em class="sig-param">rle</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_to_brle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert run length encoded (RLE) value/counts to BRLE.</p>
+<p>RLE data is stored in a rank 1 array with each pair giving:
+(value, count)</p>
+<p>e.g. the RLE encoding of [4, 4, 4, 1, 1, 6] is [4, 3, 1, 2, 6, 1].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rle</strong> (<em>(</em><em>n</em><em>,</em><em>) </em><em>int</em>) – Run length encoded data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>otherwise brle_to_brle is called on that list before returning.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>equivalent binary run length encoding. a list if dtype is None,</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If any of the even counts of <cite>rle</cite> are not zero or 1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_to_dense">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_to_dense</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_to_dense" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the dense decoding of the associated run length encoded data.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_to_rle">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_to_rle</code><span class="sig-paren">(</span><em class="sig-param">rle</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_to_rle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Almost the identity function.</p>
+<p>Checks for possible merges and required splits.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.rle_to_sparse">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">rle_to_sparse</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.rle_to_sparse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get dense indices associated with non-zeros.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.sorted_brle_gather_1d">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">sorted_brle_gather_1d</code><span class="sig-paren">(</span><em class="sig-param">brle_data</em>, <em class="sig-param">ordered_indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.sorted_brle_gather_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gather brle_data at ordered_indices.</p>
+<p>This is equivalent to <cite>brle_to_dense(brle_data)[ordered_indices]</cite> but
+avoids the decoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_data</strong> (<em>iterable of run-length-encoded data.</em>) – </p></li>
+<li><p><strong>ordered_indices</strong> (<em>iterable of ints in ascending order.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><cite>raw_data</cite> iterable of values at the dense indices, same length as</p></li>
+<li><p><em>ordered indices.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.sorted_rle_gather_1d">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">sorted_rle_gather_1d</code><span class="sig-paren">(</span><em class="sig-param">rle_data</em>, <em class="sig-param">ordered_indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.sorted_rle_gather_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gather brle_data at ordered_indices.</p>
+<p>This is equivalent to <cite>rle_to_dense(brle_data)[ordered_indices]</cite> but avoids
+the decoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>brle_data</strong> (<em>iterable of run-length-encoded data.</em>) – </p></li>
+<li><p><strong>ordered_indices</strong> (<em>iterable of ints in ascending order.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><cite>brle_data</cite> iterable of values at the dense indices, same length as</p></li>
+<li><p><em>ordered indices.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.split_long_brle_lengths">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">split_long_brle_lengths</code><span class="sig-paren">(</span><em class="sig-param">lengths</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.split_long_brle_lengths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split lengths that exceed max dtype value.</p>
+<p>Lengths <cite>l</cite> are converted into [max_val, 0] * l // max_val + [l % max_val]</p>
+<p>e.g. for dtype=np.uint8 (max_value == 255)
+<code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">split_long_brle_lengths([600,</span> <span class="pre">300,</span> <span class="pre">2,</span> <span class="pre">6],</span> <span class="pre">np.uint8)</span> <span class="pre">==</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[255,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">90,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">45,</span> <span class="pre">2,</span> <span class="pre">6]</span>
+<span class="pre">`</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.voxel.runlength.split_long_rle_lengths">
+<code class="sig-prename descclassname">trimesh.voxel.runlength.</code><code class="sig-name descname">split_long_rle_lengths</code><span class="sig-paren">(</span><em class="sig-param">values</em>, <em class="sig-param">lengths</em>, <em class="sig-param">dtype=&lt;class 'numpy.int64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.runlength.split_long_rle_lengths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split long lengths in the associated run length encoding.</p>
+<p>e.g.
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">split_long_rle_lengths([5,</span> <span class="pre">300,</span> <span class="pre">2,</span> <span class="pre">12],</span> <span class="pre">np.uint8)</span> <span class="pre">==</span> <span class="pre">[5,</span> <span class="pre">255,</span> <span class="pre">5,</span> <span class="pre">45,</span> <span class="pre">2,</span> <span class="pre">12]</span>
+<span class="pre">`</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (values column of run length encoding, or <cite>rle[::2]</cite>) – </p></li>
+<li><p><strong>lengths</strong> (counts in run length encoding, or <cite>rle[1::2]</cite>) – </p></li>
+<li><p><strong>dtype</strong> (<em>numpy data type indicating the maximum value.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>values, lengths associated with the appropriate splits. <cite>lengths</cite> will be</p></li>
+<li><p>of type <cite>dtype</cite>, while <cite>values</cite> will be the same as the value passed in.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.voxel.transforms">
+<span id="trimesh-voxel-transforms-module"></span><h2>trimesh.voxel.transforms module<a class="headerlink" href="#module-trimesh.voxel.transforms" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trimesh.voxel.transforms.Transform">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.transforms.</code><code class="sig-name descname">Transform</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.transforms.Transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for caching metadata associated with 4x4 transformations.</p>
+<p>The transformation matrix is used to define relevant properties
+for the voxels, including pitch and origin.</p>
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.apply_scale">
+<code class="sig-name descname">apply_scale</code><span class="sig-paren">(</span><em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.transforms.Transform.apply_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutate the transform in-place and return self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.apply_transform">
+<code class="sig-name descname">apply_transform</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.transforms.Transform.apply_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutate the transform in-place and return self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.apply_translation">
+<code class="sig-name descname">apply_translation</code><span class="sig-paren">(</span><em class="sig-param">translation</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.transforms.Transform.apply_translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutate the transform in-place and return self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.transforms.Transform.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.crc">
+<code class="sig-name descname">crc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.transforms.Transform.crc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the zlib.adler32 hash of the current transformation matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>crc</strong> – Hash of transformation matrix</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.inverse_matrix">
+<em class="property">property </em><code class="sig-name descname">inverse_matrix</code><a class="headerlink" href="#trimesh.voxel.transforms.Transform.inverse_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.inverse_transform_points">
+<code class="sig-name descname">inverse_transform_points</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.transforms.Transform.inverse_transform_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the inverse transformation to points (not in-place).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.is_identity">
+<em class="property">property </em><code class="sig-name descname">is_identity</code><a class="headerlink" href="#trimesh.voxel.transforms.Transform.is_identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flags this transformation being sufficiently close to eye(4).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.matrix">
+<em class="property">property </em><code class="sig-name descname">matrix</code><a class="headerlink" href="#trimesh.voxel.transforms.Transform.matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the homogeneous transformation matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>matrix</strong> – Transformation matrix</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(4, 4) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.md5">
+<code class="sig-name descname">md5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.transforms.Transform.md5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the MD5 hash of the current transformation matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>md5</strong> – Hash of transformation matrix</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.pitch">
+<em class="property">property </em><code class="sig-name descname">pitch</code><a class="headerlink" href="#trimesh.voxel.transforms.Transform.pitch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#trimesh.voxel.transforms.Transform.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the scale factor of the current transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>scale</strong> – Scale factor from the matrix</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(3,) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.transform_points">
+<code class="sig-name descname">transform_points</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.transforms.Transform.transform_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the transformation to points (not in-place).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Points in cartesian space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>transformed</strong> – Points transformed by matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 3) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.translation">
+<em class="property">property </em><code class="sig-name descname">translation</code><a class="headerlink" href="#trimesh.voxel.transforms.Transform.translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the translation component of the matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>translation</strong> – Cartesian translation</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(3,) float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.transforms.Transform.unit_volume">
+<em class="property">property </em><code class="sig-name descname">unit_volume</code><a class="headerlink" href="#trimesh.voxel.transforms.Transform.unit_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Volume of a transformed unit cube.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.voxel">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trimesh.voxel" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="trimesh.voxel.VoxelGrid">
+<em class="property">class </em><code class="sig-prename descclassname">trimesh.voxel.</code><code class="sig-name descname">VoxelGrid</code><span class="sig-paren">(</span><em class="sig-param">encoding</em>, <em class="sig-param">transform=None</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="trimesh.html#trimesh.parent.Geometry" title="trimesh.parent.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">trimesh.parent.Geometry</span></code></a></p>
+<p>Store 3D voxels.</p>
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.apply_transform">
+<code class="sig-name descname">apply_transform</code><span class="sig-paren">(</span><em class="sig-param">matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.apply_transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.as_boxes">
+<code class="sig-name descname">as_boxes</code><span class="sig-paren">(</span><em class="sig-param">colors=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.as_boxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A rough Trimesh representation of the voxels with a box
+for each filled voxel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>colors</strong> (<em>(</em><em>3</em><em>,</em><em>) or </em><em>(</em><em>4</em><em>,</em><em>) </em><em>float</em><em> or </em><em>uint8</em>) – (X, Y, Z, 3) or (X, Y, Z, 4) float or uint8
+Where matrix.shape == (X, Y, Z)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mesh</strong> – Mesh with one box per filled cell.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="trimesh.html#trimesh.Trimesh" title="trimesh.Trimesh">trimesh.Trimesh</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.bounds">
+<em class="property">property </em><code class="sig-name descname">bounds</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.bounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.crc">
+<code class="sig-name descname">crc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.crc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.element_volume">
+<em class="property">property </em><code class="sig-name descname">element_volume</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.element_volume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.encoding">
+<em class="property">property </em><code class="sig-name descname">encoding</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>Encoding</cite> object providing the occupancy grid.</p>
+<p>See <cite>trimesh.voxel.encoding</cite> for implementations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.extents">
+<em class="property">property </em><code class="sig-name descname">extents</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.extents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.fill">
+<code class="sig-name descname">fill</code><span class="sig-paren">(</span><em class="sig-param">method='holes'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutates self by filling in the encoding according to <cite>morphology.fill</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>implementation key</em><em>, </em><em>one of</em>) – <cite>trimesh.voxel.morphology.fill.fillers</cite> keys</p></li>
+<li><p><strong>**kwargs</strong> (<em>additional kwargs passed to the keyed implementation</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>self after replacing encoding with a filled version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.filled_count">
+<em class="property">property </em><code class="sig-name descname">filled_count</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.filled_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>int, number of occupied voxels in the grid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.hollow">
+<code class="sig-name descname">hollow</code><span class="sig-paren">(</span><em class="sig-param">structure=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.hollow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutates self by removing internal voxels leaving only surface elements.</p>
+<p>Surviving elements are those in encoding that are adjacent to an empty
+voxel, where adjacency is controlled by <cite>structure</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>structure</strong> (<em>adjacency structure. If None</em><em>, </em><em>square connectivity is used.</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>self after replacing encoding with a surface version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.indices_to_points">
+<code class="sig-name descname">indices_to_points</code><span class="sig-paren">(</span><em class="sig-param">indices</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.indices_to_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.is_filled">
+<code class="sig-name descname">is_filled</code><span class="sig-paren">(</span><em class="sig-param">point</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.is_filled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query points to see if the voxel cells they lie in are
+filled or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em>) – Points in space</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>is_filled</strong> – Is cell occupied or not for each point</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n,) bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.marching_cubes">
+<em class="property">property </em><code class="sig-name descname">marching_cubes</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.marching_cubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A marching cubes Trimesh representation of the voxels.</p>
+<p>No effort was made to clean or smooth the result in any way;
+it is merely the result of applying the scikit-image
+measure.marching_cubes function to self.encoding.dense.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>meshed</strong> – object, as returned by marching cubes algorithm.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Trimesh object representing the current voxel</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.matrix">
+<em class="property">property </em><code class="sig-name descname">matrix</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a DENSE matrix of the current voxel encoding</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>dense</strong> – Numpy array of dense matrix
+Shortcut to voxel.encoding.dense</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(a, b, c) bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.md5">
+<code class="sig-name descname">md5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.md5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.origin">
+<em class="property">property </em><code class="sig-name descname">origin</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated. Use <cite>self.translation</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.pitch">
+<em class="property">property </em><code class="sig-name descname">pitch</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.pitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uniform scaling factor representing the side length of each voxel.</p>
+<p>Raises a <cite>RuntimeError</cite> if <cite>self.transformation</cite> has rotation or shear
+components of has non-uniform scaling.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.points">
+<em class="property">property </em><code class="sig-name descname">points</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.points" title="Permalink to this definition">¶</a></dt>
+<dd><p>The center of each filled cell as a list of points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>points</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(self.filled, 3) float, list of points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.points_to_indices">
+<code class="sig-name descname">points_to_indices</code><span class="sig-paren">(</span><em class="sig-param">points</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.points_to_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert points to indices in the matrix array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>(</em><em>n</em><em>, </em><em>3</em><em>) </em><em>float</em><em>, </em><em>point in space</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>indices</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(n, 3) int array of indices into self.encoding</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.revoxelized">
+<code class="sig-name descname">revoxelized</code><span class="sig-paren">(</span><em class="sig-param">shape</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.revoxelized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new VoxelGrid without rotations, reflections or shearing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shape</strong> (<em>3-tuple of ints denoting the shape of the returned VoxelGrid.</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>VoxelGrid of the given shape with (possibly non-uniform) scale and</em></p></li>
+<li><p><em>translation transformation matrix.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>3-element float representing per-axis scale.</p>
+<p>Raises a <cite>RuntimeError</cite> if <cite>self.transform</cite> has rotation or
+shear components.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>3-tuple of ints denoting shape of occupancy grid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the current set of voxels into a trimesh for visualization
+and show that via its built- in preview method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.sparse_indices">
+<em class="property">property </em><code class="sig-name descname">sparse_indices</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.sparse_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>(n, 3) int array of sparse indices of occupied voxels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.strip">
+<code class="sig-name descname">strip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.voxel.VoxelGrid.strip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutate self by stripping leading/trailing planes of zeros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>self after mutation occurs in-place</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.transform">
+<em class="property">property </em><code class="sig-name descname">transform</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>4x4 homogeneous transformation matrix.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.translation">
+<em class="property">property </em><code class="sig-name descname">translation</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Location of voxel at [0, 0, 0].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.voxel.VoxelGrid.volume">
+<em class="property">property </em><code class="sig-name descname">volume</code><a class="headerlink" href="#trimesh.voxel.VoxelGrid.volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>What is the volume of the filled cells in the current voxel object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>volume</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float, volume of filled cells</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="trimesh.visual.html" class="btn btn-neutral float-left" title="trimesh.visual package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
